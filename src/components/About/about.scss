@@ -1,0 +1,72 @@
+.About {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 5%;
+
+    &_grid {
+        display: grid;
+        margin-top: 2%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+
+        @include Tablet {
+            display: flex;
+            flex-direction: column-reverse;
+            max-width: 90%;
+            align-self: center;
+        }
+    }
+
+    &_title {
+        font-size: 3vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $hovering_color;
+
+        @include Tablet {
+            font-size: 5vw;
+        }
+
+        @include Mobile {
+            font-size: 8vw;
+        }
+    }
+
+    &_text-con {
+        display: flex;
+        padding-top: 5%;
+    }
+
+    &_text {
+        display: flex;
+        text-align: left;
+        line-break: normal;
+        font-size: 1vw;
+        line-height: 5vh;
+        color: white;
+        width: 90%;
+
+        @include Tablet {
+            font-size: 2vw;
+            text-align: center;
+            width: 100%;
+        }
+
+        @include Mobile {
+            font-size: 4vw;
+        }
+    }
+
+    &_img {
+        display: block;
+        border-radius: 50px;
+        box-shadow: $secondary_color 20px 20px 30px -10px;
+        object-fit: cover;
+        height: 100vh;
+        width: 100%;
+        border: 2px solid whitesmoke;
+
+        @include Tablet {
+            height: 70vh;
+        }
+    }
+}

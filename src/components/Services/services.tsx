@@ -2,7 +2,7 @@
 export default function Services() {
     return (
         <div className="Services">
-            <h1 className="Services_titile">Services</h1>
+            <h1 className="Services_title">Services</h1>
             <div className="Services_Grid">
                 <div className=" Services_block Services_block--1">
                     <img className="Services_img" src="./Photoshoot.jpg" />
@@ -27,7 +27,7 @@ export default function Services() {
                     <img className="Services_img" src="./camera.jpg" />
                 </div>
                 <div className="Services_block Services_block--3">
-                    <img className="Services_img Services_img--3" src="./studio.jpg" />
+                    <img className="Services_img" src="./studio.jpg" />
                     <div className="Services_grid-content">
                         <h1 className="Services_grid-content-title">INITIAL CONSULTATION</h1>
                         <p className="Services_grid-content-text">
