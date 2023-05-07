@@ -26,13 +26,13 @@
     flex-direction: column;
     position: fixed;
     z-index: 100;
-    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     transform: translateX(-100%);
     box-sizing: border-box;
     background: linear-gradient(36deg, $hovering_color 8%, $secondary_color 100%);
+    // background: #232323;
     height: 100vh;
 
     &:target {

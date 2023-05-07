@@ -1,4 +1,5 @@
-import Menu from "./Menu/menu";
+import { FiMenu } from "react-icons/fi";
+
 
 export default function Navbar() {
     return (
@@ -42,8 +43,10 @@ export default function Navbar() {
                     <option className="Container_option" value="ru">Russian</option>
                 </select>
             </div>
-            {/* This the Menu That Opens Up on Tablet and Mobile */}
-            <Menu />
+            {/* This the Burger icon that shows up when Entering The tablet and Mobile mode */}
+            <div className="Menu">
+                <a href="#Menu"><FiMenu className="Menu_burger" /></a>
+            </div>
         </div>
     )
 }

@@ -1,13 +1,9 @@
-import { FiMenu } from "react-icons/fi";
 import { RxCross1 } from 'react-icons/rx';
 
 export default function Menu() {
     return (
         <>
-        {/* This the Burger icon that shows up when Entering The tablet and Mobile mode */}
-            <div className="Menu">
-                <a href="#Menu"><FiMenu className="Menu_burger" /></a>
-            </div>
+      
         {/* This is the Menu That Opens Up when pressing The Burger Menu */}
             <section id="Menu" className="Menu-open">
                 <div className="Menu-open_Box">
