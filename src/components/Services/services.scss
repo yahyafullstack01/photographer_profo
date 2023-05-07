@@ -8,6 +8,8 @@
         font-size: 3vw;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $hovering_color;
+        font-family: 'Asap', sans-serif;
+        font-weight: 500;
 
         @include Tablet {
             font-size: 5vw;
@@ -91,6 +93,8 @@
         font-size: 3vw;
         padding-bottom: 5%;
         text-transform: uppercase;
+        font-family: 'Asap', sans-serif;
+        font-weight: 500;
 
         @include Mobile {
             font-size: 4vw;
@@ -101,6 +105,8 @@
         color: white;
         align-self: center;
         max-width: 90%;
+        font-family: 'Asap', sans-serif;
+        font-weight: 400;
 
         @include BigScreen {
             font-size: 1vw;
@@ -120,6 +126,8 @@
         text-align: center;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $hovering_color;
+        font-family: 'Asap', sans-serif;
+        font-weight: 400;
 
         @include Mobile {
             font-size: 4vw;
@@ -131,15 +139,17 @@
         font-size: 2vw;
         border-radius: 10px;
         margin-top: 2%;
-        color: white;
         border: none;
         outline: none;
         background: $secondary_color;
         cursor: pointer;
         transition: ease-in-out 0.3s;
+        font-family: 'Asap', sans-serif;
+        font-weight: 500;
 
         &:hover {
             box-shadow: $hovering_color 20px 20px 30px -10px;
+            color: $hovering_color;
             transform: scale(1.1);
         }
 

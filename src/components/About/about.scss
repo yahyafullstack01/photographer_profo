@@ -21,6 +21,8 @@
         font-size: 3vw;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $hovering_color;
+        font-family: 'Asap', sans-serif;
+        font-weight: 500;
 
         @include Tablet {
             font-size: 5vw;
@@ -42,8 +44,9 @@
         line-break: normal;
         font-size: 1vw;
         line-height: 5vh;
-        color: white;
         width: 90%;
+        font-family: 'Asap', sans-serif;
+        font-weight: 400;
 
         @include Tablet {
             font-size: 2vw;
