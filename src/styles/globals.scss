@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./utilities/varaibles";
+@import "./utilities/mixins";
+@import "../components/Header/header.scss";
+@import "../components/Header/Navbar/navbar.scss";
+@import "../components/Header/Navbar/Menu/menu.scss";
+@import "../components/Header/Hero/hero.scss";
+@import "../components/About/about.scss";
+@import "../components/Services/services.scss";
+@import "../components/Footer/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: ease-in-out 0.3s;
+  box-sizing: border-box;
+}
+
+-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  background: $primary_color;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  width: fit-content;
+}

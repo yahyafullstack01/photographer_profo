@@ -1,0 +1,155 @@
+@import "/src/styles/utilities/mixins";
+@import "/src/styles/utilities/varaibles";
+
+.Menu {
+    display: none;
+
+    @include Tablet {
+        display: flex;
+    }
+
+    &_burger {
+        cursor: pointer;
+        font-size: 4vw;
+        color: rgba(255, 255, 255, 0.478);
+
+        @include Tablet {
+            font-size: 5vw;
+        }
+
+        @include Mobile {
+            font-size: 10vw;
+        }
+    }
+}
+
+.Menu-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    box-sizing: border-box;
+    background: linear-gradient(36deg, $hovering_color 8%, $secondary_color 100%);
+    height: 100vh;
+
+    &:target {
+        transform: translateX(0);
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    &_Box {
+        display: flex;
+        backdrop-filter: blur(50px);
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &_close {
+        margin-right: 2%;
+        font-size: 4vw;
+        color: white;
+
+        &:hover {
+            color: $hovering_color;
+        }
+
+        @include Mobile {
+            font-size: 9vw;
+        }
+    }
+
+    &_Box-2 {
+        display: flex;
+        margin-top: 5%;
+        justify-content: space-between;
+    }
+
+    &_links-con {
+        display: flex;
+        margin-top: 5%;
+        row-gap: 3vh;
+        margin-left: 2%;
+        flex-direction: column;
+        width: 100%;
+
+        @include Mobile{
+            row-gap: 5vh;
+            margin-left: 5%;
+            margin-top: 10%;
+        }
+    }
+
+    &_links {
+        font-size: 3vw;
+        color: white;
+        border-radius: 10px;
+        transition: ease-in-out 0.3s;
+        @include Tablet {
+            font-size: 4vw;
+        }
+
+        @include Mobile {
+            font-size: 6vw;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $secondary_color;
+            transition: width 0.3s;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $secondary_color;
+
+            &::after {
+                background: $secondary_color;
+                width: 100%;
+            }
+        }
+    }
+
+    &_lang-con {
+        display: flex;
+        flex-direction: column;
+        font-size: 4vw;
+        margin-right: 2%;
+        @include Mobile {
+            font-size: 6vw;
+        }
+    }
+
+    &_selector {
+        display: flex;
+        outline: none;
+        color: white;
+        background: transparent;
+        cursor: pointer;
+
+        @include BigScreen {
+            font-size: 40px;
+        }
+
+        &:hover {
+            color: $hovering_color;
+        }
+    }
+
+    &_option {
+        background-color: gray;
+        &:hover {
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+@import "/src/styles/utilities/mixins";
+@import "/src/styles/utilities/varaibles";
+
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    backdrop-filter: blur(5px);
+
+    @include BigScreen{
+        margin: 0 auto ;
+        padding: 0;
+        max-width: 2000px;
+    }
+
+    @include Desktop {
+        padding: 1% 2%;
+    }
+
+
+    &_block {
+        display: flex;
+        align-items: center;
+        &--1 {
+            justify-content: space-between;
+            width: 6vw;
+
+            @include Desktop {
+                width: 8vw;
+            }
+        }
+
+        &--2 {
+            width: 45%;
+            justify-content: center;
+            column-gap: 5vw;
+
+            @include Desktop {
+                width: fit-content;
+            }
+        }
+
+        @include Tablet {
+            display: none;
+        }
+    }
+
+    &_links {
+        display: inline-block;
+        color: white;
+        transition: ease-in-out 0.3s;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $hovering_color;
+            transition: width 0.3s;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $hovering_color;
+
+            &::after {
+                background: $hovering_color;
+                width: 100%;
+            }
+        }
+
+        @include BigScreen{
+            font-size: 40px;
+        }
+    }
+
+    &_socials {
+        width: 2vw;
+        height: 2vw;
+        filter: grayscale(1);
+        transition: ease-in-out 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            filter: grayscale(0);
+        }
+
+        @include Desktop {
+            width: 3vw;
+            height: 3vw;
+        }
+    }
+
+    &_logo {
+        width: 8vw;
+        height: 7vw;
+
+        @include Desktop{
+            width: 100px;
+            height: 100px;
+        }
+
+        @include Tablet {
+            width: 12vw;
+            height: 12vw;
+        }
+
+        @include Mobile {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &_lang-con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include Tablet {
+            display: none;
+        }
+    }
+
+    &_selector {
+        display: flex;
+        outline: none;
+        color: white;
+        background: transparent;
+        cursor: pointer;
+
+        @include BigScreen{
+            font-size: 40px;
+        }
+
+        &:hover{
+            color: $hovering_color
+        }
+    }
+
+    &_option {
+        background-color: gray;
+        &:hover{
+            color: white;
+        }
+    }
+}
