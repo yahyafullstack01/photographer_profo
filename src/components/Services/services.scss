@@ -1,0 +1,154 @@
+.Services {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 5%;
+
+    &_titile {
+        font-size: 3vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $hovering_color;
+
+        @include Tablet{
+            font-size: 5vw;
+        }
+
+        @include Mobile{
+            font-size: 8vw;
+        }
+    }
+
+    &_Grid {
+        display: grid;
+        margin-top: 2%;
+        row-gap: 5vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    &_block {
+        display: flex;
+
+        @include Tablet {
+            flex-direction: column;
+            row-gap: 5vh;
+
+            &--2 {
+                flex-direction: column-reverse;
+            }
+            &--4 {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    &_img {
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 60vh;
+        border-radius: 10px;
+        box-shadow: $hovering_color 20px 20px 30px -10px;
+        border: 2px solid white;
+
+        @include Tablet{
+            width: 90%;
+            align-self: center;
+        }
+
+        @include Mobile{
+            width: 100%;
+            height: 50vh;
+        }
+
+        &--3 {
+            width: 50%;
+
+            @include Tablet {
+                width: 90%;
+            }
+
+            @include Mobile{
+                width: 100%;
+            }
+        }
+    }
+
+    &_grid-content {
+        padding: 5% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+        background-color: #393636;
+
+        @include Tablet{
+            width: 90%;
+            align-self: center;
+        }
+
+        @include Mobile{
+            width: 100%;
+        }
+    }
+
+    &_grid-content-title {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $secondary_color;
+        font-size: 3vw;
+        padding-bottom: 5%;
+        text-transform: uppercase;
+
+        @include Mobile{
+            font-size: 4vw;
+        }
+    }
+
+    &_grid-content-text {
+        color: white;
+        align-self: center;
+        max-width: 90%;
+    }
+
+    &_package-con {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        align-items: center;
+        grid-column: 1 / span 2;
+    }
+
+    &_package-txt {
+        font-size: 2vw;
+        text-align: center;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $hovering_color;
+
+        @include Mobile{
+            font-size: 4vw;
+        }
+    }
+
+    &_package-btn {
+        padding: 10px;
+        font-size: 2vw;
+        border-radius: 10px;
+        margin-top: 2%;
+        color: white;
+        border: none;
+        outline: none;
+        background: $secondary_color;
+        cursor: pointer;
+        transition: ease-in-out 0.3s;
+
+        &:hover {
+            box-shadow: $hovering_color 20px 20px 30px -10px;
+            transform: scale(1.1);
+        }
+
+        @include Mobile{
+            font-size: 4vw;
+        }
+    }
+}
