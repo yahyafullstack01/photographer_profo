@@ -3,7 +3,6 @@ import { RxCross1 } from 'react-icons/rx';
 export default function Menu() {
     return (
         <>
-      
         {/* This is the Menu That Opens Up when pressing The Burger Menu */}
             <section id="Menu" className="Menu-open">
                 <div className="Menu-open_Box">
@@ -14,7 +13,7 @@ export default function Menu() {
                             className="Container_logo"
                         />
                     </a>
-                    <a className="Menu-open_close" href="#"><RxCross1 /></a>
+                    <a className="Menu-open_Close" href="#"><RxCross1 className="Menu-open_close" /></a>
                 </div>
                 <div className="Menu-open_Box-2">
                     <div className="Menu-open_links-con">

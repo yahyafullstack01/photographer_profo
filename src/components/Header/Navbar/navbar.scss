@@ -13,7 +13,7 @@
     @include BigScreen{
         margin: 0 auto ;
         padding: 0;
-        max-width: 2000px;
+        max-width: 1960px;
     }
 
     @include Desktop {
@@ -128,7 +128,6 @@
     &_selector {
         display: flex;
         outline: none;
-        color: white;
         background: transparent;
         cursor: pointer;
 
@@ -142,7 +141,7 @@
     }
 
     &_option {
-        background-color: gray;
+        background-color: transparent;
         &:hover{
             color: white;
         }

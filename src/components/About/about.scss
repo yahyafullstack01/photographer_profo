@@ -3,6 +3,12 @@
     flex-direction: column;
     margin: 2% 5%;
 
+    @include BigScreen {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 1960px;
+    }
+
     &_grid {
         display: grid;
         margin-top: 2%;
@@ -21,7 +27,7 @@
         font-size: 3vw;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $hovering_color;
-        font-family: 'Asap', sans-serif;
+        font-family: "Asap", sans-serif;
         font-weight: 500;
 
         @include Tablet {
@@ -45,7 +51,7 @@
         font-size: 1vw;
         line-height: 5vh;
         width: 90%;
-        font-family: 'Asap', sans-serif;
+        font-family: "Asap", sans-serif;
         font-weight: 400;
 
         @include Tablet {

@@ -32,7 +32,6 @@
     transform: translateX(-100%);
     box-sizing: border-box;
     background: linear-gradient(36deg, $hovering_color 8%, $secondary_color 100%);
-    // background: #232323;
     height: 100vh;
 
     &:target {
@@ -50,14 +49,9 @@
         align-items: center;
     }
 
-    &_close {
+    &_Close{
         margin-right: 2%;
         font-size: 4vw;
-        color: white;
-
-        &:hover {
-            color: $hovering_color;
-        }
 
         @include Mobile {
             font-size: 9vw;
@@ -87,7 +81,7 @@
 
     &_links {
         font-size: 3vw;
-        color: white;
+        // color: white;
         border-radius: 10px;
         transition: ease-in-out 0.3s;
         @include Tablet {
@@ -131,7 +125,6 @@
     &_selector {
         display: flex;
         outline: none;
-        color: white;
         background: transparent;
         cursor: pointer;
 
@@ -145,7 +138,7 @@
     }
 
     &_option {
-        background-color: gray;
+        background-color: transparent;
         &:hover {
             color: white;
         }
