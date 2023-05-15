@@ -1,33 +1,53 @@
 import { useEffect, useState } from 'react';
+import client from '../../../../sanity.client';
+
+interface Image {
+    _id: string;
+    url: string;
+    alt: string;
+}
 
 export default function Hero() {
-
-    const images = [
-        'https://images.unsplash.com/photo-1512882549909-02d06bf80585?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-        'https://images.unsplash.com/photo-1521405785232-7a56b029191e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80',
-        'https://images.unsplash.com/photo-1508182390781-8dd476c3237c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80',
-    ];
-
+    const [images, setImages] = useState<Image[]>([]);
     const [index, setIndex] = useState(0);
 
+    // This function fetches the Api from Sanity.io
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const query = `*[_type == "slider"] { _id, picture { asset->{url}, alt } }`;
+                const result = await client.fetch<{ _id: string, picture: { asset: { url: string }, alt: string } }[]>(query);
+
+                const formattedImages = result.map(item => ({
+                    _id: item._id,
+                    url: item.picture.asset.url,
+                    alt: item.picture.alt
+                }));
+                setImages(formattedImages);
+
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+
+
+        };
+
+        fetchImages();
+    }, []);
+
+    // This function Changes the images in the hero every 4s
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
         }, 4000);
-
         return () => clearInterval(interval);
-    }, []);
-
-
-    console.log(images[0]);
-
-
+    }, [images]);
 
     return (
         <div className='Slider'>
-            <img className='Slider_img' src={images[index]} alt="Images of the slider" />
+            <img className='Slider_img' src={images[index]?.url} alt={images[index]?.alt} />
         </div>
-    )
-
-    
+    );
 }
+
+

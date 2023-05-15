@@ -563,10 +563,10 @@
     "get-it" "^8.1"
     "rxjs" "7"
 
-"@sanity/client@^6.0.0":
-  "integrity" "sha512-q2Mi79ttJxoUjZG3LGlfIFoYfMUxra9tRaPbfmQRVJQ2I/TiVGvuE6yt38fgox796wpeZvYeuYH8L7Ms79IXYg=="
-  "resolved" "https://registry.npmjs.org/@sanity/client/-/client-6.0.1.tgz"
-  "version" "6.0.1"
+"@sanity/client@^6.0.0", "@sanity/client@^6.1.0":
+  "integrity" "sha512-l+cyCG7HhJJC2IgpFeIkF0e+gbtDqRn8n/K8xVs9x1VYcZu6M7651FE3dAxSYsOlQkYetgxXzWW5Y0BvQMXoyQ=="
+  "resolved" "https://registry.npmjs.org/@sanity/client/-/client-6.1.0.tgz"
+  "version" "6.1.0"
   dependencies:
     "@sanity/eventsource" "^5.0.0"
     "get-it" "^8.1.0"
