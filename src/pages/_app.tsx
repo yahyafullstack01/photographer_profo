@@ -4,8 +4,9 @@ import Head from "../../Html/html"
 import { useEffect } from 'react';
 import Header from "../components/Header/header";
 import { AppContext } from "../Mycontext/context";
+import { appWithTranslation } from "next-i18next";
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     //for stopping menu scroll in mobile version
@@ -19,13 +20,14 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <AppContext.Provider value={{}}>
-    <>
-      <Head />
-      <Header />
-      <Component {...pageProps} />
-    </>
+      <>
+        <Head />
+        <Header />
+        <Component {...pageProps} />
+      </>
     </AppContext.Provider>
   )
 }
+export default appWithTranslation(App);
 
 

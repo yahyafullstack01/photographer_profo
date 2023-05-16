@@ -1,7 +1,19 @@
 import { FiMenu } from "react-icons/fi";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+
 
 
 export default function Navbar() {
+
+    const router = useRouter();
+    const handleChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const lang = e.target.value;
+        router.push(router.pathname, router.asPath, { locale: lang });
+        console.log(lang);
+    };
+
+
     return (
         <div className="Container">
             <div className="Container_block Container_block--1">
@@ -38,9 +50,12 @@ export default function Navbar() {
                 <a className="Container_links" href="">Contact</a>
             </div>
             <div className="Container_lang-con">
-                <select className="Container_selector">
+                <select className="Container_selector"
+                    defaultValue={router.locale}
+                    onChange={handleChangeLanguage}
+                >
                     <option className="Container_option" value="en">English</option>
-                    <option className="Container_option" value="ru">Russian</option>
+                    <option className="Container_option" value="uk">Ukrainian</option>
                 </select>
             </div>
             {/* This the Burger icon that shows up when Entering The tablet and Mobile mode */}

@@ -3,7 +3,11 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 
 export default function About() {
+    const { t } = useTranslation("Home");
     const [image, setImage] = useState<string | null>(null);
+
+    const About: any = t('About_title', { returnObjects: true });
+
 
     // This function fetches the Api from Sanity.io
     useEffect(() => {
@@ -23,8 +27,6 @@ export default function About() {
         fetchImage();
     }, []);
 
-    const {t} = useTranslation("Home");
-    const About: any  = t("About_title", { returnObjects: true });
 
     return (
         <div className="About">
