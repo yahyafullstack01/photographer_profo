@@ -1,4 +1,26 @@
+import client from "@/sanity/sanity.client";
+import { useState, useEffect } from "react";
+
 export default function About() {
+    const [image, setImage] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchImage = async () => {
+            try {
+                const query = `*[_type == "about"][0]{ picture { asset->{url} } }`;
+                const result = await client.fetch<{ picture: { asset: { url: string } } }>(query);
+
+                if (result.picture && result.picture.asset && result.picture.asset.url) {
+                    setImage(result.picture.asset.url);
+                }
+            } catch (error) {
+                console.error('Error fetching image:', error);
+            }
+        };
+
+        fetchImage();
+    }, []);
+
     return (
         <div className="About">
             <h1 className="About_title">About Me</h1>
@@ -15,12 +37,14 @@ export default function About() {
                         Thank you for considering me as your photographer. I would be honored to capture your memories and create images that you will cherish for a lifetime.
                     </p>
                 </div>
-                <img
-                    className="About_img"
-                    src="/Me.jpg"
-                    alt="About Me photo"
-                />
+                {image && (
+                    <img
+                        className="About_img"
+                        src={image}
+                        alt="About Me photo"
+                    />
+                )}
             </div>
         </div>
-    )
+    );
 }

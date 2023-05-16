@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import client from '../../../../sanity.client';
+import client from '../../../sanity/sanity.client';
 
 interface Image {
     _id: string;
