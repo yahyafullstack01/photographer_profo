@@ -1,5 +1,6 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
+import { useTranslation } from "next-i18next";
 
 export default function About() {
     const [image, setImage] = useState<string | null>(null);
@@ -22,9 +23,12 @@ export default function About() {
         fetchImage();
     }, []);
 
+    const {t} = useTranslation("Home");
+    const About: any  = t("About_title", { returnObjects: true });
+
     return (
         <div className="About">
-            <h1 className="About_title">About Me</h1>
+            <h1 className="About_title">{About}</h1>
             <div className="About_grid">
                 <div className="About_text-con">
                     <p className="About_text">
