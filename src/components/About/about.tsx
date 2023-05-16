@@ -6,7 +6,9 @@ export default function About() {
     const { t } = useTranslation("Home");
     const [image, setImage] = useState<string | null>(null);
 
-    const About: any = t('About_title', { returnObjects: true });
+    const About_title: any = t('About_title', { returnObjects: true });
+    const About_text: any = t('About_section', { returnObjects: true });
+
 
 
     // This function fetches the Api from Sanity.io
@@ -30,18 +32,17 @@ export default function About() {
 
     return (
         <div className="About">
-            <h1 className="About_title">{About}</h1>
+            <h1 className="About_title">{About_title}</h1>
             <div className="About_grid">
                 <div className="About_text-con">
                     <p className="About_text">
-                        I understand the importance of capturing moments that are meaningful and special. I have always been passionate about photography, and over the years, I have honed my skills and developed my unique style.
-                        My approach to photography is to capture authentic and natural moments that reflect the true personality of my subjects.
+                        {About_text[0]}
                         <br></br><br></br>
-                        My love for photography began when I received my first camera as a gift from my parents. From that moment, I was hooked, and I have been capturing memories ever since. I take pride in being able to create a comfortable and relaxed environment for my clients, which allows me to capture their genuine emotions and personalities.
-                        Whether it's a family photoshoot, engagement shoot, or wedding, I strive to create images that evoke emotion and tell a story.
+                        {About_text[1]}
                         <br></br><br></br>
-                        My passion for photography drives me to continually improve my craft and stay up-to-date with the latest techniques and equipment.
-                        Thank you for considering me as your photographer. I would be honored to capture your memories and create images that you will cherish for a lifetime.
+                        {About_text[2]}
+                        <br></br><br></br>
+                        {About_text[3]}
                     </p>
                 </div>
                 {image && (
@@ -55,3 +56,5 @@ export default function About() {
         </div>
     );
 }
+
+
