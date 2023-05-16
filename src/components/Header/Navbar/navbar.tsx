@@ -1,6 +1,5 @@
 import { FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 
 
 
