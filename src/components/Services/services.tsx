@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function Services() {
     const [images, setImages] = useState<string[]>([]);
-
+    // This function fetches the Api from Sanity.io
     useEffect(() => {
         const fetchImages = async () => {
             try {

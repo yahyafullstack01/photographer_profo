@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function About() {
     const [image, setImage] = useState<string | null>(null);
 
+    // This function fetches the Api from Sanity.io
     useEffect(() => {
         const fetchImage = async () => {
             try {
