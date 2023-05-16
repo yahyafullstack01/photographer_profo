@@ -19,7 +19,7 @@ export default function Menu() {
                     <div className="Menu-open_links-con">
                         <a className="Menu-open_links" href="">Packages</a>
                         <a className="Menu-open_links" href="">Blogs</a>
-                        <a className="Menu-open_links" href="">Gallery</a>
+                        <a className="Menu-open_links" href="#Gallery">Gallery</a>
                         <a className="Menu-open_links" href="">Offers</a>
                         <a className="Menu-open_links" href="">FeedBack</a>
                         <a className="Menu-open_links" href="">Contact</a>

@@ -66,8 +66,7 @@
 
     &_links-con {
         display: flex;
-        margin-top: 5%;
-        row-gap: 3vh;
+        row-gap: 5vh;
         margin-left: 2%;
         flex-direction: column;
         width: 100%;
@@ -119,6 +118,7 @@
         margin-right: 2%;
         @include Mobile {
             font-size: 6vw;
+            margin-top: 10%;
         }
     }
 

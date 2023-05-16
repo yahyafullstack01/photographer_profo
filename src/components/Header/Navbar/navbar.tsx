@@ -23,7 +23,7 @@ export default function Navbar() {
             <div className="Container_block Container_block--2">
                 <a className="Container_links" href="">Packages</a>
                 <a className="Container_links" href="">Blogs</a>
-                <a className="Container_links" href="">Gallery</a>
+                <a className="Container_links" href="#Gallery">Gallery</a>
             </div>
             <a href="">
                 <img
