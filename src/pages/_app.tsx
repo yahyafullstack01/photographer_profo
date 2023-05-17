@@ -4,6 +4,8 @@ import Head from "../../Html/html"
 import { useEffect } from 'react';
 import { AppContext } from "../Mycontext/context";
 import { appWithTranslation } from "next-i18next";
+import Navbar from "../components/Header/Navbar/navbar";
+
 
 function App({ Component, pageProps }: AppProps) {
 
@@ -21,6 +23,7 @@ function App({ Component, pageProps }: AppProps) {
     <AppContext.Provider value={{}}>
       <>
         <Head />
+        <Navbar />
         <Component {...pageProps} />
       </>
     </AppContext.Provider>

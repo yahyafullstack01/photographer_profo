@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 
 export default function MyPregnancy() {
     return (
-        <div></div>
+        <div className="Gallery_pages">
+            <img
+                className="Gallery_pages_img"
+                src="/pregnancy.jpg"
+                alt="The pregnancy bg"
+            />
+        </div>
     )
 }

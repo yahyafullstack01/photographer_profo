@@ -1,12 +1,12 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
-import MyLove from "@/components/MyGallery/GalleryPages/MyLove";
+import MyFamily from "../../components/MyGallery/GalleryPages/MyFamily";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from "next";
 export default function LoveStory() {
     return (
         <>
-            <MyLove />
+            <MyFamily />
         </>
     )
 }
@@ -20,4 +20,3 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         },
     };
 };
-

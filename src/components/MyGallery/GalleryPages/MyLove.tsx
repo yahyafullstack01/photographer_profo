@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 
 export default function MyLove() {
     return (
-        <div></div>
+        <div className="Gallery_pages">
+            <img
+                className="Gallery_pages_img"
+                src="/love.jpg"
+                alt="The love bg"
+            />
+        </div>
     )
 }

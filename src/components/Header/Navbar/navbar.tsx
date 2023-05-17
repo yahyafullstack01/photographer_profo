@@ -2,8 +2,6 @@ import { FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-
-
 export default function Navbar() {
 
     const { t } = useTranslation("Home");
@@ -40,7 +38,7 @@ export default function Navbar() {
                 <a className="Container_links" href="#About">{Nav_element[1]}</a>
                 <a className="Container_links" href="#Blogs">{Nav_element[2]}</a>
             </div>
-            <a href="">
+            <a href="/">
                 <img
                     src="/logo.png"
                     alt="The logo of instagram"
