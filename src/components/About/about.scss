@@ -68,14 +68,16 @@
     &_img {
         display: block;
         border-radius: 50px;
+        margin-top: -15%;
         box-shadow: $secondary_color 20px 20px 30px -10px;
         object-fit: cover;
-        height: 100vh;
+        height: 80vh;
         width: 100%;
         border: 2px solid whitesmoke;
 
         @include Tablet {
             height: 70vh;
+            margin-top: 0;
         }
     }
 }
