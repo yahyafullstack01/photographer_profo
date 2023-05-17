@@ -31,7 +31,7 @@ export default function About() {
 
 
     return (
-        <div className="About">
+        <div className="About" id="About">
             <h1 className="About_title">{About_title}</h1>
             <div className="About_grid">
                 <div className="About_text-con">

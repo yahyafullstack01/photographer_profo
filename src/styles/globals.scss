@@ -18,7 +18,6 @@
   padding: 0;
   transition: ease-in-out 0.3s;
   box-sizing: border-box;
-  color: #626262;
 }
 
 -webkit-scrollbar {
@@ -31,6 +30,7 @@ body {
   scroll-behavior: smooth;
   width: 100%;
   height: 100vh;
+  color: #626262;
 }
 
 a {

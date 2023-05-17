@@ -1,8 +1,12 @@
 import { RxCross1 } from 'react-icons/rx';
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 
 export default function Menu() {
+    const { t } = useTranslation("Home");
+    const Nav_element: any = t('Navbar_List', { returnObjects: true });
+
     const router = useRouter();
     const handleChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const lang = e.target.value;
@@ -25,12 +29,12 @@ export default function Menu() {
                 </div>
                 <div className="Menu-open_Box-2">
                     <div className="Menu-open_links-con">
-                        <a className="Menu-open_links" href="">Packages</a>
-                        <a className="Menu-open_links" href="">Blogs</a>
-                        <a className="Menu-open_links" href="#Gallery">Gallery</a>
-                        <a className="Menu-open_links" href="">Offers</a>
-                        <a className="Menu-open_links" href="">FeedBack</a>
-                        <a className="Menu-open_links" href="">Contact</a>
+                        <a className="Menu-open_links" href="">{Nav_element[0]}</a>
+                        <a className="Menu-open_links" href="">{Nav_element[1]}</a>
+                        <a className="Menu-open_links" href="#Gallery">{Nav_element[2]}</a>
+                        <a className="Menu-open_links" href="">{Nav_element[3]}</a>
+                        <a className="Menu-open_links" href="">{Nav_element[4]}</a>
+                        <a className="Menu-open_links" href="">{Nav_element[5]}</a>
                     </div>
                     <div className="Menu-open_lang-con">
                         <select className="Menu-open_selector"
