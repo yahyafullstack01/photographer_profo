@@ -2,7 +2,6 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app'
 import Head from "../../Html/html"
 import { useEffect } from 'react';
-import Header from "../components/Header/header";
 import { AppContext } from "../Mycontext/context";
 import { appWithTranslation } from "next-i18next";
 
@@ -22,7 +21,6 @@ function App({ Component, pageProps }: AppProps) {
     <AppContext.Provider value={{}}>
       <>
         <Head />
-        <Header />
         <Component {...pageProps} />
       </>
     </AppContext.Provider>
