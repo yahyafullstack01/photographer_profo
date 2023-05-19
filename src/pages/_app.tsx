@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { AppContext } from "../Mycontext/context";
 import { appWithTranslation } from "next-i18next";
 import Navbar from "../components/Header/Navbar/navbar";
+import Footer from '@/components/Footer/footer';
 
 
 function App({ Component, pageProps }: AppProps) {
@@ -20,13 +21,12 @@ function App({ Component, pageProps }: AppProps) {
     });
   }, []);
   return (
-    <AppContext.Provider value={{}}>
       <>
         <Head />
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </>
-    </AppContext.Provider>
   )
 }
 export default appWithTranslation(App);

@@ -17,8 +17,9 @@
 * {
   margin: 0;
   padding: 0;
-  transition: ease-in-out 0.3s;
   box-sizing: border-box;
+  transition: ease-in-out 0.3s;
+
 }
 
 -webkit-scrollbar {
@@ -29,6 +30,7 @@ html,
 body {
   background: rgb(227, 245, 247);
   scroll-behavior: smooth;
+  transition: ease-in-out 0.3s;
   width: 100%;
   height: 100vh;
   color: #626262;

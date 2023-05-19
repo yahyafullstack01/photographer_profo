@@ -12,15 +12,16 @@ export default function HomePage() {
   const { t } = useTranslation("Home");
   return (
     <AppContext.Provider value={{}}>
-    <div>
-      <Header />
-      <section />
-      <About />
-      <section />
-      <Services />
-      <section />
-      <MyGallery />
-    </div>
+      <div>
+        <Header />
+        <section />
+        <About />
+        <section />
+        <Services />
+        <section />
+        <MyGallery />
+        <section />
+      </div>
     </AppContext.Provider>
   )
 }

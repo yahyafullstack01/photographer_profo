@@ -1,0 +1,90 @@
+.Footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    row-gap: 20px;
+    background-color: $primary_color;
+    color: aliceblue;
+    font-family: "Asap", sans-serif;
+    font-weight: 400;
+
+    @include Tablet {
+    }
+
+    &_container {
+        display: flex;
+        align-items: center;
+        margin: 2% 5%;
+        justify-content: space-between;
+
+        @include BigScreen {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1960px;
+        }
+        @include Tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 5vh;
+        }
+    }
+
+    &_icon-box {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        @include BigScreen {
+            column-gap: 50px;
+        }
+
+        @include Tablet {
+            column-gap: 5vw;
+        }
+    }
+
+    &_social {
+        cursor: pointer;
+        width: 2vw;
+        height: 4vh;
+    }
+
+    &_img {
+        filter: grayscale(0);
+        @include BigScreen {
+            width: 3vw;
+            height: 3vh;
+        }
+
+        @include Tablet {
+            width: 6vw;
+            height: 6vh;
+        }
+
+        @include Mobile {
+            width: 7vw;
+            height: 5vh;
+        }
+    }
+
+    &_text-box {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &_text {
+        font-size: 1.5vw;
+        @include BigScreen {
+            font-size: 2vw;
+        }
+
+        @include Tablet {
+            font-size: 2.5vw;
+        }
+
+        @include Mobile {
+            font-size: 3.5vw;
+        }
+    }
+}
