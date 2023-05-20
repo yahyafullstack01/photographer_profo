@@ -12,7 +12,7 @@ export default function MyFamily() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const query = `*[_type == "love"]{ picture { asset->{url} } }`;
+                const query = `*[_type == "family"]{ picture { asset->{url} } }`;
                 const result = await client.fetch(query);
 
                 if (result && result.length > 0) {

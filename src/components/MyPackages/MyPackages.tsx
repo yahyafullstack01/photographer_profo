@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 export default function MyPackages() {
     return (
-        <div></div>
+        <div className="MyPackages">
+            
+        </div>
     )
 }
