@@ -1,0 +1,65 @@
+import { FiMenu } from "react-icons/fi";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+
+export default function Navbarpages() {
+
+    const { t } = useTranslation("Home");
+    const Nav_element: any = t('Navbar_List', { returnObjects: true });
+
+    const router = useRouter();
+    const handleChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const lang = e.target.value;
+        router.push(router.pathname, router.asPath, { locale: lang });
+        console.log(lang);
+    };
+
+    return (
+        <div className="Navpages">
+            <div id="Navbar" className="Navpages_box">
+                <div className="Container_block Container_block--1">
+                    <a href="">
+                        <img
+                            src="/instagram.png"
+                            alt="The logo of instagram"
+                            className="Container_socials"
+                        />
+                    </a>
+                    <a href="">
+                        <img
+                            src="/facebook.png"
+                            alt="The logo of instagram"
+                            className="Container_socials"
+                        />
+                    </a>
+                </div>
+                <div className="Container_block Container_block--2">
+                    <a className="Container_links" href="/#Gallery">{Nav_element[0]}</a>
+                    <a className="Container_links" href="/#About">{Nav_element[1]}</a>
+                    <a className="Container_links" href="/#Blogs">{Nav_element[2]}</a>
+                </div>
+                <a href="/">
+                    <img
+                        src="/logo.png"
+                        alt="The logo of instagram"
+                        className="Container_logo"
+                    />
+                </a>
+                <div className="Container_block Container_block--2">
+                    <a className="Container_links" href="/Services">{Nav_element[3]}</a>
+                    <a className="Container_links" href="/FeedBack">{Nav_element[4]}</a>
+                    <a className="Container_links" href="/Contact">{Nav_element[5]}</a>
+                </div>
+                <div className="Container_lang-con">
+                    <select className="Container_selector"
+                        defaultValue={router.locale}
+                        onChange={handleChangeLanguage}
+                    >
+                        <option className="Container_option" value="en">English</option>
+                        <option className="Container_option" value="uk">Ukrainian</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    )
+}

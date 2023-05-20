@@ -1,5 +1,7 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
 
 export default function Services() {
     const [images, setImages] = useState<string[]>([]);
@@ -21,7 +23,7 @@ export default function Services() {
     }, []);
 
     return (
-        <div className="Services">
+        <div id="Services" className="Services">
             <h1 className="Services_title">Services</h1>
             <div className="Services_Grid">
                 <div className=" Services_block Services_block--1">
@@ -73,9 +75,11 @@ export default function Services() {
             </div>
             <div className="Services_package-con">
                 <h1 className="Services_package-txt">If you're Interested in my services and would like to know more, check out my Packages</h1>
-                <button className="Services_package-btn">
-                    My Packages
-                </button>
+                <Link passHref href="/Packages">
+                    <button className="Services_package-btn">
+                        My Packages
+                    </button>
+                </Link>
             </div>
         </div>
     );

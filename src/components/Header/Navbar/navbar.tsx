@@ -16,7 +16,7 @@ export default function Navbar() {
 
 
     return (
-        <div className="Container">
+        <div id="Navbar" className="Container">
             <div className="Container_block Container_block--1">
                 <a href="">
                     <img
@@ -46,7 +46,7 @@ export default function Navbar() {
                 />
             </a>
             <div className="Container_block Container_block--2">
-                <a className="Container_links" href="Services">{Nav_element[3]}</a>
+                <a className="Container_links" href="#Services">{Nav_element[3]}</a>
                 <a className="Container_links" href="#FeedBack">{Nav_element[4]}</a>
                 <a className="Container_links" href="#Contact">{Nav_element[5]}</a>
             </div>

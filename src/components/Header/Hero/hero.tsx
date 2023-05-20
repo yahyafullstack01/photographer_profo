@@ -28,10 +28,7 @@ export default function Hero() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
-
-
         };
-
         fetchImages();
     }, []);
 

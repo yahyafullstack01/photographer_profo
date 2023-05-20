@@ -1,4 +1,3 @@
-
 .Container {
     display: flex;
     align-items: center;
@@ -11,8 +10,8 @@
     backdrop-filter: blur(5px);
     color: aliceblue;
 
-    @include BigScreen{
-        margin: 0 auto ;
+    @include BigScreen {
+        margin: 0 auto;
         padding: 0;
         max-width: 1960px;
     }
@@ -20,7 +19,6 @@
     @include Desktop {
         padding: 1% 2%;
     }
-
 
     &_block {
         display: flex;
@@ -52,9 +50,9 @@
     &_links {
         display: inline-block;
         transition: ease-in-out 0.3s;
-        font-family: 'Asap', sans-serif;
+        font-family: "Asap", sans-serif;
         font-weight: 400;
-        
+
         &::after {
             content: "";
             display: block;
@@ -74,7 +72,7 @@
             }
         }
 
-        @include BigScreen{
+        @include BigScreen {
             font-size: 40px;
         }
     }
@@ -101,7 +99,7 @@
         width: 8vw;
         height: 7vw;
 
-        @include Desktop{
+        @include Desktop {
             width: 100px;
             height: 100px;
         }
@@ -132,19 +130,46 @@
         background: transparent;
         cursor: pointer;
 
-        @include BigScreen{
+        @include BigScreen {
             font-size: 40px;
         }
 
-        &:hover{
-            color: $hovering_color
+        &:hover {
+            color: $hovering_color;
         }
     }
 
     &_option {
         background-color: transparent;
-        &:hover{
+        &:hover {
             color: white;
+        }
+    }
+}
+
+.Navpages {
+    display: flex;
+    width: 100%;
+    background: #393636;
+
+
+    &_box {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        backdrop-filter: blur(5px);
+        color: aliceblue;
+
+        @include BigScreen {
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1960px;
+        }
+    
+        @include Desktop {
+            padding: 1% 2%;
         }
     }
 }

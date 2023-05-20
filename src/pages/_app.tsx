@@ -2,16 +2,14 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app'
 import Head from "../../Html/html"
 import { useEffect } from 'react';
-import { AppContext } from "../Mycontext/context";
 import { appWithTranslation } from "next-i18next";
-import Navbar from "../components/Header/Navbar/navbar";
 import Footer from '@/components/Footer/footer';
 
 
 function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
-    //for stopping menu scroll in mobile version
+    // For stopping menu scroll in mobile version
     window.addEventListener('hashchange', () => {
       if (window.location.hash === '#Menu') {
         document.body.style.overflowY = 'hidden';
@@ -20,15 +18,16 @@ function App({ Component, pageProps }: AppProps) {
       }
     });
   }, []);
+
   return (
-      <>
-        <Head />
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-      </>
-  )
+    <>
+      <Head />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
+
 export default appWithTranslation(App);
 
 
