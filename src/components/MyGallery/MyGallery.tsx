@@ -1,6 +1,8 @@
 import client from "@/sanity/sanity.client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useTranslation } from "next-i18next";
+
 
 export default function MyGallery() {
     const [Love, setLove] = useState<string[]>([]);
@@ -8,6 +10,14 @@ export default function MyGallery() {
     const [Pregnancy, setPregnancy] = useState<string[]>([]);
     const [Family, setFamily] = useState<string[]>([]);
     const [Wedding, setWedding] = useState<string[]>([]);
+
+    const { t } = useTranslation("Home");
+    const Gallery_header: any = t('Gallery_title', { returnObjects: true });
+    const Gallery_box_1: any = t('Gallery_box_1', { returnObjects: true });
+    const Gallery_box_2: any = t('Gallery_box_2', { returnObjects: true });
+    const Gallery_box_3: any = t('Gallery_box_3', { returnObjects: true });
+    const Gallery_box_4: any = t('Gallery_box_4', { returnObjects: true });
+    const Gallery_box_5: any = t('Gallery_box_5', { returnObjects: true });
 
     // This function fetches the Love Card Api from Sanity.io
     useEffect(() => {
@@ -101,7 +111,7 @@ export default function MyGallery() {
 
     return (
         <div id="Gallery" className="Mygallery">
-            <h1 className="Mygallery_title">My Gallery</h1>
+            <h1 className="Mygallery_title">{Gallery_header}</h1>
             <div className="Mygallery_Grid">
                 <Link passHref href="/Gallery/Lovestory" className="Mygallery_anchor">
                     <div className="Mygallery_container">
@@ -110,7 +120,7 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">Love</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_1}</h2>
                     </div>
                 </Link>
                 <Link passHref href="/Gallery/Portraitstory" className="Mygallery_anchor">
@@ -120,7 +130,7 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">Portrait</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_2}</h2>
                     </div>
                 </Link>
                 <Link passHref href="/Gallery/Pregnancystory" className="Mygallery_anchor">
@@ -130,19 +140,19 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img  Mygallery_middle "
                         />
-                        <h2 className="Mygallery_info">Pregnancy</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_3}</h2>
                     </div>
                 </Link>
             </div>
             <div className="Mygallery_centered">
-            <Link passHref href="/Gallery/Familystory" className="Mygallery_anchor">
+                <Link passHref href="/Gallery/Familystory" className="Mygallery_anchor">
                     <div className="Mygallery_container Mygallery_container_2">
                         <img
                             src={Family[0]}
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">Family</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_4}</h2>
                     </div>
                 </Link>
                 <Link passHref href="/Gallery/Weddingstory" className="Mygallery_anchor">
@@ -152,7 +162,7 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">Wedding</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_5}</h2>
                     </div>
                 </Link>
             </div>

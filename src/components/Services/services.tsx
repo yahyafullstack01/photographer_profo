@@ -1,10 +1,25 @@
-import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
+import { useTranslation } from "next-i18next";
+import client from '@/sanity/sanity.client';
 import Link from "next/link";
 
-
 export default function Services() {
+    const { t } = useTranslation("Home");
     const [images, setImages] = useState<string[]>([]);
+
+    const Services_header: any = t('Services_title', { returnObjects: true });
+    const Services_title_1: any = t('Services_title_box-1', { returnObjects: true });
+    const Services_title_2: any = t('Services_title_box-2', { returnObjects: true });
+    const Services_title_3: any = t('Services_title_box-3', { returnObjects: true });
+    const Services_title_4: any = t('Services_title_box-4', { returnObjects: true });
+    const Services_text_1: any = t('Services_box_content_1', { returnObjects: true });
+    const Services_text_2: any = t('Services_box_content_2', { returnObjects: true });
+    const Services_text_3: any = t('Services_box_content_3', { returnObjects: true });
+    const Services_text_4: any = t('Services_box_content_4', { returnObjects: true });
+    const Services_package_title: any = t('Services_package_title', { returnObjects: true });
+    const Services_package_btn: any = t('Services_package_btn', { returnObjects: true });
+
+
     // This function fetches the Api from Sanity.io
     useEffect(() => {
         const fetchImages = async () => {
@@ -24,26 +39,30 @@ export default function Services() {
 
     return (
         <div id="Services" className="Services">
-            <h1 className="Services_title">Services</h1>
+            <h1 className="Services_title">{Services_header}</h1>
             <div className="Services_Grid">
                 <div className=" Services_block Services_block--1">
                     <img className="Services_img" src={images[0]} alt="Service 1" />
                     <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">EXPRESS PHOTOSHOOT</h1>
+                        <h1 className="Services_grid-content-title">{Services_title_1}</h1>
                         <p className="Services_grid-content-text">
-                            Photoshoots can be overwhelming, which is why it’s beneficial to<br />
-                            have an experienced professional managing the details.Through this<br />
-                            service, you can count on me to guide you in every step of the way.
+                            {Services_text_1[0]}
+                            <br />
+                            {Services_text_1[1]}
+                            <br />
+                            {Services_text_1[2]}
                         </p>
                     </div>
                 </div>
                 <div className=" Services_block Services_block--2">
                     <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">FULL PHOTOSHOOT</h1>
+                        <h1 className="Services_grid-content-title">{Services_title_2}</h1>
                         <p className="Services_grid-content-text">
-                            Throughout many years of providing this service to clients, I have<br />
-                            gained the experience and expertise necessary to make this process<br />
-                            as seamless as possible. If you have any questions, simply reach out.
+                            {Services_text_2[0]}
+                            <br />
+                            {Services_text_2[1]}
+                            <br />
+                            {Services_text_2[2]}
                         </p>
                     </div>
                     <img className="Services_img" src={images[1]} alt="Service 2" />
@@ -51,33 +70,39 @@ export default function Services() {
                 <div className="Services_block Services_block--3">
                     <img className="Services_img" src={images[2]} alt="Service 3" />
                     <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">INITIAL CONSULTATION</h1>
+                        <h1 className="Services_grid-content-title">{Services_title_3}</h1>
                         <p className="Services_grid-content-text">
-                            As one of my most popular services, these appointments tend to fill<br />
-                            up fast. I’m committed to working closely with my clients to<br />
-                            understand exactly what they’re looking for, then capturing<br />
-                            the perfect moment with ease.
+                            {Services_text_3[0]}
+                            <br />
+                            {Services_text_3[1]}
+                            <br />
+                            {Services_text_3[2]}
+                            <br />
+                            {Services_text_3[3]}
                         </p>
                     </div>
                 </div>
                 <div className=" Services_block Services_block--4">
                     <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">Portrait Photography</h1>
+                        <h1 className="Services_grid-content-title">{Services_title_4}</h1>
                         <p className="Services_grid-content-text">
-                            If you're looking for stunning portraits that capture your essence <br />
-                            and personality, our Portrait Photography Service is the perfect choice,<br />
-                            for you. We have the experience and expertise to create beautiful, timeless portraits<br />
-                            that you'll treasure for years to come.
+                            {Services_text_4[0]}
+                            <br />
+                            {Services_text_4[1]}
+                            <br />
+                            {Services_text_4[2]}
+                            <br />
+                            {Services_text_4[3]}
                         </p>
                     </div>
                     <img className="Services_img" src={images[3]} alt="Service 4" />
                 </div>
             </div>
             <div className="Services_package-con">
-                <h1 className="Services_package-txt">If you're Interested in my services and would like to know more, check out my Packages</h1>
+                <h1 className="Services_package-txt">{Services_package_title}</h1>
                 <Link passHref href="/Packages">
                     <button className="Services_package-btn">
-                        My Packages
+                        {Services_package_btn}
                     </button>
                 </Link>
             </div>
