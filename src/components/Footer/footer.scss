@@ -9,8 +9,9 @@
     font-family: "Asap", sans-serif;
     font-weight: 400;
     margin-top: 2%;
-    
-    @include Tablet {
+
+    @include BigScreen {
+        padding-top: 2%;
     }
 
     &_container {
@@ -63,7 +64,7 @@
         }
 
         @include Mobile {
-            width: 7vw;
+            width: 10vw;
             height: 5vh;
         }
     }

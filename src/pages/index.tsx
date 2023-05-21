@@ -6,6 +6,7 @@ import { GetStaticProps } from "next";
 import { AppContext } from "../Mycontext/context";
 import Header from "../components/Header/header";
 import Navbar from "@/components/Header/Navbar/navbar";
+import MyBlogs from "@/components/MyBlogs/MyBlogs";
 
 
 export default function HomePage() {
@@ -20,6 +21,8 @@ export default function HomePage() {
         <Services />
         <section />
         <MyGallery />
+        <section />
+        <MyBlogs />
         <section />
       </div>
     </AppContext.Provider>
