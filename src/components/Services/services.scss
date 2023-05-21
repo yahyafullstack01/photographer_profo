@@ -93,8 +93,7 @@
     }
 
     &_grid-content-title {
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $secondary_color;
+        color: $secondary_color;
         font-size: 3vw;
         padding-bottom: 5%;
         text-transform: uppercase;
@@ -129,8 +128,7 @@
     &_package-txt {
         font-size: 2vw;
         text-align: center;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $hovering_color;
+        color: $hovering_color;
         font-family: "Asap", sans-serif;
         font-weight: 400;
 

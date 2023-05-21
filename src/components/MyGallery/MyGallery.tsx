@@ -120,7 +120,7 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">{Gallery_box_1}</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_2}</h2>
                     </div>
                 </Link>
                 <Link passHref href="/Gallery/Portraitstory" className="Mygallery_anchor">
@@ -130,7 +130,7 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">{Gallery_box_2}</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_5}</h2>
                     </div>
                 </Link>
                 <Link passHref href="/Gallery/Pregnancystory" className="Mygallery_anchor">
@@ -162,7 +162,7 @@ export default function MyGallery() {
                             alt="The image"
                             className="Mygallery_img"
                         />
-                        <h2 className="Mygallery_info">{Gallery_box_5}</h2>
+                        <h2 className="Mygallery_info">{Gallery_box_1}</h2>
                     </div>
                 </Link>
             </div>

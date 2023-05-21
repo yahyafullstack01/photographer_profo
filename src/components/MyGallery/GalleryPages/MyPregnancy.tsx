@@ -55,10 +55,10 @@ export default function MyPregnancy() {
                     />
                 ))}
             </div>
-            <div className="Services_package-con">
-                <h1 className="Services_package-txt">If you're Interested in my work and would like to know more, check out</h1>
+            <div className="Gallery_package-con">
+                <h1 className="Gallery_package-txt">If you're Interested in my work and would like to know more, check out</h1>
                 <Link passHref href="/Packages">
-                    <button className="Services_package-btn">
+                    <button className="Gallery_package-btn">
                         My Packages
                     </button>
                 </Link>

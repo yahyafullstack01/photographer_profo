@@ -45,8 +45,7 @@
     }
 
     &_title {
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $secondary_color;
+        color: $secondary_color;
         font-size: 3vw;
         padding-bottom: 5%;
         margin-top: 2%;

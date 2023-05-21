@@ -44,7 +44,7 @@ export default function MyFamily() {
     return (
         <div className="Gallery">
             <h1 className="Gallery_title ">Family album</h1>
-            <div className="Gallery_grid-box">
+            <div className="Gallery_grid-box-2">
                 {images.map((image, index) => (
                     <img
                         key={index}
@@ -55,10 +55,10 @@ export default function MyFamily() {
                     />
                 ))}
             </div>
-            <div className="Services_package-con">
-                <h1 className="Services_package-txt">If you're Interested in my work and would like to know more, check out</h1>
+            <div className="Gallery_package-con">
+                <h1 className="Gallery_package-txt">If you're Interested in my work and would like to know more, check out</h1>
                 <Link passHref href="/Packages">
-                    <button className="Services_package-btn">
+                    <button className="Gallery_package-btn">
                         My Packages
                     </button>
                 </Link>
