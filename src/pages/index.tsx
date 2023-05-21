@@ -7,6 +7,7 @@ import { AppContext } from "../Mycontext/context";
 import Header from "../components/Header/header";
 import Navbar from "@/components/Header/Navbar/navbar";
 import MyBlogs from "@/components/MyBlogs/MyBlogs";
+import Contacts from "@/components/Contacts/contact";
 
 
 export default function HomePage() {
@@ -24,6 +25,7 @@ export default function HomePage() {
         <section />
         <MyBlogs />
         <section />
+        <Contacts />
       </div>
     </AppContext.Provider>
   )

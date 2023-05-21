@@ -12,8 +12,7 @@
 
     &_title {
         font-size: 3vw;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $hovering_color;
+        color: $hovering_color;
         font-family: "Asap", sans-serif;
         font-weight: 500;
 

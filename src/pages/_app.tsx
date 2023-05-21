@@ -17,6 +17,7 @@ function App({ Component, pageProps }: AppProps) {
         document.body.style.overflowY = 'auto';
       }
     });
+    
   }, []);
 
   return (

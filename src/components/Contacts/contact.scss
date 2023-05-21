@@ -1,0 +1,165 @@
+.Mycontact {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #393636;
+    padding-bottom: 5%;
+
+    @include  Tablet{
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0;
+    }
+
+    &_img {
+        border-top-left-radius: 20px;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        grid-column: span 2;
+
+        @include Tablet{
+            grid-column: span 4;
+            height: 55vh;
+            margin: 0 auto;
+            max-width: 90%;
+            border-top-left-radius: 0;
+        }
+
+        @include Mobile{
+            max-width: 100%;
+        }
+    }
+
+    &_info-box {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2%;
+        width: 100%;
+        grid-column: span 4;
+
+        @include Tablet{
+            padding-left: 5%;
+        }
+    }
+    &_header {
+        font-size: 3vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $secondary_color;
+        font-family: "Asap", sans-serif;
+        font-weight: 500;
+        margin-bottom: 2%;
+
+        @include Tablet {
+            font-size: 5vw;
+        }
+
+        @include Mobile {
+            font-size: 8vw;
+        }
+    }
+
+    &_text {
+        font-size: 1.5vw;
+        max-width: 80%;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $hovering_color;
+        font-family: "Asap", sans-serif;
+        font-weight: 500;
+
+        @include Tablet{
+            font-size: 3vw;
+        }
+
+        @include Mobile{
+            max-width: 90%;
+            font-size: 4vw;
+        }
+    }
+
+    &_form {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        margin-top: 2%;
+        row-gap: 5vh;
+        padding-bottom: 2%;
+        @include Tablet{
+            max-width: 90%;
+        }
+
+        @include Mobile{
+            margin-top: 5%;
+        }
+
+    }
+
+    &_box {
+        display: flex;
+        row-gap: 3vh;
+        flex-direction: column;
+    }
+
+    &_input {
+        background: transparent;
+        padding: 15px;
+        font-size: 1.5vw;
+        max-width: 50%;
+        outline: none;
+        color: aliceblue;
+        border-bottom: 3px solid aliceblue;
+
+        &::placeholder {
+            color: rgba(240, 248, 255, 0.556);
+        }
+
+        &:focus {
+            border-bottom: 3px solid $hovering_color;
+
+            &::placeholder {
+                color: $hovering_color !important;
+            }
+        }
+
+        @include Tablet{
+            font-size: 2vw;
+        }
+
+        @include Mobile{
+            font-size: 3.5vw;
+            max-width: 100%;
+        }
+    }
+
+    &_btn {
+        padding: 10px;
+        font-size: 2vw;
+        border-radius: 10px;
+        margin-top: 2%;
+        border: none;
+        outline: none;
+        max-width: 40%;
+        background: $secondary_color;
+        cursor: pointer;
+        transition: ease-in-out 0.3s;
+        font-family: "Asap", sans-serif;
+        font-weight: 500;
+
+        &:hover {
+            box-shadow: $hovering_color 20px 20px 30px -10px;
+            color: $hovering_color;
+            transform: scale(1.1);
+        }
+
+        @include Tablet{
+            font-size: 3vw;
+        }
+
+        @include Mobile {
+            font-size: 4vw;
+        }
+    }
+}
