@@ -63,7 +63,7 @@
     &_text {
         font-size: 1.5vw;
         max-width: 80%;
-        color: $hovering_color;
+        // color: $hovering_color;
         font-family: "Asap", sans-serif;
         font-weight: 500;
 
@@ -148,8 +148,9 @@
         font-weight: 500;
 
         &:hover {
-            box-shadow: $hovering_color 20px 20px 30px -10px;
-            color: $hovering_color;
+            // box-shadow: $hovering_color 20px 20px 30px -10px;
+            // color: $hovering_color;
+            background-color: $hovering_color;
             transform: scale(1.1);
         }
 

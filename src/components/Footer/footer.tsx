@@ -65,7 +65,7 @@ export default function Footer() {
                     <p className='Footer_text'>Made by Mejor Tech</p>
                 </div>
 
-                <a href='/' className='Footer_text'>@Elina smiranova</a>
+                <a href='/' className='Footer_text'>@Elena smirnova 2012-2023</a>
             </div>
             <p className='Footer_text'>© All Rights Reserved Terms of Use and Privacy Policy</p>
         </div>
