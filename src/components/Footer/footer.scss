@@ -1,41 +1,48 @@
 .Footer {
     display: flex;
     flex-direction: column;
-    text-align: center;
     width: 100%;
-    row-gap: 20px;
     background-color: #393636;
     color: aliceblue;
     font-family: "Asap", sans-serif;
     font-weight: 400;
+    // padding-bottom: 1%;
 
-    @include BigScreen {
+    @include Mobile {
         padding-top: 2%;
     }
 
-    @include Mobile{
-        padding-top: 2%;
-    }
-
-    @include Small-Mobile{
+    @include Small-Mobile {
         padding-top: 5%;
+    }
+
+    &_holder {
+        display: flex;
+        row-gap: 5vh;
+        margin: 2% 5%;
+        margin-bottom: 0;
+        flex-direction: column;
+
+        @include BigScreen {
+            width: 100%;
+            padding: 0;
+            max-width: 1960px;
+            margin: 0 auto;
+        }
     }
 
     &_container {
         display: flex;
         align-items: center;
-        margin: 2% 5%;
         justify-content: space-between;
 
-        @include BigScreen {
-            width: 100%;
-            margin: 0 auto;
-            max-width: 1960px;
-        }
         @include Tablet {
-            flex-direction: column;
             align-items: flex-start;
             row-gap: 5vh;
+        }
+
+        @include Mobile{
+            flex-direction: column;
         }
     }
 
@@ -50,8 +57,6 @@
         @include Tablet {
             column-gap: 5vw;
         }
-
-
     }
 
     &_social {
@@ -62,9 +67,12 @@
 
     &_img {
         filter: grayscale(0);
+        width: 4vw;
+        height: 4vw;
+
         @include BigScreen {
             width: 3vw;
-            height: 3vh;
+            height: 5vh;
         }
 
         @include Tablet {
@@ -77,7 +85,7 @@
             height: 8vh;
         }
 
-        @include Small-Mobile{
+        @include Small-Mobile {
             width: 11vw;
             height: 8vh;
         }
@@ -101,6 +109,33 @@
 
         @include Mobile {
             font-size: 3.5vw;
+        }
+    }
+
+    &_text-down {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5vw;
+        margin-bottom: 15px;
+
+
+        @include BigScreen {
+            font-size: 2vw;
+        }
+
+        @include Tablet {
+            font-size: 2.5vw;
+        }
+
+        @include Mobile {
+            font-size: 3.5vw;
+            text-align: center;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        @include Small-Mobile{
+            font-size: 3vw;
         }
     }
 }

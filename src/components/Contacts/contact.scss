@@ -1,16 +1,22 @@
 .Mycontact {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     grid-auto-flow: dense;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding-bottom: 5%;
-    margin-bottom: 2%;
+    margin: 5% 5%;
 
-    @include  Tablet{
-        grid-template-columns: repeat(4, 1fr);
-        margin: 0;
+    @include BigScreen {
+        margin: 5% auto;
+        padding: 0;
+        max-width: 1960px;
+    }
+
+    @include Tablet {
+        display: flex;
+        flex-direction: column;
     }
 
     &_img {
@@ -18,17 +24,14 @@
         width: 100%;
         object-fit: cover;
         height: 100%;
-        grid-column: span 2;
 
-        @include Tablet{
-            grid-column: span 4;
+        @include Tablet {
+            width: 100%;
             height: 55vh;
-            margin: 0 auto;
-            max-width: 90%;
             border-top-left-radius: 0;
         }
 
-        @include Mobile{
+        @include Mobile {
             max-width: 100%;
         }
     }
@@ -36,12 +39,15 @@
     &_info-box {
         display: flex;
         flex-direction: column;
-        padding-left: 2%;
+        margin-left: 20%;
         width: 80%;
-        margin: 0 auto;
-        grid-column: span 4;
-        @include Tablet{
-            padding-left: 5%;
+        @include Tablet {
+            margin-left: 0;
+            margin-top: 5%;
+        }
+
+        @include Mobile {
+            width: 100%;
         }
     }
     &_header {
@@ -63,37 +69,38 @@
     &_text {
         font-size: 1.5vw;
         max-width: 80%;
-        // color: $hovering_color;
         font-family: "Asap", sans-serif;
         font-weight: 500;
 
-        @include Tablet{
+        @include Tablet {
             font-size: 3vw;
+            max-width: 90%;
         }
 
-        @include Mobile{
-            max-width: 90%;
+        @include Mobile {
+            max-width: 95%;
             font-size: 4vw;
         }
     }
 
     &_form {
         display: flex;
+        row-gap: 5vh;
+        // justify-content: space-between;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         flex-direction: column;
         margin-top: 2%;
-        row-gap: 5vh;
-        padding-bottom: 2%;
-        
-        @include Tablet{
+
+        @include Tablet {
             max-width: 90%;
+            height: 100vh;
         }
 
-        @include Mobile{
+        @include Mobile {
+            max-width: 100%;
             margin-top: 5%;
         }
-
     }
 
     &_box {
@@ -104,9 +111,9 @@
 
     &_input {
         background: transparent;
-        padding: 15px;
+        padding: 5px;
         font-size: 1.5vw;
-        max-width: 50%;
+        max-width: 100%;
         outline: none;
         color: $primary_color;
         border-bottom: 3px solid $primary_color;
@@ -123,13 +130,13 @@
             }
         }
 
-        @include Tablet{
+        @include Tablet {
             font-size: 2vw;
         }
 
-        @include Mobile{
+        @include Mobile {
             font-size: 3.5vw;
-            max-width: 100%;
+            width: 100%;
         }
     }
 
@@ -148,13 +155,11 @@
         font-weight: 500;
 
         &:hover {
-            // box-shadow: $hovering_color 20px 20px 30px -10px;
-            // color: $hovering_color;
             background-color: $hovering_color;
             transform: scale(1.1);
         }
 
-        @include Tablet{
+        @include Tablet {
             font-size: 3vw;
         }
 
