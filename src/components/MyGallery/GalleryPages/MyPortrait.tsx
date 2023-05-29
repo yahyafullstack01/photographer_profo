@@ -44,7 +44,7 @@ export default function MyPortrait() {
     return (
         <div className="Gallery">
             <h1 className="Gallery_title ">Portrait album</h1>
-            <div className="Gallery_grid-box-2">
+            <div className="Gallery_grid-box">
                 {images.map((image, index) => (
                     <img
                         key={index}
