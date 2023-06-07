@@ -1,6 +1,7 @@
 import { RxCross1 } from 'react-icons/rx';
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Link from 'next/link';
 
 
 export default function Menu() {
@@ -33,7 +34,7 @@ export default function Menu() {
                         <a className="Menu-open_links" href="#About">{Nav_element[1]}</a>
                         <a className="Menu-open_links" href="#Blogs">{Nav_element[2]}</a>
                         <a className="Menu-open_links" href="#Services">{Nav_element[3]}</a>
-                        <a className="Menu-open_links" href="/#">{Nav_element[4]}</a>
+                        <Link className="Menu-open_links" href="/FeedBack">{Nav_element[4]}</Link>
                         <a className="Menu-open_links" href="#Contact">{Nav_element[5]}</a>
                     </div>
                     <div className="Menu-open_lang-con">

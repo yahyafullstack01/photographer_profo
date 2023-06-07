@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { SiNextdotjs } from 'react-icons/si';
 
 
@@ -67,7 +68,7 @@ export default function Footer() {
                 </div>
                 <div className="Footer_text-down">
                     <p>© All Rights Reserved Terms of Use and Privacy Policy</p>
-                    <a href='/'>@Elena smirnova 2012-2023</a>
+                    <Link passHref href='/'>@Elena smirnova 2012-2023</Link>
                 </div >
             </div>
         </div>

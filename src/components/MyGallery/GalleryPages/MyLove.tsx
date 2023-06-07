@@ -56,7 +56,7 @@ export default function MyLove() {
                 ))}
             </div>
             <div className="Gallery_package-con">
-                <h1 className="Gallery_package-txt">If you're Interested in my work and would like to know more, check out</h1>
+                <h1 className="Gallery_package-txt">If you&apos;re Interested in my work and would like to know more, check out</h1>
                 <Link passHref href="/Packages">
                     <button className="Gallery_package-btn">
                         My Packages

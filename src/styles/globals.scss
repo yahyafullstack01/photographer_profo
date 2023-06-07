@@ -10,6 +10,7 @@
 @import "../components/Header/Hero/hero.scss";
 @import "../components/About/about.scss";
 @import "../components/Services/services.scss";
+@import "../components/MyPackages/MyPackages.scss";
 @import "../components/MyGallery/MyGallery.scss";
 @import "../components/MyGallery/GalleryPages/Gallery_pages.scss";
 @import "../components/MyBlogs/MyBlogs.scss";
@@ -22,6 +23,7 @@
   box-sizing: border-box;
   transition: ease-in-out 0.3s;
   font-family: "Asap", sans-serif;
+  scroll-behavior: smooth;
 }
 
 -webkit-scrollbar {

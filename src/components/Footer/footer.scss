@@ -8,6 +8,10 @@
     font-weight: 400;
     // padding-bottom: 1%;
 
+    @include BigScreen {
+        padding-top: 2%;
+    }
+
     @include Mobile {
         padding-top: 2%;
     }
@@ -37,11 +41,12 @@
         justify-content: space-between;
 
         @include Tablet {
+            flex-direction: column;
             align-items: flex-start;
             row-gap: 5vh;
         }
 
-        @include Mobile{
+        @include Mobile {
             flex-direction: column;
         }
     }
@@ -67,8 +72,8 @@
 
     &_img {
         filter: grayscale(0);
-        width: 4vw;
-        height: 4vw;
+        width: 2vw;
+        height: 4vh;
 
         @include BigScreen {
             width: 3vw;
@@ -81,13 +86,13 @@
         }
 
         @include Mobile {
-            width: 10vw;
-            height: 8vh;
+            width: 6vw;
+            height: 6vh;
         }
 
         @include Small-Mobile {
-            width: 11vw;
-            height: 8vh;
+            width: 9vw;
+            height: 7vh;
         }
     }
 
@@ -98,7 +103,7 @@
     }
 
     &_text {
-        font-size: 1.5vw;
+        font-size: 1.2vw;
         @include BigScreen {
             font-size: 2vw;
         }
@@ -110,14 +115,17 @@
         @include Mobile {
             font-size: 3.5vw;
         }
+
+        @include Small-Mobile{
+            font-size: 4vw;
+        }
     }
 
     &_text-down {
         display: flex;
         justify-content: space-between;
-        font-size: 1.5vw;
+        font-size: 1.2vw;
         margin-bottom: 15px;
-
 
         @include BigScreen {
             font-size: 2vw;
@@ -125,6 +133,8 @@
 
         @include Tablet {
             font-size: 2.5vw;
+            row-gap: 20px;
+            flex-direction: column-reverse;
         }
 
         @include Mobile {
@@ -134,8 +144,8 @@
             align-items: center;
         }
 
-        @include Small-Mobile{
-            font-size: 3vw;
+        @include Small-Mobile {
+            font-size: 4vw;
         }
     }
 }

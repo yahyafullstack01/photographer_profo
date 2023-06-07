@@ -1,6 +1,7 @@
 import { FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 export default function Navbarpages() {
 
@@ -25,30 +26,30 @@ export default function Navbarpages() {
                             className="Container_socials"
                         />
                     </a>
-                    <a href="">
+                    <Link href="">
                         <img
                             src="/facebook.png"
                             alt="The logo of instagram"
                             className="Container_socials"
                         />
-                    </a>
+                    </Link>
                 </div>
                 <div className="Container_block Container_block--2">
-                    <a className="Container_links" href="/#Gallery">{Nav_element[0]}</a>
-                    <a className="Container_links" href="/#About">{Nav_element[1]}</a>
-                    <a className="Container_links" href="/#Blogs">{Nav_element[2]}</a>
+                    <Link className="Container_links" href="/#Gallery">{Nav_element[0]}</Link>
+                    <Link className="Container_links" href="/#About">{Nav_element[1]}</Link>
+                    <Link className="Container_links" href="/#Blogs">{Nav_element[2]}</Link>
                 </div>
-                <a href="/">
+                <Link passHref href="/">
                     <img
                         src="/logo.png"
                         alt="The logo of instagram"
                         className="Container_logo"
                     />
-                </a>
+                </Link>
                 <div className="Container_block Container_block--2">
-                    <a className="Container_links" href="/Services">{Nav_element[3]}</a>
-                    <a className="Container_links" href="/FeedBack">{Nav_element[4]}</a>
-                    <a className="Container_links" href="/Contact">{Nav_element[5]}</a>
+                    <Link className="Container_links" href="/#Services">{Nav_element[3]}</Link>
+                    <Link className="Container_links" href="/FeedBack">{Nav_element[4]}</Link>
+                    <Link className="Container_links" href="/#Contact">{Nav_element[5]}</Link>
                 </div>
                 <div className="Container_lang-con">
                     <select className="Container_selector"
