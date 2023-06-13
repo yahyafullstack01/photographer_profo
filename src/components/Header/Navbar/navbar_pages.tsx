@@ -60,6 +60,10 @@ export default function Navbarpages() {
                         <option className="Container_option" value="uk">Ukrainian</option>
                     </select>
                 </div>
+                {/* This the Burger icon that shows up when Entering The tablet and Mobile mode */}
+                <div className="Menu">
+                    <a href="#Menu"><FiMenu className="Menu_burger" /></a>
+                </div>
             </div>
         </div>
     )

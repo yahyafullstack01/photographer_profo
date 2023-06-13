@@ -1,10 +1,19 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
+import { useTranslation } from "next-i18next";
 
 export default function MyPackages() {
+    const { t } = useTranslation("Home");
+
+    const Package_title: any = t('Package_title', { returnObjects: true });
+    const Package_quote: any = t('Package_quote', { returnObjects: true });
+    const Package_types: any = t('Package_types', { returnObjects: true });
+    const Package_info_1: any = t('Package_info-1', { returnObjects: true });
+    const Package_info_2: any = t('Package_info-2', { returnObjects: true });
+    const Package_info_3: any = t('Package_info-3', { returnObjects: true });
+
 
     const [images, setImages] = useState<string[]>([]);
-
     // This function fetches the Api from Sanity.io
     useEffect(() => {
         const fetchImages = async () => {
@@ -24,60 +33,55 @@ export default function MyPackages() {
 
     return (
         <div className="MyPackages">
-            
+            <h1 className="MyPackages_title">{Package_title}</h1>
+            <q className="MyPackages_quote">{Package_quote}</q>
+            <div className="MyPackages_Box">
+                <div className="MyPackages_Box--all">
+                    <h1 className="MyPackages_type">{Package_types[0]}<br />385 €</h1>
+                    <img
+                        src={images[2]}
+                        alt="The image of the packages"
+                        className="MyPackages_picture"
+                    />
+                    <ul className="MyPackages_list-con">
+                        <p className="MyPackages_list"><strong>{Package_info_1[0]}</strong></p>
+                        <li className="MyPackages_list">{Package_info_1[1]}</li>
+                        <li className="MyPackages_list">{Package_info_1[2]}</li>
+                        <li className="MyPackages_list">{Package_info_1[3]}</li>
+                        <li className="MyPackages_list">{Package_info_1[4]}</li>
+                    </ul>
+                </div>
+                <div className="MyPackages_Box--all">
+                    <h1 className="MyPackages_type">{Package_types[1]}<br />535 €</h1>
+                    <img
+                        src={images[1]}
+                        alt="The image of the packages"
+                        className="MyPackages_picture"
+                    />
+                    <ul className="MyPackages_list-con">
+                        <p className="MyPackages_list"><strong>{Package_info_2[0]}</strong></p>
+                        <li className="MyPackages_list">{Package_info_2[1]}</li>
+                        <li className="MyPackages_list">{Package_info_2[2]}</li>
+                        <li className="MyPackages_list">{Package_info_2[3]}</li>
+                        <li className="MyPackages_list">{Package_info_2[4]}</li>
+                    </ul>
+                </div>
+                <div className="MyPackages_Box--all">
+                    <h1 className="MyPackages_type">{Package_types[2]}<br />650 €</h1>
+                    <img
+                        src={images[0]}
+                        alt="The image of the packages"
+                        className="MyPackages_picture"
+                    />
+                    <ul className="MyPackages_list-con">
+                        <p className="MyPackages_list"><strong>{Package_info_3[0]}</strong></p>
+                        <li className="MyPackages_list">{Package_info_3[1]}</li>
+                        <li className="MyPackages_list">{Package_info_3[2]}</li>
+                        <li className="MyPackages_list">{Package_info_3[3]}</li>
+                        <li className="MyPackages_list">{Package_info_3[4]}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }
-
-{/* <h1 className="MyPackages_title">My Packages</h1>
-<p className="MyPackages_quote">Capture the perfect moments that will make memories.</p>
-
-<div className="MyPackages_Box">
-    <div className="MyPackages_Box--1">
-        <h1 className="MyPackages_type">Minimum</h1>
-        <img
-            src={images[2]}
-            alt="The image of the packages"
-            className="MyPackages_picture"
-        />
-        <ul className="MyPackages_list-con">
-            <li className="MyPackages_list">Shooting time up to 4 hours (only Mon-Thu)</li>
-            <li className="MyPackages_list">Planning and consultation</li>
-            <li className="MyPackages_list">Author's processing of all photos (minimum 200 pcs)</li>
-            <li className="MyPackages_list">15 printed photos</li>
-            <li className="MyPackages_list">All material on flash media in designer packaging</li>
-        </ul>
-    </div>
-
-    <div className="MyPackages_Box--2">
-        <h1 className="MyPackages_type">Standard</h1>
-        <img
-            src="./pacakge_standard.jpg"
-            alt="The image of the packages"
-            className="MyPackages_picture"
-        />
-        <ul className="MyPackages_list-con">
-            <li className="MyPackages_list">Shooting time up to 8 hours</li>
-            <li className="MyPackages_list">Preliminary meeting and consultation on preparation for the wedding and the choice of locations for the photo shoot, the conclusion of the contract</li>
-            <li className="MyPackages_list">Author's processing of all photos (minimum 400 pcs)</li>
-            <li className="MyPackages_list">20 printed photos</li>
-            <li className="MyPackages_list">All material on flash media in designer packaging</li>
-        </ul>
-    </div>
-
-    <div className="MyPackages_Box--3">
-        <h1 className="MyPackages_type">Full day</h1>
-        <img
-            src="./package_full.jpg"
-            alt="The image of the packages"
-            className="MyPackages_picture"
-        />
-        <ul className="MyPackages_list-con">
-            <li className="MyPackages_list">Shooting time up to 12 hours</li>
-            <li className="MyPackages_list">Preliminary meeting and consultation on preparation for the wedding and the choice of locations for the photo shoot, the conclusion of the contract</li>
-            <li className="MyPackages_list">Author's processing of all photos (minimum 600 pcs)</li>
-            <li className="MyPackages_list">30 printed photos</li>
-            <li className="MyPackages_list">All material on flash media in designer packaging</li>
-        </ul>
-    </div>
-</div> */}

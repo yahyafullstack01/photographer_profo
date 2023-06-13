@@ -30,12 +30,12 @@ export default function Menu() {
                 </div>
                 <div className="Menu-open_Box-2">
                     <div className="Menu-open_links-con">
-                        <a className="Menu-open_links" href="#Gallery">{Nav_element[0]}</a>
-                        <a className="Menu-open_links" href="#About">{Nav_element[1]}</a>
-                        <a className="Menu-open_links" href="#Blogs">{Nav_element[2]}</a>
-                        <a className="Menu-open_links" href="#Services">{Nav_element[3]}</a>
+                        <a className="Menu-open_links" href="/#Gallery">{Nav_element[0]}</a>
+                        <a className="Menu-open_links" href="/#About">{Nav_element[1]}</a>
+                        <a className="Menu-open_links" href="/#Blogs">{Nav_element[2]}</a>
+                        <a className="Menu-open_links" href="/#Services">{Nav_element[3]}</a>
                         <Link className="Menu-open_links" href="/FeedBack">{Nav_element[4]}</Link>
-                        <a className="Menu-open_links" href="#Contact">{Nav_element[5]}</a>
+                        <a className="Menu-open_links" href="/#Contact">{Nav_element[5]}</a>
                     </div>
                     <div className="Menu-open_lang-con">
                         <select className="Menu-open_selector"

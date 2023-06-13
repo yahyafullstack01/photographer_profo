@@ -3,11 +3,16 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    box-sizing: border-box;
 
     &_img{
         display: flex;
         object-fit: cover;
         width: 100%;
         height: 100vh;
+
+        @include Mobile{
+            object-fit: fill;
+        }
     }
 }

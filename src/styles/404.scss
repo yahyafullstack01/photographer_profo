@@ -1,0 +1,26 @@
+.ErrPage{
+    display: flex;
+    text-align: center;
+    font-size: 3.5vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    @include Mobile{
+        font-size: 10vw;
+    }
+
+    &_btn{
+        display: block;
+        margin-top: 5%;
+        background: $secondary_color;
+        padding: 10px;
+        border-radius: 15px;
+
+        &:active{
+            background: $hovering_color;
+            transform: scale(0.9);
+        }
+    }
+}

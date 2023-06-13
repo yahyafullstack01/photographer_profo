@@ -15,7 +15,9 @@
 @import "../components/MyGallery/GalleryPages/Gallery_pages.scss";
 @import "../components/MyBlogs/MyBlogs.scss";
 @import "../components/Contacts/contact.scss";
+@import "../components/MyPackages/Contacts_Packages/contacts_packages.scss";
 @import "../components/Footer/footer.scss";
+@import "./404.scss";
 
 * {
   margin: 0;
@@ -57,3 +59,8 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+li{
+  list-style: none;
+}
+
