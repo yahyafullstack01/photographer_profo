@@ -55,7 +55,7 @@ export default function Contact() {
                         <select name="Choice" className="Mycontact_packages_select" id="Choice">
                             <option value="LinkedIn">{Contact_choice[0]}</option>
                             <option value="Google">{Contact_choice[1]}</option>
-                            <option value="Facebook">{Contact_choice[2]} day</option>
+                            <option value="Facebook">{Contact_choice[2]}</option>
                         </select>
                     </label>
                     <button className='Mycontact_packages_btn' type={"submit"}>{Contact_btn}</button>
