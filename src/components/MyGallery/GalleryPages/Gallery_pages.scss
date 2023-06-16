@@ -110,8 +110,6 @@
         font-weight: 500;
 
         &:hover {
-            // box-shadow: $hovering_color 20px 20px 30px -10px;
-            // color: $hovering_color;
             background-color: $hovering_color;
             transform: scale(1.1);
         }
