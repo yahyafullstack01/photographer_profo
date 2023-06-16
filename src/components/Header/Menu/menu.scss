@@ -1,4 +1,3 @@
-
 .Menu {
     display: none;
 
@@ -47,9 +46,12 @@
         backdrop-filter: blur(50px);
         justify-content: space-between;
         align-items: center;
+        @include Mobile {
+            margin-top: 4%;
+        }
     }
 
-    &_Close{
+    &_Close {
         margin-right: 2%;
         font-size: 4vw;
 
@@ -71,7 +73,7 @@
         flex-direction: column;
         width: 100%;
 
-        @include Mobile{
+        @include Mobile {
             row-gap: 5vh;
             margin-left: 5%;
             margin-top: 10%;
