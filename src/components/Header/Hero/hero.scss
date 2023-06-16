@@ -1,19 +1,23 @@
-.Slider{
+.Slider {
     display: flex;
     width: 100%;
     height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
 
-    &_img{
+    @include Mobile {
+        height: auto;
+    }
+
+    &_img {
         display: flex;
         object-fit: cover;
         width: 100%;
         height: 100vh;
 
-        @include Mobile{
+        @include Mobile {
             object-fit: fill;
-            height:85vh;
+            height: 70vh;
         }
     }
 }
