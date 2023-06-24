@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import { AppContext } from "../Mycontext/context";
 import Header from "../components/Header/header";
 import Navbar from "@/components/Header/Navbar/navbar";
-import MyBlogs from "@/components/MyBlogs/MyBlogs";
+import MyBlogs from "@/components/MyStories/MyStories";
 import Contacts from "@/components/Contacts/contact";
 
 

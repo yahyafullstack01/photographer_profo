@@ -13,7 +13,10 @@
 @import "../components/MyPackages/MyPackages.scss";
 @import "../components/MyGallery/MyGallery.scss";
 @import "../components/MyGallery/GalleryPages/Gallery_pages.scss";
-@import "../components/MyBlogs/MyBlogs.scss";
+@import "../components/MyStories/MyStories.scss";
+@import "../components/MyStories/StoryPages/StoryPages.scss";
+@import "../pages/Stories/StoryPage.scss";
+@import "../components/FeedBack/feedback.scss";
 @import "../components/Contacts/contact.scss";
 @import "../components/MyPackages/Contacts_Packages/contacts_packages.scss";
 @import "../components/Footer/footer.scss";
@@ -60,7 +63,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-li{
+li {
   list-style: none;
 }
-

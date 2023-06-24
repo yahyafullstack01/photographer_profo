@@ -52,6 +52,7 @@ export default function MyFamily() {
                         alt="The Pictures in the gallery"
                         className="Gallery_img"
                         onClick={() => showFullscreenImage(index)}
+                        loading="lazy"
                     />
                 ))}
             </div>
