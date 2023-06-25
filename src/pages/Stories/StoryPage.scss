@@ -9,6 +9,10 @@
         max-width: 1960px;
     }
 
+    // @include Mobile {
+    //     height: 100%;
+    // }
+
     &_title {
         font-size: 3vw;
         text-transform: capitalize;
@@ -54,7 +58,9 @@
         }
 
         @include Mobile {
-            grid-template-columns: 1fr;
+            display: flex;
+            height: inherit;
+            flex-direction: column;
         }
     }
 
