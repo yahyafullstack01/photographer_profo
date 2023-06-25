@@ -97,6 +97,12 @@ export default function Contact() {
                             className="Mycontact_packages_select"
                             id="package">
                             <option
+                                disabled
+                                selected
+                            >
+                                {Contact_holders[6]}
+                            </option>
+                            <option
                                 value={Contact_choice[0]}>
                                 {Contact_choice[0]}
                             </option>
