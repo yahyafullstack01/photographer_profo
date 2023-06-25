@@ -44,21 +44,77 @@ export default function Contact() {
                 <p className='Mycontact_packages_text'>
                     {Contact_info}
                 </p>
-                <form className='Mycontact_packages_form' action=''>
-                    <input className='Mycontact_packages_input' placeholder={Contact_holders[0]} type={"text"} required />
-                    <input className='Mycontact_packages_input' placeholder={Contact_holders[1]} type={"email"} required />
-                    <input className='Mycontact_packages_input' placeholder={Contact_holders[2]} type={"number"} required />
-                    <input className='Mycontact_packages_input' placeholder={Contact_holders[3]} type={"text"} />
-                    <input className='Mycontact_packages_input' placeholder={Contact_holders[4]} type={"text"} />
-                    <textarea className='Mycontact_packages_textarea' placeholder={Contact_holders[5]} />
-                    <label htmlFor={"Choice"} className="Mycontact_packages_choice-box" >{Contact_choice_label}:
-                        <select name="Choice" className="Mycontact_packages_select" id="Choice">
-                            <option value="LinkedIn">{Contact_choice[0]}</option>
-                            <option value="Google">{Contact_choice[1]}</option>
-                            <option value="Facebook">{Contact_choice[2]}</option>
+                <form
+                    className='Mycontact_packages_form pageclip-form'
+                    action="https://send.pageclip.co/EJu3hCGEEWDdHQ16fppwbE2ffwGbTWsz/Photography2023"
+                    method='POST'
+                >
+                    <input
+                        className='Mycontact_packages_input'
+                        placeholder={Contact_holders[0]}
+                        type={"text"}
+                        name='name'
+                        required
+                    />
+                    <input
+                        className='Mycontact_packages_input'
+                        placeholder={Contact_holders[1]}
+                        type={"email"}
+                        name='email'
+                        required
+                    />
+                    <input
+                        className='Mycontact_packages_input'
+                        placeholder={Contact_holders[2]}
+                        type={"number"}
+                        name='phone'
+                        required
+                    />
+                    <input
+                        className='Mycontact_packages_input'
+                        placeholder={Contact_holders[3]}
+                        type={"text"}
+                        name='weddingDate'
+                    />
+                    <input
+                        className='Mycontact_packages_input'
+                        placeholder={Contact_holders[4]}
+                        type={"text"}
+                        name='location'
+                    />
+                    <textarea
+                        className='Mycontact_packages_textarea'
+                        placeholder={Contact_holders[5]}
+                        name='message'
+                    />
+                    <label
+                        htmlFor={"package"}
+                        className="Mycontact_packages_choice-box"
+                    >
+                        {Contact_choice_label}:
+                        <select
+                            name="package"
+                            className="Mycontact_packages_select"
+                            id="package">
+                            <option
+                                value={Contact_choice[0]}>
+                                {Contact_choice[0]}
+                            </option>
+                            <option
+                                value={Contact_choice[1]}>
+                                {Contact_choice[1]}
+                            </option>
+                            <option
+                                value={Contact_choice[2]}>
+                                {Contact_choice[2]}
+                            </option>
                         </select>
                     </label>
-                    <button className='Mycontact_packages_btn' type={"submit"}>{Contact_btn}</button>
+                    <button
+                        className='Mycontact_packages_btn pageclip-form__submit'
+                        type={"submit"}>
+                        {Contact_btn}
+                    </button>
                 </form>
             </div>
         </div>

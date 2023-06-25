@@ -44,7 +44,7 @@ export default function Contact() {
                 <form
                     className='Mycontact_form pageclip-form'
                     action="https://send.pageclip.co/EJu3hCGEEWDdHQ16fppwbE2ffwGbTWsz/Photography2023"
-                    method='Post'
+                    method='POST'
                 >
                     <input
                         className='Mycontact_input'
