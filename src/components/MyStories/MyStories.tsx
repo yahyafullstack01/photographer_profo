@@ -12,7 +12,7 @@ export default function MyStories() {
     const [Wedding, setWedding] = useState<string[]>([]);
 
     const { t } = useTranslation("Home");
-    const Gallery_header: any = t('Gallery_title', { returnObjects: true });
+    const Story_title: any = t('Story_title', { returnObjects: true });
     const Gallery_box_1: any = t('Gallery_box_1', { returnObjects: true });
     const Gallery_box_2: any = t('Gallery_box_2', { returnObjects: true });
     const Gallery_box_3: any = t('Gallery_box_3', { returnObjects: true });
@@ -112,8 +112,8 @@ export default function MyStories() {
 
 
     return (
-        <div className="MyStories">
-            <h1 className="MyStories_title">My Story</h1>
+        <div id="Story" className="MyStories">
+            <h1 className="MyStories_title">{Story_title}</h1>
             <div className="MyStories_Grid">
                 <Link passHref href="/Stories/Lovestory" className="MyStories_anchor">
                     <div className="MyStories_container">

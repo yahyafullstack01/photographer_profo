@@ -44,8 +44,9 @@
             margin: 4% 0;
         }
 
-        @include Small-Mobile{
-            font-size: 4.5vw;
+        @include Small-Mobile {
+            font-size: 5.5vw;
+            margin: 10% 0;
         }
     }
 
@@ -69,6 +70,10 @@
         @include Tablet {
             display: flex;
             flex-direction: column;
+        }
+
+        @include Mobile {
+            row-gap: 5vh;
         }
     }
 
@@ -95,11 +100,11 @@
             font-size: 3vw;
         }
 
-        @include Mobile{
+        @include Mobile {
             font-size: 4vw;
         }
 
-        @include Small-Mobile{
+        @include Small-Mobile {
             font-size: 4.5vw;
         }
     }
@@ -142,12 +147,11 @@
             font-size: 2vw;
         }
 
-        @include Mobile{
-         
+        @include Mobile {
             font-size: 3.5vw;
         }
 
-        @include Small-Mobile{
+        @include Small-Mobile {
             font-size: 4vw;
         }
     }

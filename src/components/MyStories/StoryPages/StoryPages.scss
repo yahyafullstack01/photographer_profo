@@ -62,7 +62,7 @@
         border-radius: 20px;
         cursor: pointer;
 
-        &:active{
+        &:active {
             transform: scale(0.9);
         }
     }
@@ -70,8 +70,9 @@
     &_name {
         font-size: 1.5vw;
         text-align: center;
-        font-family: "Asap", sans-serif;
-        font-weight: bold;
+        text-transform: capitalize;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-weight: lighter;
         margin: 3% 0;
 
         @include BigScreen {

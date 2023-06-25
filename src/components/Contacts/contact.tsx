@@ -41,14 +41,54 @@ export default function Contact() {
                 <p className='Mycontact_text'>
                     {Contact_info}
                 </p>
-                <form className='Mycontact_form' action=''>
-                    <input className='Mycontact_input' placeholder={Contact_holders[0]} type={"text"} required />
-                    <input className='Mycontact_input' placeholder={Contact_holders[1]} type={"email"} required />
-                    <input className='Mycontact_input' placeholder={Contact_holders[2]} type={"number"} required />
-                    <input className='Mycontact_input' placeholder={Contact_holders[3]} type={"text"} />
-                    <input className='Mycontact_input' placeholder={Contact_holders[4]} type={"text"} />
-                    <textarea className='Mycontact_input' placeholder={Contact_holders[5]} />
-                    <button className='Mycontact_btn' type={"submit"}>{Contact_btn}</button>
+                <form
+                    className='Mycontact_form pageclip-form'
+                    action="https://send.pageclip.co/EJu3hCGEEWDdHQ16fppwbE2ffwGbTWsz/Photography2023"
+                    method='Post'
+                >
+                    <input
+                        className='Mycontact_input'
+                        placeholder={Contact_holders[0]}
+                        type={"text"}
+                        name='name'
+                        required />
+                    <input
+                        className='Mycontact_input'
+                        placeholder={Contact_holders[1]}
+                        type={"email"}
+                        name='email'
+                        required
+                    />
+                    <input
+                        className='Mycontact_input'
+                        placeholder={Contact_holders[2]}
+                        type={"number"}
+                        name='phone'
+                        required
+                    />
+                    <input
+                        className='Mycontact_input'
+                        placeholder={Contact_holders[3]}
+                        type={"text"}
+                        name='weddingDate'
+                    />
+                    <input
+                        className='Mycontact_input'
+                        placeholder={Contact_holders[4]}
+                        type={"text"}
+                        name='location'
+                    />
+                    <textarea
+                        className='Mycontact_input'
+                        placeholder={Contact_holders[5]}
+                        name='message'
+                    />
+                    <button
+                        className='Mycontact_btn pageclip-form__submit'
+                        type={"submit"}
+                    >
+                        {Contact_btn}
+                    </button>
                 </form>
             </div>
         </div>

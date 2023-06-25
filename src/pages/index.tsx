@@ -3,7 +3,7 @@ import Services from "../components/Services/services"
 import MyGallery from "@/components/MyGallery/MyGallery"
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from "next";
-import { AppContext } from "../Mycontext/context";
+// import { AppContext } from "../Mycontext/context";
 import Header from "../components/Header/header";
 import Navbar from "@/components/Header/Navbar/navbar";
 import MyBlogs from "@/components/MyStories/MyStories";
@@ -12,22 +12,20 @@ import Contacts from "@/components/Contacts/contact";
 
 export default function HomePage() {
   return (
-    <AppContext.Provider value={{}}>
-      <div>
-        <Navbar />
-        <Header />
-        <section />
-        <About />
-        <section />
-        <Services />
-        <section />
-        <MyGallery />
-        <section />
-        <MyBlogs />
-        <section />
-        <Contacts />
-      </div>
-    </AppContext.Provider>
+    <>
+      <Navbar />
+      <Header />
+      <section />
+      <About />
+      <section />
+      <Services />
+      <section />
+      <MyGallery />
+      <section />
+      <MyBlogs />
+      <section />
+      <Contacts />
+    </>
   )
 }
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

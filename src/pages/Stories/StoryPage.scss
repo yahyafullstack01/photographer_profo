@@ -12,7 +12,7 @@
     &_title {
         font-size: 3vw;
         text-transform: capitalize;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-weight: lighter;
         margin-left: 5%;
 
@@ -35,6 +35,8 @@
         grid-auto-rows: auto;
         column-gap: 2vw;
         row-gap: 10vh;
+        grid-auto-rows: 70vh;
+        height: 80vh;
         border-radius: 20px;
         margin: 2% 5%;
 
@@ -63,10 +65,8 @@
         border-radius: 20px;
         cursor: pointer;
 
-        &:active{
+        &:active {
             transform: scale(0.9);
         }
     }
 }
-
-

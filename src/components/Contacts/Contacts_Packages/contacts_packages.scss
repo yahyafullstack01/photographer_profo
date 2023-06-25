@@ -19,6 +19,11 @@
         flex-direction: column;
     }
 
+    @include Mobile{
+        margin-top: 9%;
+        margin-bottom: 9%;
+    }
+
     &_img {
         border-top-left-radius: 20px;
         width: 100%;
