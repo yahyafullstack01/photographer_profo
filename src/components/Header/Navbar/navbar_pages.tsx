@@ -19,20 +19,20 @@ export default function Navbarpages() {
         <div className="Navpages">
             <div id="Navbar" className="Navpages_box">
                 <div className="Container_block Container_block--1">
-                    <a href="">
+                    <a href="https://www.instagram.com/elendelmar" target="_blank">
                         <img
                             src="/instagram.png"
                             alt="The logo of instagram"
                             className="Container_socials"
                         />
                     </a>
-                    <Link href="">
+                    <a href="https://www.facebook.com/smirnova.olena" target="_blank">
                         <img
                             src="/facebook.png"
                             alt="The logo of instagram"
                             className="Container_socials"
                         />
-                    </Link>
+                    </a>
                 </div>
                 <div className="Container_block Container_block--2">
                     <Link className="Container_links" href="/#Gallery">{Nav_element[0]}</Link>

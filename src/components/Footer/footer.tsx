@@ -1,10 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { SiNextdotjs } from 'react-icons/si';
-
-
-
-
 
 export default function Footer() {
     return (
@@ -12,7 +6,7 @@ export default function Footer() {
             <div className='Footer_holder'>
                 <div className="Footer_container">
                     <div className="Footer_icon-box">
-                        <a href="">
+                        <a href="https://www.instagram.com/elendelmar" target="_blank">
                             <Image
                                 src="/instagram.png"
                                 width={50}
@@ -22,7 +16,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a href="">
+                        <a href="https://www.facebook.com/smirnova.olena" target="_blank">
                             <Image
                                 src="/facebook.png"
                                 width={50}
@@ -32,7 +26,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a href=''>
+                        <a href="https://web.telegram.org/a/#417377486" target="_blank">
                             <Image
                                 src="/telegram.webp"
                                 width={50}
@@ -42,7 +36,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a href=''>
+                        <a href='https://wa.me/34634859891'>
                             <Image
                                 src="/whatsapp.webp"
                                 width={50}
@@ -68,7 +62,7 @@ export default function Footer() {
                 </div>
                 <div className="Footer_text-down">
                     <p>© All Rights Reserved Terms of Use and Privacy Policy</p>
-                    <Link passHref href='/'>@Elena smirnova 2012-2023</Link>
+                    <a href="mailto:smirnova.olena@gmail.com" target="_blank">smirnova.olena@gmail.com</a>
                 </div >
             </div>
         </div>

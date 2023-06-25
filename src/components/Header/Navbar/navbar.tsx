@@ -19,14 +19,14 @@ export default function Navbar() {
     return (
         <div id="Navbar" className="Container">
             <div className="Container_block Container_block--1">
-                <a href="">
+                <a href="https://www.instagram.com/elendelmar" target="_blank">
                     <img
                         src="/instagram.png"
                         alt="The logo of instagram"
                         className="Container_socials"
                     />
                 </a>
-                <a href="">
+                <a href="https://www.facebook.com/smirnova.olena" target="_blank">
                     <img
                         src="/facebook.png"
                         alt="The logo of instagram"
@@ -39,7 +39,7 @@ export default function Navbar() {
                 <a className="Container_links" href="#About">{Nav_element[1]}</a>
                 <a className="Container_links" href="#Story">{Nav_element[2]}</a>
             </div>
-            <Link  href="/">
+            <Link href="/">
                 <img
                     src="/logo.png"
                     alt="The logo of instagram"
@@ -64,6 +64,6 @@ export default function Navbar() {
             <div className="Menu">
                 <a href="#Menu"><FiMenu className="Menu_burger" /></a>
             </div>
-        </div>
+        </div >
     )
 }
