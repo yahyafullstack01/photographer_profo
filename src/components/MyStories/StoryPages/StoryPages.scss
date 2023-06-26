@@ -52,6 +52,7 @@
 
         @include Mobile {
             grid-template-columns: 1fr;
+            grid-auto-rows: 80vh;
         }
     }
 

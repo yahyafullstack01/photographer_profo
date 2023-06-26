@@ -113,6 +113,10 @@
         @include BigScreen {
             font-size: 1vw;
         }
+
+        @include Mobile{
+            text-align: left;
+        }
     }
 
     &_package-con {

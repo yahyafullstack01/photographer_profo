@@ -52,6 +52,9 @@
 
         @include Mobile {
             grid-template-columns: 1fr;
+            row-gap: 5vh;
+            grid-auto-rows: 80vh;
+            margin-bottom: 2%;
         }
     }
 
@@ -79,7 +82,6 @@
     &_package-txt {
         font-size: 2vw;
         text-align: center;
-        // color: $hovering_color;
         font-family: "Asap", sans-serif;
         font-weight: 400;
 
@@ -89,7 +91,7 @@
         }
 
         @include Mobile {
-            font-size: 4vw;
+            font-size: 5vw;
             margin-bottom: 2%;
         }
 
@@ -118,7 +120,7 @@
         }
 
         @include Mobile {
-            font-size: 4vw;
+            font-size: 5vw;
         }
 
         @include Small-Mobile {
