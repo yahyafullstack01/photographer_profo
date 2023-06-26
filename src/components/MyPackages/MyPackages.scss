@@ -6,7 +6,7 @@
     @include BigScreen {
         margin: 0 auto;
         padding: 0;
-        max-width: 1960px;
+        max-width: 2222px;
     }
 
     &_title {
@@ -52,19 +52,22 @@
 
     &_Box {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         margin-top: 2%;
-        column-gap: 1vw;
         margin-bottom: 5%;
 
         &--all {
             display: flex;
+            height: fit-content;
             position: relative;
             flex-direction: column;
-            justify-self: center;
             border-radius: 15px;
-            border-style: double;
+            margin: 2%;
+            
+            @include Mobile{
+                margin: 0;
+            }
         }
 
         @include Tablet {
@@ -84,7 +87,7 @@
         font-size: 1.5vw;
         border-radius: 10px;
         align-self: center;
-        width: 100%;
+        width: 85%;
         font-weight: 500;
         text-transform: uppercase;
         color: black;
@@ -98,6 +101,7 @@
 
         @include Tablet {
             font-size: 3vw;
+            width: 100%;
         }
 
         @include Mobile {
@@ -110,23 +114,39 @@
     }
 
     &_picture {
-        width: 100%;
-        object-fit: fill;
+        width: 85%;
+        object-fit: cover;
         align-self: center;
-        height: 50%;
+        height: 70vh;
         border-radius: 10px;
         margin-top: 2%;
+
+        @include Tablet {
+            width: 100%;
+        }
+
+        @include Mobile{
+            height: 50vh;
+        }
     }
 
     &_list-con {
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
         row-gap: 3vh;
         height: 40vh;
-        margin: 3% 0;
         padding: 10px;
-        min-width: 90%;
+        width: 85%;
         list-style: none;
+
+        @include Tablet {
+            width: 100%;
+        }
+
+        @include Mobile{
+            height: auto;
+        }
     }
 
     &_list {

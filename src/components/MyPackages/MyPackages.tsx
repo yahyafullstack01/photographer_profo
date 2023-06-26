@@ -11,6 +11,8 @@ export default function MyPackages() {
     const Package_info_1: any = t('Package_info-1', { returnObjects: true });
     const Package_info_2: any = t('Package_info-2', { returnObjects: true });
     const Package_info_3: any = t('Package_info-3', { returnObjects: true });
+    const Package_info_4: any = t('Package_info-4', { returnObjects: true });
+
 
 
     const [images, setImages] = useState<string[]>([]);
@@ -37,9 +39,9 @@ export default function MyPackages() {
             <q className="MyPackages_quote">{Package_quote}</q>
             <div className="MyPackages_Box">
                 <div className="MyPackages_Box--all">
-                    <h1 className="MyPackages_type">{Package_types[0]}<br />385 €</h1>
+                    <h1 className="MyPackages_type">{Package_types[0]}</h1>
                     <img
-                        src={images[2]}
+                        src={images[0]}
                         alt="The image of the packages"
                         className="MyPackages_picture"
                     />
@@ -52,7 +54,7 @@ export default function MyPackages() {
                     </ul>
                 </div>
                 <div className="MyPackages_Box--all">
-                    <h1 className="MyPackages_type">{Package_types[1]}<br />535 €</h1>
+                    <h1 className="MyPackages_type">{Package_types[1]}</h1>
                     <img
                         src={images[1]}
                         alt="The image of the packages"
@@ -67,9 +69,9 @@ export default function MyPackages() {
                     </ul>
                 </div>
                 <div className="MyPackages_Box--all">
-                    <h1 className="MyPackages_type">{Package_types[2]}<br />650 €</h1>
+                    <h1 className="MyPackages_type">{Package_types[2]}</h1>
                     <img
-                        src={images[0]}
+                        src={images[2]}
                         alt="The image of the packages"
                         className="MyPackages_picture"
                     />
@@ -79,6 +81,21 @@ export default function MyPackages() {
                         <li className="MyPackages_list">{Package_info_3[2]}</li>
                         <li className="MyPackages_list">{Package_info_3[3]}</li>
                         <li className="MyPackages_list">{Package_info_3[4]}</li>
+                    </ul>
+                </div>
+                <div className="MyPackages_Box--all">
+                    <h1 className="MyPackages_type">{Package_types[3]}</h1>
+                    <img
+                        src={images[3]}
+                        alt="The image of the packages"
+                        className="MyPackages_picture"
+                    />
+                    <ul className="MyPackages_list-con">
+                        <p className="MyPackages_list"><strong>{Package_info_3[0]}</strong></p>
+                        <li className="MyPackages_list">{Package_info_4[1]}</li>
+                        <li className="MyPackages_list">{Package_info_4[2]}</li>
+                        <li className="MyPackages_list">{Package_info_4[3]}</li>
+                        <li className="MyPackages_list">{Package_info_4[4]}</li>
                     </ul>
                 </div>
             </div>

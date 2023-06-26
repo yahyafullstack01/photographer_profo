@@ -7,7 +7,7 @@
     @include BigScreen {
         margin: 0 auto;
         padding: 0;
-        max-width: 1960px;
+        max-width: 2222px;
     }
 
     &_title {
@@ -55,7 +55,7 @@
         display: flex;
         object-fit: cover;
         width: 100%;
-        height: 60vh;
+        height: 70vh;
         border-radius: 10px;
         border: 2px solid white;
 

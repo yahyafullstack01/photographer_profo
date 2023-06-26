@@ -114,6 +114,10 @@ export default function Contact() {
                                 value={Contact_choice[2]}>
                                 {Contact_choice[2]}
                             </option>
+                            <option
+                                value={Contact_choice[3]}>
+                                {Contact_choice[3]}
+                            </option>
                         </select>
                     </label>
                     <button
