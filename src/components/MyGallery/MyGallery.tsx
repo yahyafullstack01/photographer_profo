@@ -2,8 +2,7 @@ import client from "@/sanity/sanity.client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 
 
 export default function MyGallery() {
@@ -13,6 +12,7 @@ export default function MyGallery() {
     const [Family, setFamily] = useState<string[]>([]);
     const [Wedding, setWedding] = useState<string[]>([]);
 
+    // This fetches the translations from  i18nexus
     const { t } = useTranslation("Home");
     const Gallery_header: any = t('Gallery_title', { returnObjects: true });
     const Gallery_box_1: any = t('Gallery_box_1', { returnObjects: true });
@@ -117,7 +117,7 @@ export default function MyGallery() {
             <div className="Mygallery_Grid">
                 <Link passHref href="/Gallery/Love_album" className="Mygallery_anchor">
                     <div className="Mygallery_container">
-                        <LazyLoadImage
+                        <img
                             src={Love[0]}
                             alt="The image"
                             className="Mygallery_img"

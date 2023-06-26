@@ -4,9 +4,10 @@ import client from '@/sanity/sanity.client';
 import Link from "next/link";
 
 export default function Services() {
-    const { t } = useTranslation("Home");
     const [images, setImages] = useState<string[]>([]);
 
+    // This fetches the translations from  i18nexus
+    const { t } = useTranslation("Home");
     const Services_header: any = t('Services_title', { returnObjects: true });
     const Services_title_1: any = t('Services_title_box-1', { returnObjects: true });
     const Services_title_2: any = t('Services_title_box-2', { returnObjects: true });

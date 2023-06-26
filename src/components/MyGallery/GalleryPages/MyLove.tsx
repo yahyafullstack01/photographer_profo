@@ -1,12 +1,22 @@
 import client from "../../../sanity/sanity.client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
 
 
 export default function MyLove() {
     const [images, setImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
     const [isFullscreenOpen, setIsFullscreenOpen] = useState<boolean>(false);
+
+    const { t } = useTranslation("Home");
+    const Gallery_pages_Names: any = t('Gallery_pages_Names', { returnObjects: true });
+    const Services_package_title: any = t('Services_package_title', { returnObjects: true });
+    const Services_package_btn: any = t('Services_package_btn', { returnObjects: true });
+
+
+
 
     // This function fetches the Api from Sanity.io
     useEffect(() => {
@@ -29,7 +39,6 @@ export default function MyLove() {
         fetchImages();
     }, []);
 
-
     // These functions are used to open and close the Fullscreen mode when looking through images
     const showFullscreenImage = (index: number) => {
         setCurrentIndex(index);
@@ -43,7 +52,7 @@ export default function MyLove() {
 
     return (
         <div className="Gallery">
-            <h1 className="Gallery_title ">Love album</h1>
+            <h1 className="Gallery_title ">{Gallery_pages_Names[0]}</h1>
             <div className="Gallery_grid-box">
                 {images.map((image, index) => (
                     <img
@@ -56,10 +65,10 @@ export default function MyLove() {
                 ))}
             </div>
             <div className="Gallery_package-con">
-                <h1 className="Gallery_package-txt">If you&apos;re Interested in my work and would like to know more, check out</h1>
+                <h1 className="Gallery_package-txt">{Services_package_title}</h1>
                 <Link passHref href="/Packages">
                     <button className="Gallery_package-btn">
-                        My Packages
+                        {Services_package_btn}
                     </button>
                 </Link>
             </div>

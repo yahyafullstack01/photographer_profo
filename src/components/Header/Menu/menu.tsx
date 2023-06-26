@@ -5,9 +5,12 @@ import Link from 'next/link';
 
 
 export default function Menu() {
+
+    // This fetches the translations from  i18nexus
     const { t } = useTranslation("Home");
     const Nav_element: any = t('Navbar_List', { returnObjects: true });
 
+    // This fucntion detects which locale lang is the user choosing by clicking on one of the options
     const router = useRouter();
     const handleChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const lang = e.target.value;

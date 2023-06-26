@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 
 export default function About() {
-    const { t } = useTranslation("Home");
     const [image, setImage] = useState<string | null>(null);
 
+    // This fetches the translations from  i18nexus
+    const { t } = useTranslation("Home");
     const About_title: any = t('About_title', { returnObjects: true });
     const About_text: any = t('About_section', { returnObjects: true });
-
 
 
     // This function fetches the Api from Sanity.io
