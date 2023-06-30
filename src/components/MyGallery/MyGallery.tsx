@@ -120,7 +120,7 @@ export default function MyGallery() {
                         <img
                             src={Love[0]}
                             alt="The image"
-                            className="Mygallery_img"
+                            className="A picture of a couple holding each other in an alley way"
                         />
                         <h2 className="Mygallery_info">{Gallery_box_2}</h2>
                     </div>

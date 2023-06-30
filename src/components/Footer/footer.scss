@@ -6,7 +6,6 @@
     color: aliceblue;
     font-family: "Asap", sans-serif;
     font-weight: 400;
-    // padding-bottom: 1%;
 
     @include BigScreen {
         padding-top: 2%;
@@ -86,13 +85,13 @@
         }
 
         @include Mobile {
-            width: 8vw;
-            height: 6vh;
+            width: 7vw;
+            height: 5.5vh;
         }
 
         @include Small-Mobile {
-            width: 10vw;
-            height: 7vh;
+            width: 8vw;
+            height: 5vh;
         }
     }
 

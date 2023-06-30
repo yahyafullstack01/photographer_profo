@@ -7,14 +7,12 @@ export default function Contact() {
     const { t } = useTranslation("Home");
     const [image, setImage] = useState<string | null>(null);
 
-
     const Contact_header: any = t('Contact_title', { returnObjects: true });
     const Contact_info: any = t('Contact_info', { returnObjects: true });
     const Contact_holders: any = t('Contact_holders', { returnObjects: true });
     const Contact_btn: any = t('Contact_btn', { returnObjects: true });
     const Contact_choice_label: any = t('Contact_choice_label', { returnObjects: true });
     const Contact_choice: any = t('Contact_choice', { returnObjects: true });
-
 
     // This function fetches the Api from Sanity.io
     useEffect(() => {

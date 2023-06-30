@@ -42,7 +42,11 @@ export default function Hero() {
 
     return (
         <div className='Slider'>
-            <img className='Slider_img' src={images[index]?.url} alt={images[index]?.alt} />
+            <img
+                className='Slider_img'
+                src={images[index]?.url}
+                alt={images[index]?.alt}
+            />
         </div>
     );
 }

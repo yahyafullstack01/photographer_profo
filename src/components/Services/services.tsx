@@ -43,7 +43,11 @@ export default function Services() {
             <h1 className="Services_title">{Services_header}</h1>
             <div className="Services_Grid">
                 <div className=" Services_block Services_block--1">
-                    <img className="Services_img" src={images[0]} alt="Service 1" />
+                    <img
+                        className="Services_img"
+                        src={images[0]}
+                        alt="A picture of a Sony Camera"
+                    />
                     <div className="Services_grid-content">
                         <h1 className="Services_grid-content-title">{Services_title_1}</h1>
                         <p className="Services_grid-content-text">
@@ -66,10 +70,18 @@ export default function Services() {
                             {Services_text_2[2]}
                         </p>
                     </div>
-                    <img className="Services_img" src={images[1]} alt="Service 2" />
+                    <img
+                        className="Services_img"
+                        src={images[1]}
+                        alt="A picture of a couple in a grass feild"
+                    />
                 </div>
                 <div className="Services_block Services_block--3">
-                    <img className="Services_img" src={images[2]} alt="Service 3" />
+                    <img
+                        className="Services_img"
+                        src={images[2]}
+                        alt="A picture of a Photoshoot studio"
+                    />
                     <div className="Services_grid-content">
                         <h1 className="Services_grid-content-title">{Services_title_3}</h1>
                         <p className="Services_grid-content-text">
@@ -96,7 +108,11 @@ export default function Services() {
                             {Services_text_4[3]}
                         </p>
                     </div>
-                    <img className="Services_img" src={images[3]} alt="Service 4" />
+                    <img
+                        className="Services_img"
+                        src={images[3]}
+                        alt="A portrait picture of a girl in a wedding dress"
+                    />
                 </div>
             </div>
             <div className="Services_package-con">

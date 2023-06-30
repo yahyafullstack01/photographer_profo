@@ -49,7 +49,7 @@ export default function About() {
                     <img
                         className="About_img"
                         src={image}
-                        alt="About Me photo"
+                        alt="A Photo of Elina"
                     />
                 )}
             </div>
