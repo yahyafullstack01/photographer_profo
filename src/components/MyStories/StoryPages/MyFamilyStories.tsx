@@ -37,9 +37,7 @@ export default function MyFamilystory() {
             } catch (error) {
                 console.error("Error fetching family images:", error);
             }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            setIsLoading(false);
         };
         fetchImages();
     }, []);

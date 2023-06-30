@@ -40,9 +40,10 @@ export default function MyLove() {
                 console.error("Error fetching love images:", error);
             }
 
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            // setTimeout(() => {
+            //     setIsLoading(false);
+            // }, 2000);
+            setIsLoading(false);
         };
         fetchImages();
     }, []);

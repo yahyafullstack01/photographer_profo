@@ -34,9 +34,7 @@ export default function MyWedding() {
             } catch (error) {
                 console.error("Error fetching love images:", error);
             }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            setIsLoading(false);
         };
         fetchImages();
     }, []);

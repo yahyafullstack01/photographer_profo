@@ -38,9 +38,7 @@ export default function MyFamily() {
                 console.error("Error fetching love images:", error);
             }
 
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            setIsLoading(false);
         };
         fetchImages();
     }, []);
@@ -94,36 +92,36 @@ export default function MyFamily() {
             }
             {/*This fuction toggles between fullscreen and normal mode*/}
             {isFullscreenOpen && (
-                    <div id="fullscreen-overlay">
-                        <span id="close-btn" onClick={hideFullscreenImage}>
-                            &times;
-                        </span>
-                        <img
-                            id="fullscreen-image"
-                            src={images[currentIndex]}
-                            alt={images[currentIndex]}
-                        />
-                        <span
-                            id="prev-btn"
-                            onClick={() =>
-                                setCurrentIndex((prevIndex) =>
-                                    (prevIndex - 1 + images.length) % images.length
-                                )
-                            }
-                        >
-                            &lt;
-                        </span>
-                        <span
-                            id="next-btn"
-                            onClick={() =>
-                                setCurrentIndex((prevIndex) =>
-                                    (prevIndex + 1) % images.length
-                                )
-                            }
-                        >
-                            &gt;
-                        </span>
-                    </div>
+                <div id="fullscreen-overlay">
+                    <span id="close-btn" onClick={hideFullscreenImage}>
+                        &times;
+                    </span>
+                    <img
+                        id="fullscreen-image"
+                        src={images[currentIndex]}
+                        alt={images[currentIndex]}
+                    />
+                    <span
+                        id="prev-btn"
+                        onClick={() =>
+                            setCurrentIndex((prevIndex) =>
+                                (prevIndex - 1 + images.length) % images.length
+                            )
+                        }
+                    >
+                        &lt;
+                    </span>
+                    <span
+                        id="next-btn"
+                        onClick={() =>
+                            setCurrentIndex((prevIndex) =>
+                                (prevIndex + 1) % images.length
+                            )
+                        }
+                    >
+                        &gt;
+                    </span>
+                </div>
             )
             }
         </div >

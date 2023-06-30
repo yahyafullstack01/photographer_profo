@@ -57,7 +57,7 @@ export default function MyStories() {
             }
             setTimeout(() => {
                 setIsLoading(false);
-            }, 4000);
+            }, 2000);
         };
 
         fetchImages();
@@ -78,7 +78,7 @@ export default function MyStories() {
             }
             setTimeout(() => {
                 setIsLoading(false);
-            }, 4000);
+            }, 2000);
         };
 
         fetchImages();
@@ -99,7 +99,7 @@ export default function MyStories() {
             }
             setTimeout(() => {
                 setIsLoading(false);
-            }, 4000);
+            }, 2000);
         };
 
         fetchImages();
@@ -120,7 +120,7 @@ export default function MyStories() {
             }
             setTimeout(() => {
                 setIsLoading(false);
-            }, 4000);
+            }, 2000);
         };
 
         fetchImages();

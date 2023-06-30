@@ -26,9 +26,7 @@ export default function About() {
                 console.error('Error fetching image:', error);
             }
 
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
+            setIsLoading(false);
         };
 
         fetchImage();

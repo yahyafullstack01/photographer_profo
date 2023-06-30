@@ -32,9 +32,7 @@ export default function MyPackages() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            setIsLoading(false);
         };
         
 

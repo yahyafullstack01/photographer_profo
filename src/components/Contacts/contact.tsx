@@ -30,9 +30,7 @@ export default function Contact() {
             } catch (error) {
                 console.error('Error fetching image:', error);
             }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            setIsLoading(false);
         };
 
         fetchImage();

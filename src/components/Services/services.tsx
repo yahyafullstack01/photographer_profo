@@ -38,9 +38,7 @@ export default function Services() {
                 console.error('Error fetching images:', error);
             }
 
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
+            setIsLoading(false);
         };
 
         fetchImages();

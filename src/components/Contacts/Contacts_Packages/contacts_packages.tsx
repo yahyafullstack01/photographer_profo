@@ -33,7 +33,7 @@ export default function Contact() {
             }
             setTimeout(() => {
                 setIsLoading(false);
-            }, 4000);
+            }, 2000);
         };
 
         fetchImage();

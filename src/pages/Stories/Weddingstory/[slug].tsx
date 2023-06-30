@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import client from "../../../sanity/sanity.client";
 import { useState, useEffect } from "react";
+import Skeleton from 'react-loading-skeleton';
+
 
 export default function WeddingStoryPage() {
     const router = useRouter();
@@ -8,6 +10,8 @@ export default function WeddingStoryPage() {
     const [images, setImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
     const [isFullscreenOpen, setIsFullscreenOpen] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     console.log(slug);
 
@@ -27,6 +31,7 @@ export default function WeddingStoryPage() {
             } catch (error) {
                 console.error("Error fetching wedding story:", error);
             }
+            setIsLoading(false);
         };
 
         if (slug) {
@@ -50,7 +55,14 @@ export default function WeddingStoryPage() {
     return (
         <div className="StoryPage">
             <h1 className="StoryPage_title">{slug} Photos</h1>
-            <div className="StoryPage_grid-box">
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='100%'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) : (<div className="StoryPage_grid-box">
                 {images.map((image, imageIndex) => (
                     <img
                         key={imageIndex}
@@ -94,6 +106,7 @@ export default function WeddingStoryPage() {
                     </div>
                 )}
             </div>
+            )}
         </div>
     );
 }

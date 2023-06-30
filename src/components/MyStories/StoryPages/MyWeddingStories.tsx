@@ -36,9 +36,7 @@ export default function MyLoveStory() {
             } catch (error) {
                 console.error("Error fetching wedding images:", error);
             }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 4000);
+            setIsLoading(false);
         };
         fetchImages();
     }, []);

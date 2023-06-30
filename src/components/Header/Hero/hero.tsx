@@ -26,10 +26,9 @@ const Hero = () => {
                     alt: item.picture.alt
                 }));
 
-                setTimeout(() => {
-                    setImages(formattedImages);
-                    setIsLoading(false);
-                }, 2000);
+                setImages(formattedImages);
+                setIsLoading(false);
+
 
             } catch (error) {
                 console.error('Error fetching images:', error);
