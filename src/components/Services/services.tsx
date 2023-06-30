@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import client from '@/sanity/sanity.client';
 import Link from "next/link";
+import Skeleton from 'react-loading-skeleton';
+
 
 export default function Services() {
     const [images, setImages] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     // This fetches the translations from  i18nexus
     const { t } = useTranslation("Home");
@@ -33,6 +37,10 @@ export default function Services() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImages();
@@ -41,88 +49,100 @@ export default function Services() {
     return (
         <div id="Services" className="Services">
             <h1 className="Services_title">{Services_header}</h1>
-            <div className="Services_Grid">
-                <div className=" Services_block Services_block--1">
-                    <img
-                        className="Services_img"
-                        src={images[0]}
-                        alt="A picture of a Sony Camera"
-                    />
-                    <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">{Services_title_1}</h1>
-                        <p className="Services_grid-content-text">
-                            {Services_text_1[0]}
-                            <br />
-                            {Services_text_1[1]}
-                            <br />
-                            {Services_text_1[2]}
-                        </p>
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='90vw'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) :
+                <>
+                    <div className="Services_Grid">
+                        <div className=" Services_block Services_block--1">
+
+                            <img
+                                className="Services_img"
+                                src={images[0]}
+                                alt="A picture of a Sony Camera"
+                            />
+                            <div className="Services_grid-content">
+                                <h1 className="Services_grid-content-title">{Services_title_1}</h1>
+                                <p className="Services_grid-content-text">
+                                    {Services_text_1[0]}
+                                    <br />
+                                    {Services_text_1[1]}
+                                    <br />
+                                    {Services_text_1[2]}
+                                </p>
+                            </div>
+                        </div>
+                        <div className=" Services_block Services_block--2">
+                            <div className="Services_grid-content">
+                                <h1 className="Services_grid-content-title">{Services_title_2}</h1>
+                                <p className="Services_grid-content-text">
+                                    {Services_text_2[0]}
+                                    <br />
+                                    {Services_text_2[1]}
+                                    <br />
+                                    {Services_text_2[2]}
+                                </p>
+                            </div>
+                            <img
+                                className="Services_img"
+                                src={images[1]}
+                                alt="A picture of a couple in a grass feild"
+                            />
+                        </div>
+                        <div className="Services_block Services_block--3">
+                            <img
+                                className="Services_img"
+                                src={images[2]}
+                                alt="A picture of a Photoshoot studio"
+                            />
+                            <div className="Services_grid-content">
+                                <h1 className="Services_grid-content-title">{Services_title_3}</h1>
+                                <p className="Services_grid-content-text">
+                                    {Services_text_3[0]}
+                                    <br />
+                                    {Services_text_3[1]}
+                                    <br />
+                                    {Services_text_3[2]}
+                                    <br />
+                                    {Services_text_3[3]}
+                                </p>
+                            </div>
+                        </div>
+                        <div className=" Services_block Services_block--4">
+                            <div className="Services_grid-content">
+                                <h1 className="Services_grid-content-title">{Services_title_4}</h1>
+                                <p className="Services_grid-content-text">
+                                    {Services_text_4[0]}
+                                    <br />
+                                    {Services_text_4[1]}
+                                    <br />
+                                    {Services_text_4[2]}
+                                    <br />
+                                    {Services_text_4[3]}
+                                </p>
+                            </div>
+                            <img
+                                className="Services_img"
+                                src={images[3]}
+                                alt="A portrait picture of a girl in a wedding dress"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className=" Services_block Services_block--2">
-                    <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">{Services_title_2}</h1>
-                        <p className="Services_grid-content-text">
-                            {Services_text_2[0]}
-                            <br />
-                            {Services_text_2[1]}
-                            <br />
-                            {Services_text_2[2]}
-                        </p>
+                    <div className="Services_package-con">
+                        <h1 className="Services_package-txt">{Services_package_title}</h1>
+                        <Link passHref href="/Packages">
+                            <button className="Services_package-btn">
+                                {Services_package_btn}
+                            </button>
+                        </Link>
                     </div>
-                    <img
-                        className="Services_img"
-                        src={images[1]}
-                        alt="A picture of a couple in a grass feild"
-                    />
-                </div>
-                <div className="Services_block Services_block--3">
-                    <img
-                        className="Services_img"
-                        src={images[2]}
-                        alt="A picture of a Photoshoot studio"
-                    />
-                    <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">{Services_title_3}</h1>
-                        <p className="Services_grid-content-text">
-                            {Services_text_3[0]}
-                            <br />
-                            {Services_text_3[1]}
-                            <br />
-                            {Services_text_3[2]}
-                            <br />
-                            {Services_text_3[3]}
-                        </p>
-                    </div>
-                </div>
-                <div className=" Services_block Services_block--4">
-                    <div className="Services_grid-content">
-                        <h1 className="Services_grid-content-title">{Services_title_4}</h1>
-                        <p className="Services_grid-content-text">
-                            {Services_text_4[0]}
-                            <br />
-                            {Services_text_4[1]}
-                            <br />
-                            {Services_text_4[2]}
-                            <br />
-                            {Services_text_4[3]}
-                        </p>
-                    </div>
-                    <img
-                        className="Services_img"
-                        src={images[3]}
-                        alt="A portrait picture of a girl in a wedding dress"
-                    />
-                </div>
-            </div>
-            <div className="Services_package-con">
-                <h1 className="Services_package-txt">{Services_package_title}</h1>
-                <Link passHref href="/Packages">
-                    <button className="Services_package-btn">
-                        {Services_package_btn}
-                    </button>
-                </Link>
-            </div>
+                </>
+            }
         </div>
     );
 }

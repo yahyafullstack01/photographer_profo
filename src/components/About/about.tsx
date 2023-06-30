@@ -1,15 +1,16 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import Skeleton from 'react-loading-skeleton';
 
 export default function About() {
     const [image, setImage] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-    // This fetches the translations from  i18nexus
+    // This fetches the translations from i18nexus
     const { t } = useTranslation("Home");
     const About_title: any = t('About_title', { returnObjects: true });
     const About_text: any = t('About_section', { returnObjects: true });
-
 
     // This function fetches the Api from Sanity.io
     useEffect(() => {
@@ -24,11 +25,14 @@ export default function About() {
             } catch (error) {
                 console.error('Error fetching image:', error);
             }
+
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImage();
     }, []);
-
 
     return (
         <div className="About" id="About">
@@ -37,24 +41,31 @@ export default function About() {
                 <div className="About_text-con">
                     <p className="About_text">
                         {About_text[0]}
-                        <br></br><br></br>
+                        <br /><br />
                         {About_text[1]}
-                        <br></br><br></br>
+                        <br /><br />
                         {About_text[2]}
-                        <br></br><br></br>
+                        <br /><br />
                         {About_text[3]}
                     </p>
                 </div>
-                {image && (
-                    <img
-                        className="About_img"
-                        src={image}
-                        alt="A Photo of Elina"
+                {isLoading ? (
+                    <Skeleton
+                        height='100vh'
+                        width="100%"
+                        baseColor='transparent'
+                        highlightColor='rgb(208, 235, 255)'
                     />
+                ) : (
+                    image && (
+                        <img
+                            className="About_img"
+                            src={image}
+                            alt="A Photo of Elina"
+                        />
+                    )
                 )}
             </div>
         </div>
     );
 }
-
-

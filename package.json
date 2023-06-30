@@ -27,6 +27,7 @@
     "react-i18next": "^12.2.2",
     "react-icons": "^4.8.0",
     "react-lazy-load-image-component": "^1.6.0",
+    "react-loading-skeleton": "^3.3.1",
     "react-slick": "^0.29.0",
     "sanity": "^3.10.0",
     "sass": "^1.62.1",

@@ -70,7 +70,7 @@
     }
 
     &_img {
-        filter: grayscale(0);
+        filter: grayscale(1);
         width: 2vw;
         height: 4vh;
 
@@ -80,7 +80,7 @@
         }
 
         @include Tablet {
-            width: 6vw;
+            width: 5vw;
             height: 6vh;
         }
 

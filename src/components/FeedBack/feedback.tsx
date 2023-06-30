@@ -1,9 +1,13 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import Skeleton from 'react-loading-skeleton';
+
 
 export default function MyFeedback() {
     const { t } = useTranslation("Home");
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const feedback_title: any = t('Feedback_title', { returnObjects: true });
     const feedback_names: any = t('Feedback_names', { returnObjects: true });
@@ -25,6 +29,9 @@ export default function MyFeedback() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImages();
@@ -33,49 +40,57 @@ export default function MyFeedback() {
     return (
         <div className="MyFeedback">
             <h1 className="MyFeedback_title">{feedback_title}</h1>
-            <div className="MyFeedback_grid">
-                <div className="MyFeedback_contain-img">
-                    <img src={images[0]} alt="test" className="MyFeedback_img" />
-                </div>
-                <div className="MyFeedback_contain-info">
-                    <h1 className="MyFeedback_name">{feedback_names[0]}</h1>
-                    <p className="MyFeedback_txt">
-                        {feedback_info_1}
-                    </p>
-                </div>
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='100%'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) : (
+                <div className="MyFeedback_grid">
+                    <div className="MyFeedback_contain-img">
+                        <img src={images[0]} alt="test" className="MyFeedback_img" />
+                    </div>
+                    <div className="MyFeedback_contain-info">
+                        <h1 className="MyFeedback_name">{feedback_names[0]}</h1>
+                        <p className="MyFeedback_txt">
+                            {feedback_info_1}
+                        </p>
+                    </div>
 
-                <div className="MyFeedback_contain-img">
-                    <img src={images[1]} alt="test" className="MyFeedback_img" />
-                </div>
-                <div className="MyFeedback_contain-info">
-                    <h1 className="MyFeedback_name">{feedback_names[1]}</h1>
-                    <p className="MyFeedback_txt">
-                    {feedback_info_2}
-                    </p>
-                </div>
+                    <div className="MyFeedback_contain-img">
+                        <img src={images[1]} alt="test" className="MyFeedback_img" />
+                    </div>
+                    <div className="MyFeedback_contain-info">
+                        <h1 className="MyFeedback_name">{feedback_names[1]}</h1>
+                        <p className="MyFeedback_txt">
+                            {feedback_info_2}
+                        </p>
+                    </div>
 
-                <div className="MyFeedback_contain-img">
-                    <img src={images[2]} alt="test" className="MyFeedback_img" />
-                </div>
-                <div className="MyFeedback_contain-info">
-                    <h1 className="MyFeedback_name">{feedback_names[2]}</h1>
-                    <p className="MyFeedback_txt">
-                    {feedback_info_3}
-                    </p>
-                </div>
+                    <div className="MyFeedback_contain-img">
+                        <img src={images[2]} alt="test" className="MyFeedback_img" />
+                    </div>
+                    <div className="MyFeedback_contain-info">
+                        <h1 className="MyFeedback_name">{feedback_names[2]}</h1>
+                        <p className="MyFeedback_txt">
+                            {feedback_info_3}
+                        </p>
+                    </div>
 
-                <div className="MyFeedback_contain-img">
-                    <img src={images[3]} alt="test" className="MyFeedback_img" />
+                    <div className="MyFeedback_contain-img">
+                        <img src={images[3]} alt="test" className="MyFeedback_img" />
+                    </div>
+                    <div className="MyFeedback_contain-info">
+                        <h1 className="MyFeedback_name">{feedback_names[3]}</h1>
+                        <p className="MyFeedback_txt">
+                            {feedback_info_4}
+                        </p>
+                    </div>
                 </div>
-                <div className="MyFeedback_contain-info">
-                    <h1 className="MyFeedback_name">{feedback_names[3]}</h1>
-                    <p className="MyFeedback_txt">
-                    {feedback_info_4}
-                    </p>
-                </div>
+            )}
 
-
-            </div>
         </div>
     )
 }

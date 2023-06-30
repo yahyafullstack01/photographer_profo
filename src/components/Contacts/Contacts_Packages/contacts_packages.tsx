@@ -2,10 +2,14 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from "next-i18next";
 import client from '@/sanity/sanity.client';
+import Skeleton from 'react-loading-skeleton';
+
 
 export default function Contact() {
     const { t } = useTranslation("Home");
     const [image, setImage] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const Contact_header: any = t('Contact_title', { returnObjects: true });
     const Contact_info: any = t('Contact_info', { returnObjects: true });
@@ -27,6 +31,9 @@ export default function Contact() {
             } catch (error) {
                 console.error('Error fetching image:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImage();
@@ -34,8 +41,19 @@ export default function Contact() {
 
     return (
         <div id='Contact' className='Mycontact_packages'>
-            {image && (
-                <img className='Mycontact_packages_img' src={image} alt="The contact picture" />
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='100%'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) : (
+                <>
+                    {image && (
+                        <img className='Mycontact_packages_img' src={image} alt="The contact picture" />
+                    )}
+                </>
             )}
             <div className='Mycontact_packages_info-box'>
                 <h1 className='Mycontact_packages_header'>{Contact_header}</h1>

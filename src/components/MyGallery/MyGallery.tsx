@@ -2,6 +2,7 @@ import client from "@/sanity/sanity.client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import Skeleton from 'react-loading-skeleton';
 
 
 
@@ -11,6 +12,8 @@ export default function MyGallery() {
     const [Pregnancy, setPregnancy] = useState<string[]>([]);
     const [Family, setFamily] = useState<string[]>([]);
     const [Wedding, setWedding] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     // This fetches the translations from  i18nexus
     const { t } = useTranslation("Home");
@@ -34,6 +37,9 @@ export default function MyGallery() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImages();
@@ -52,6 +58,9 @@ export default function MyGallery() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImages();
@@ -70,6 +79,9 @@ export default function MyGallery() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImages();
@@ -88,6 +100,9 @@ export default function MyGallery() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImages();
@@ -106,6 +121,9 @@ export default function MyGallery() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
         };
 
         fetchImages();
@@ -114,60 +132,79 @@ export default function MyGallery() {
     return (
         <div id="Gallery" className="Mygallery">
             <h1 className="Mygallery_title">{Gallery_header}</h1>
-            <div className="Mygallery_Grid">
-                <Link passHref href="/Gallery/Love_album" className="Mygallery_anchor">
-                    <div className="Mygallery_container">
-                        <img
-                            src={Love[0]}
-                            alt="The image"
-                            className="A picture of a couple holding each other in an alley way"
-                        />
-                        <h2 className="Mygallery_info">{Gallery_box_2}</h2>
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='90vw'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) : (
+                <>
+                    <div className="Mygallery_Grid">
+                        <Link passHref href="/Gallery/Love_album" className="Mygallery_anchor">
+                            <div className="Mygallery_container">
+                                <img
+                                    src={Love[0]}
+                                    alt="The image"
+                                    className="Mygallery_img"
+                                    loading="lazy"
+                                />
+                                <h2 className="Mygallery_info">{Gallery_box_2}</h2>
+                            </div>
+                        </Link>
+                        <Link passHref href="/Gallery/Portrait_album" className="Mygallery_anchor">
+                            <div className="Mygallery_container">
+                                <img
+                                    src={Portrait[0]}
+                                    alt="The image"
+                                    className="Mygallery_img"
+                                    loading="lazy"
+                                />
+                                <h2 className="Mygallery_info">{Gallery_box_5}</h2>
+                            </div>
+                        </Link>
+                        <Link passHref href="/Gallery/Pregnancy_album" className="Mygallery_anchor">
+                            <div className="Mygallery_container Mygallery_middle">
+                                <img
+                                    src={Pregnancy[0]}
+                                    alt="The image"
+                                    className="Mygallery_img  Mygallery_middle "
+                                    loading="lazy"
+                                />
+                                <h2 className="Mygallery_info">{Gallery_box_3}</h2>
+                            </div>
+                        </Link>
                     </div>
-                </Link>
-                <Link passHref href="/Gallery/Portrait_album" className="Mygallery_anchor">
-                    <div className="Mygallery_container">
-                        <img
-                            src={Portrait[0]}
-                            alt="The image"
-                            className="Mygallery_img"
-                        />
-                        <h2 className="Mygallery_info">{Gallery_box_5}</h2>
+                    <div className="Mygallery_centered">
+                        <Link passHref href="/Gallery/Family_album" className="Mygallery_anchor">
+                            <div className="Mygallery_container Mygallery_container_2">
+                                <img
+                                    src={Family[0]}
+                                    alt="The image"
+                                    className="Mygallery_img"
+                                    loading="lazy"
+                                />
+                                <h2 className="Mygallery_info">{Gallery_box_4}</h2>
+                            </div>
+                        </Link>
+                        <Link passHref href="/Gallery/Wedding_album" className="Mygallery_anchor">
+                            <div className="Mygallery_container Mygallery_container_2">
+                                <img
+                                    src={Wedding[0]}
+                                    alt="The image"
+                                    className="Mygallery_img"
+                                    loading="lazy"
+                                />
+                                <h2 className="Mygallery_info">{Gallery_box_1}</h2>
+                            </div>
+                        </Link>
                     </div>
-                </Link>
-                <Link passHref href="/Gallery/Pregnancy_album" className="Mygallery_anchor">
-                    <div className="Mygallery_container Mygallery_middle">
-                        <img
-                            src={Pregnancy[0]}
-                            alt="The image"
-                            className="Mygallery_img  Mygallery_middle "
-                        />
-                        <h2 className="Mygallery_info">{Gallery_box_3}</h2>
-                    </div>
-                </Link>
-            </div>
-            <div className="Mygallery_centered">
-                <Link passHref href="/Gallery/Family_album" className="Mygallery_anchor">
-                    <div className="Mygallery_container Mygallery_container_2">
-                        <img
-                            src={Family[0]}
-                            alt="The image"
-                            className="Mygallery_img"
-                        />
-                        <h2 className="Mygallery_info">{Gallery_box_4}</h2>
-                    </div>
-                </Link>
-                <Link passHref href="/Gallery/Wedding_album" className="Mygallery_anchor">
-                    <div className="Mygallery_container Mygallery_container_2">
-                        <img
-                            src={Wedding[0]}
-                            alt="The image"
-                            className="Mygallery_img"
-                        />
-                        <h2 className="Mygallery_info">{Gallery_box_1}</h2>
-                    </div>
-                </Link>
-            </div>
+                </>
+            )
+            }
+
+
         </div>
     );
 }

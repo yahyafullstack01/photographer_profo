@@ -2,6 +2,8 @@ import client from "../../../sanity/sanity.client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import Skeleton from 'react-loading-skeleton';
+
 
 
 
@@ -9,6 +11,8 @@ export default function MyLove() {
     const [images, setImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
     const [isFullscreenOpen, setIsFullscreenOpen] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const { t } = useTranslation("Home");
     const Gallery_pages_Names: any = t('Gallery_pages_Names', { returnObjects: true });
@@ -35,6 +39,10 @@ export default function MyLove() {
             } catch (error) {
                 console.error("Error fetching love images:", error);
             }
+
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
         fetchImages();
     }, []);
@@ -53,25 +61,38 @@ export default function MyLove() {
     return (
         <div className="Gallery">
             <h1 className="Gallery_title ">{Gallery_pages_Names[0]}</h1>
-            <div className="Gallery_grid-box">
-                {images.map((image, index) => (
-                    <img
-                        key={index}
-                        src={image}
-                        alt="The Pictures in the gallery"
-                        className="Gallery_img"
-                        onClick={() => showFullscreenImage(index)}
-                    />
-                ))}
-            </div>
-            <div className="Gallery_package-con">
-                <h1 className="Gallery_package-txt">{Services_package_title}</h1>
-                <Link passHref href="/Packages">
-                    <button className="Gallery_package-btn">
-                        {Services_package_btn}
-                    </button>
-                </Link>
-            </div>
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='100%'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) :
+                (
+                    <>
+                        <div className="Gallery_grid-box">
+                            {images.map((image, index) => (
+                                <img
+                                    key={index}
+                                    src={image}
+                                    alt="The Pictures in the gallery"
+                                    className="Gallery_img"
+                                    onClick={() => showFullscreenImage(index)}
+                                    loading="lazy"
+                                />
+                            ))}
+                        </div>
+                        <div className="Gallery_package-con">
+                            <h1 className="Gallery_package-txt">{Services_package_title}</h1>
+                            <Link passHref href="/Packages">
+                                <button className="Gallery_package-btn">
+                                    {Services_package_btn}
+                                </button>
+                            </Link>
+                        </div>
+                    </>
+                )}
             {/*This fuction toggles between fullscreen and normal mode*/}
             {isFullscreenOpen && (
                 <div id="fullscreen-overlay">

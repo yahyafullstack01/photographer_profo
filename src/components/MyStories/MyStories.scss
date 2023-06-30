@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 2% 5%;
     padding-bottom: 5%;
+    overflow: hidden;
 
     @include BigScreen {
         margin: 0 auto;

@@ -2,6 +2,7 @@ import client from "@/sanity/sanity.client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import Skeleton from 'react-loading-skeleton';
 
 
 export default function MyStories() {
@@ -10,6 +11,7 @@ export default function MyStories() {
     const [Pregnancy, setPregnancy] = useState<string[]>([]);
     const [Family, setFamily] = useState<string[]>([]);
     const [Wedding, setWedding] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const { t } = useTranslation("Home");
     const Story_title: any = t('Story_title', { returnObjects: true });
@@ -32,6 +34,9 @@ export default function MyStories() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImages();
@@ -50,6 +55,9 @@ export default function MyStories() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImages();
@@ -68,6 +76,9 @@ export default function MyStories() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImages();
@@ -86,6 +97,9 @@ export default function MyStories() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImages();
@@ -104,70 +118,84 @@ export default function MyStories() {
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 4000);
         };
 
         fetchImages();
     }, []);
 
 
-
     return (
         <div id="Story" className="MyStories">
             <h1 className="MyStories_title">{Story_title}</h1>
-            <div className="MyStories_Grid">
-                <Link passHref href="/Stories/Lovestory" className="MyStories_anchor">
-                    <div className="MyStories_container">
-                        <img
-                            src={Love[0]}
-                            alt="The image"
-                            className="MyStories_img"
-                        />
-                        <h2 className="MyStories_info">{Gallery_box_2}</h2>
-                    </div>
-                </Link>
-                <Link passHref href="/Stories/Portraitstory" className="MyStories_anchor">
-                    <div className="MyStories_container">
-                        <img
-                            src={Portrait[0]}
-                            alt="The image"
-                            className="MyStories_img"
-                        />
-                        <h2 className="MyStories_info">{Gallery_box_5}</h2>
-                    </div>
-                </Link>
-                <Link passHref href="/Stories/Pregnancystory" className="MyStories_anchor">
-                    <div className="MyStories_container MyStories_middle">
-                        <img
-                            src={Pregnancy[0]}
-                            alt="The image"
-                            className="MyStories_img MyStories_middle "
-                        />
-                        <h2 className="MyStories_info">{Gallery_box_3}</h2>
-                    </div>
-                </Link>
-            </div>
-            <div className="MyStories_centered">
-                <Link passHref href="/Stories/Familystory" className="MyStories_anchor">
-                    <div className="MyStories_container MyStories_container_2">
-                        <img
-                            src={Family[0]}
-                            alt="The image"
-                            className="MyStories_img"
-                        />
-                        <h2 className="MyStories_info">{Gallery_box_4}</h2>
-                    </div>
-                </Link>
-                <Link passHref href="/Stories/Weddingstory" className="MyStories_anchor">
-                    <div className="MyStories_container MyStories_container_2">
-                        <img
-                            src={Wedding[0]}
-                            alt="The image"
-                            className="MyStories_img"
-                        />
-                        <h2 className="MyStories_info">{Gallery_box_1}</h2>
-                    </div>
-                </Link>
-            </div>
+            {isLoading ? (
+                <Skeleton
+                    height='100vh'
+                    width='100vw'
+                    baseColor='transparent'
+                    highlightColor='rgb(208, 235, 255)'
+                />
+            ) :
+                (
+                    <>
+                        <div className="MyStories_Grid">
+                            <Link passHref href="/Stories/Lovestory" className="MyStories_anchor">
+                                <div className="MyStories_container">
+                                    <img
+                                        src={Love[0]}
+                                        alt="The image"
+                                        className="MyStories_img"
+                                    />
+                                    <h2 className="MyStories_info">{Gallery_box_2}</h2>
+                                </div>
+                            </Link>
+                            <Link passHref href="/Stories/Portraitstory" className="MyStories_anchor">
+                                <div className="MyStories_container">
+                                    <img
+                                        src={Portrait[0]}
+                                        alt="The image"
+                                        className="MyStories_img"
+                                    />
+                                    <h2 className="MyStories_info">{Gallery_box_5}</h2>
+                                </div>
+                            </Link>
+                            <Link passHref href="/Stories/Pregnancystory" className="MyStories_anchor">
+                                <div className="MyStories_container MyStories_middle">
+                                    <img
+                                        src={Pregnancy[0]}
+                                        alt="The image"
+                                        className="MyStories_img MyStories_middle "
+                                    />
+                                    <h2 className="MyStories_info">{Gallery_box_3}</h2>
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="MyStories_centered">
+                            <Link passHref href="/Stories/Familystory" className="MyStories_anchor">
+                                <div className="MyStories_container MyStories_container_2">
+                                    <img
+                                        src={Family[0]}
+                                        alt="The image"
+                                        className="MyStories_img"
+                                    />
+                                    <h2 className="MyStories_info">{Gallery_box_4}</h2>
+                                </div>
+                            </Link>
+                            <Link passHref href="/Stories/Weddingstory" className="MyStories_anchor">
+                                <div className="MyStories_container MyStories_container_2">
+                                    <img
+                                        src={Wedding[0]}
+                                        alt="The image"
+                                        className="MyStories_img"
+                                    />
+                                    <h2 className="MyStories_info">{Gallery_box_1}</h2>
+                                </div>
+                            </Link>
+                        </div>
+                    </>
+                )}
         </div>
     );
 }
