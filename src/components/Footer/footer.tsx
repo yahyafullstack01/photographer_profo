@@ -26,7 +26,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a href="https://web.telegram.org/a/#417377486" target="_blank">
+                        <a  href="https://t.me/elendelmar" target="_blank">
                             <Image
                                 src="/telegram.webp"
                                 width={50}
