@@ -21,6 +21,28 @@ export default function MyStories() {
     const Gallery_box_4: any = t('Gallery_box_4', { returnObjects: true });
     const Gallery_box_5: any = t('Gallery_box_5', { returnObjects: true });
 
+
+    // This function fetches the story Wedding Card Api from Sanity.io
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const query = `*[_type == "story_wedding_card"]{ title, picture { asset->{url} } }`;
+                const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
+
+                const urls = results.map((result) => result.picture.asset.url);
+
+                setWedding(urls);
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
+        };
+
+        fetchImages();
+    }, []);
+    
     // This function fetches the story Love Card Api from Sanity.io
     useEffect(() => {
         const fetchImages = async () => {
@@ -37,48 +59,6 @@ export default function MyStories() {
             setTimeout(() => {
                 setIsLoading(false);
             }, 4000);
-        };
-
-        fetchImages();
-    }, []);
-
-    // This function fetches the story Portrait Card Api from Sanity.io
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const query = `*[_type == "story_portrait_card"]{ picture { asset->{url} } }`;
-                const results = await client.fetch<{ title: string, picture: { asset: { url: string } } }[]>(query);
-
-                const urls = results.map((result) => result.picture.asset.url);
-
-                setPortrait(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
-        };
-
-        fetchImages();
-    }, []);
-
-    // This function fetches the story Pregnancy Card Api from Sanity.io
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const query = `*[_type == "story_pregnancy_card"]{picture { asset->{url} } }`;
-                const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
-
-                const urls = results.map((result) => result.picture.asset.url);
-
-                setPregnancy(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
         };
 
         fetchImages();
@@ -105,26 +85,7 @@ export default function MyStories() {
         fetchImages();
     }, []);
 
-    // This function fetches the story Wedding Card Api from Sanity.io
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const query = `*[_type == "story_wedding_card"]{ title, picture { asset->{url} } }`;
-                const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
 
-                const urls = results.map((result) => result.picture.asset.url);
-
-                setWedding(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
-        };
-
-        fetchImages();
-    }, []);
 
 
     return (
@@ -141,6 +102,16 @@ export default function MyStories() {
                 (
                     <>
                         <div className="MyStories_Grid">
+                            <Link passHref href="/Stories/Weddingstory" className="MyStories_anchor">
+                                <div className="MyStories_container MyStories_container">
+                                    <img
+                                        src={Wedding[0]}
+                                        alt="The image"
+                                        className="MyStories_img"
+                                    />
+                                    <h2 className="MyStories_info">{Gallery_box_1}</h2>
+                                </div>
+                            </Link>
                             <Link passHref href="/Stories/Lovestory" className="MyStories_anchor">
                                 <div className="MyStories_container">
                                     <img
@@ -151,46 +122,14 @@ export default function MyStories() {
                                     <h2 className="MyStories_info">{Gallery_box_2}</h2>
                                 </div>
                             </Link>
-                            <Link passHref href="/Stories/Portraitstory" className="MyStories_anchor">
-                                <div className="MyStories_container">
-                                    <img
-                                        src={Portrait[0]}
-                                        alt="The image"
-                                        className="MyStories_img"
-                                    />
-                                    <h2 className="MyStories_info">{Gallery_box_5}</h2>
-                                </div>
-                            </Link>
-                            <Link passHref href="/Stories/Pregnancystory" className="MyStories_anchor">
-                                <div className="MyStories_container MyStories_middle">
-                                    <img
-                                        src={Pregnancy[0]}
-                                        alt="The image"
-                                        className="MyStories_img MyStories_middle "
-                                    />
-                                    <h2 className="MyStories_info">{Gallery_box_3}</h2>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="MyStories_centered">
                             <Link passHref href="/Stories/Familystory" className="MyStories_anchor">
-                                <div className="MyStories_container MyStories_container_2">
+                                <div className="MyStories_container MyStories_container">
                                     <img
                                         src={Family[0]}
                                         alt="The image"
                                         className="MyStories_img"
                                     />
                                     <h2 className="MyStories_info">{Gallery_box_4}</h2>
-                                </div>
-                            </Link>
-                            <Link passHref href="/Stories/Weddingstory" className="MyStories_anchor">
-                                <div className="MyStories_container MyStories_container_2">
-                                    <img
-                                        src={Wedding[0]}
-                                        alt="The image"
-                                        className="MyStories_img"
-                                    />
-                                    <h2 className="MyStories_info">{Gallery_box_1}</h2>
                                 </div>
                             </Link>
                         </div>

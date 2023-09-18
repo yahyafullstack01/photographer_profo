@@ -19,7 +19,7 @@
         flex-direction: column;
     }
 
-    @include Mobile{
+    @include Mobile {
         margin-top: 9%;
         margin-bottom: 9%;
     }
@@ -58,8 +58,8 @@
     &_header {
         font-size: 3vw;
         color: $secondary_color;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         margin-bottom: 2%;
 
         @include Tablet {
@@ -74,8 +74,8 @@
     &_text {
         font-size: 1.5vw;
         max-width: 80%;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
 
         @include Tablet {
             font-size: 3vw;
@@ -122,8 +122,9 @@
         font-size: 1.5vw;
         max-width: 100%;
         outline: none;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         color: $primary_color;
-
         border-bottom: 3px solid $primary_color;
 
         &::placeholder {
@@ -157,6 +158,8 @@
         display: flex;
         align-items: center;
         column-gap: 10px;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         font-size: 1.5vw;
         width: fit-content;
 
@@ -168,8 +171,7 @@
             font-size: 3vw;
         }
 
-
-        @include Small-Mobile{
+        @include Small-Mobile {
             font-size: 3.5vw;
         }
     }
@@ -180,14 +182,20 @@
         align-items: center;
         max-width: 50%;
         outline: none;
+        cursor: pointer;
         border: none;
         padding: 15px;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         border-radius: 5px;
         text-align: center;
-        background: $secondary_color;
+        border: 1px solid #002b2c;
+        outline: none;
+        color: #002b2c;
 
         &:hover {
-            background-color: $hovering_color;
+            background-color: #393636;
+            color: white;
         }
 
         @include Tablet {
@@ -203,24 +211,23 @@
     &_btn {
         padding: 10px;
         font-size: 2vw;
-        border-radius: 10px;
         margin-top: 2%;
-        border: none;
-        outline: none;
         max-width: 40%;
-        background: $secondary_color;
+        border: 1px solid #002b2c;
+        outline: none;
+        color: #002b2c;
         cursor: pointer;
         transition: ease-in-out 0.3s;
         font-family: "Asap", sans-serif;
         font-weight: 500;
 
         &:hover {
-            background-color: $hovering_color;
-            transform: scale(1.1);
+            background-color: #393636;
+            color: white;
         }
 
         &:active {
-            transform: scale(1);
+            transform: scale(0.9);
         }
 
         @include Tablet {

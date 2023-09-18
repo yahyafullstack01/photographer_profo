@@ -13,8 +13,8 @@
 
     &_title {
         font-size: 3vw;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
 
         @include Tablet {
             font-size: 5vw;
@@ -77,7 +77,7 @@
         font-size: 2vw;
         text-align: center;
         margin-top: 2%;
-        font-family: "Asap", sans-serif;
+        font-family: "Mooli", sans-serif;
         font-weight: 400;
 
         @include Mobile {

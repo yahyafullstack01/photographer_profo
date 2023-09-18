@@ -4,7 +4,7 @@
     width: 100%;
     background-color: #393636;
     color: aliceblue;
-    font-family: "Asap", sans-serif;
+    font-family: "Mooli", sans-serif;
     font-weight: 400;
 
     @include BigScreen {
@@ -65,13 +65,13 @@
 
     &_social {
         cursor: pointer;
-        width: 2vw;
+        width: auto;
         height: 4vh;
     }
 
     &_img {
         filter: grayscale(1);
-        width: 2vw;
+        width: auto;
         height: 4vh;
 
         @include BigScreen {
@@ -103,6 +103,8 @@
 
     &_text {
         font-size: 1.2vw;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         @include BigScreen {
             font-size: 2vw;
         }
@@ -123,6 +125,8 @@
     &_text-down {
         display: flex;
         justify-content: space-between;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         font-size: 1.2vw;
         margin-bottom: 15px;
 

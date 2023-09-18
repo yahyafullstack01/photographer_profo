@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 2% 5%;
     padding-bottom: 5%;
+    
 
     @include BigScreen {
         margin: 0 auto;
@@ -12,8 +13,8 @@
 
     &_title {
         font-size: 3vw;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
 
         @include Tablet {
             font-size: 5vw;
@@ -78,7 +79,7 @@
         text-align: center;
         border-radius: 10px;
         width: 100%;
-        background-color: #393636;
+        background-color: transparent;
 
         @include Tablet {
             width: 90%;
@@ -95,8 +96,8 @@
         font-size: 3vw;
         padding-bottom: 5%;
         text-transform: uppercase;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
 
         @include Mobile {
             font-size: 4vw;
@@ -104,17 +105,17 @@
     }
 
     &_grid-content-text {
-        color: white;
+        color: #393636;
         align-self: center;
         max-width: 90%;
-        font-family: "Asap", sans-serif;
+        font-family: "Mooli", sans-serif;
         font-weight: 400;
 
         @include BigScreen {
             font-size: 1vw;
         }
 
-        @include Mobile{
+        @include Mobile {
             text-align: left;
         }
     }
@@ -130,7 +131,7 @@
     &_package-txt {
         font-size: 2.5vw;
         text-align: center;
-        font-family: "Asap", sans-serif;
+        font-family: "Mooli", sans-serif;
         font-weight: 400;
 
         @include Mobile {
@@ -140,25 +141,33 @@
 
     &_package-btn {
         padding: 10px;
-        font-size: 2.5vw;
-        border-radius: 10px;
+        font-size: 2vw;
+        // border-radius: 10px;
         margin-top: 2%;
-        border: none;
+        border: 1px solid #002b2c;
         outline: none;
-        background: $secondary_color;
+        color: #002b2c;
         cursor: pointer;
+        width: 20vw;
         transition: ease-in-out 0.3s;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
 
         &:hover {
-            background-color: $hovering_color;
-            transform: scale(1.1);
+            // background-color: $hovering_color;
+            background-color: #393636;
+            color: white;
+            // transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
         }
 
         @include Mobile {
             font-size: 5.5vw;
             margin-top: 5%;
+            width: auto;
         }
     }
 }

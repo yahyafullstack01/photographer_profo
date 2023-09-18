@@ -8,13 +8,15 @@
     
     @include BigScreen {
         margin: 0 auto;
+        min-height: 100vh;
         max-width: 2222px;
     }
 
+
     &_title {
         font-size: 3vw;
-        font-family: "Asap", sans-serif;
-        font-weight: 500;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         margin-left: 5%;
 
         @include BigScreen {
@@ -74,9 +76,9 @@
         font-size: 1.5vw;
         text-align: center;
         text-transform: capitalize;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        font-weight: lighter;
-        margin: 3% 0;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
+        // margin: 3% 0;
 
         @include BigScreen {
             margin: 0;

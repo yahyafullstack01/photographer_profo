@@ -20,7 +20,6 @@
         padding: 1% 2%;
     }
 
-
     &_block {
         display: flex;
         align-items: center;
@@ -51,7 +50,7 @@
     &_links {
         display: inline-block;
         transition: ease-in-out 0.3s;
-        font-family: "Asap", sans-serif;
+        font-family: "Mooli", sans-serif;
         font-weight: 400;
 
         &::after {
@@ -120,6 +119,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
         @include Tablet {
             display: none;
         }
@@ -153,7 +154,6 @@
     width: 100%;
     background: #393636;
 
-
     &_box {
         display: flex;
         width: 100%;
@@ -168,7 +168,7 @@
             padding: 0;
             max-width: 1960px;
         }
-    
+
         @include Desktop {
             padding: 1% 2%;
         }

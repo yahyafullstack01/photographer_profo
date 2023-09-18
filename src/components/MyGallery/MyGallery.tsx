@@ -8,8 +8,6 @@ import Skeleton from 'react-loading-skeleton';
 
 export default function MyGallery() {
     const [Love, setLove] = useState<string[]>([]);
-    const [Portrait, setPortrait] = useState<string[]>([]);
-    const [Pregnancy, setPregnancy] = useState<string[]>([]);
     const [Family, setFamily] = useState<string[]>([]);
     const [Wedding, setWedding] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +22,27 @@ export default function MyGallery() {
     const Gallery_box_4: any = t('Gallery_box_4', { returnObjects: true });
     const Gallery_box_5: any = t('Gallery_box_5', { returnObjects: true });
 
+    // This function fetches the Wedding Card Api from Sanity.io
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const query = `*[_type == "wedding_card"]{ title, picture { asset->{url} } }`;
+                const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
+
+                const urls = results.map((result) => result.picture.asset.url);
+
+                setWedding(urls);
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
+        };
+
+        fetchImages();
+    }, []);
+
     // This function fetches the Love Card Api from Sanity.io
     useEffect(() => {
         const fetchImages = async () => {
@@ -34,48 +53,6 @@ export default function MyGallery() {
                 const urls = results.map((result) => result.picture.asset.url);
 
                 setLove(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
-        };
-
-        fetchImages();
-    }, []);
-
-    // This function fetches the Portrait Card Api from Sanity.io
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const query = `*[_type == "portrait_card"]{ picture { asset->{url} } }`;
-                const results = await client.fetch<{ title: string, picture: { asset: { url: string } } }[]>(query);
-
-                const urls = results.map((result) => result.picture.asset.url);
-
-                setPortrait(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
-        };
-
-        fetchImages();
-    }, []);
-
-    // This function fetches the Pregnancy Card Api from Sanity.io
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const query = `*[_type == "pregnancy_card"]{picture { asset->{url} } }`;
-                const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
-
-                const urls = results.map((result) => result.picture.asset.url);
-
-                setPregnancy(urls);
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
@@ -108,26 +85,7 @@ export default function MyGallery() {
         fetchImages();
     }, []);
 
-    // This function fetches the Wedding Card Api from Sanity.io
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const query = `*[_type == "wedding_card"]{ title, picture { asset->{url} } }`;
-                const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
 
-                const urls = results.map((result) => result.picture.asset.url);
-
-                setWedding(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 2000);
-        };
-
-        fetchImages();
-    }, []);
 
     return (
         <div id="Gallery" className="Mygallery">
@@ -142,6 +100,17 @@ export default function MyGallery() {
             ) : (
                 <>
                     <div className="Mygallery_Grid">
+                        <Link passHref href="/Gallery/Wedding_album" className="Mygallery_anchor">
+                            <div className="Mygallery_container Mygallery_container">
+                                <img
+                                    src={Wedding[0]}
+                                    alt="The image"
+                                    className="Mygallery_img"
+                                    loading="lazy"
+                                />
+                                <h2 className="Mygallery_info">{Gallery_box_1}</h2>
+                            </div>
+                        </Link>
                         <Link passHref href="/Gallery/Love_album" className="Mygallery_anchor">
                             <div className="Mygallery_container">
                                 <img
@@ -153,32 +122,8 @@ export default function MyGallery() {
                                 <h2 className="Mygallery_info">{Gallery_box_2}</h2>
                             </div>
                         </Link>
-                        <Link passHref href="/Gallery/Portrait_album" className="Mygallery_anchor">
-                            <div className="Mygallery_container">
-                                <img
-                                    src={Portrait[0]}
-                                    alt="The image"
-                                    className="Mygallery_img"
-                                    loading="lazy"
-                                />
-                                <h2 className="Mygallery_info">{Gallery_box_5}</h2>
-                            </div>
-                        </Link>
-                        <Link passHref href="/Gallery/Pregnancy_album" className="Mygallery_anchor">
-                            <div className="Mygallery_container Mygallery_middle">
-                                <img
-                                    src={Pregnancy[0]}
-                                    alt="The image"
-                                    className="Mygallery_img  Mygallery_middle "
-                                    loading="lazy"
-                                />
-                                <h2 className="Mygallery_info">{Gallery_box_3}</h2>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="Mygallery_centered">
                         <Link passHref href="/Gallery/Family_album" className="Mygallery_anchor">
-                            <div className="Mygallery_container Mygallery_container_2">
+                            <div className="Mygallery_container Mygallery_container">
                                 <img
                                     src={Family[0]}
                                     alt="The image"
@@ -188,23 +133,10 @@ export default function MyGallery() {
                                 <h2 className="Mygallery_info">{Gallery_box_4}</h2>
                             </div>
                         </Link>
-                        <Link passHref href="/Gallery/Wedding_album" className="Mygallery_anchor">
-                            <div className="Mygallery_container Mygallery_container_2">
-                                <img
-                                    src={Wedding[0]}
-                                    alt="The image"
-                                    className="Mygallery_img"
-                                    loading="lazy"
-                                />
-                                <h2 className="Mygallery_info">{Gallery_box_1}</h2>
-                            </div>
-                        </Link>
                     </div>
                 </>
             )
             }
-
-
         </div>
     );
 }

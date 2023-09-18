@@ -58,7 +58,6 @@ export default function Services() {
                 <>
                     <div className="Services_Grid">
                         <div className=" Services_block Services_block--1">
-
                             <img
                                 className="Services_img"
                                 src={images[0]}
@@ -90,44 +89,6 @@ export default function Services() {
                                 className="Services_img"
                                 src={images[1]}
                                 alt="A picture of a couple in a grass feild"
-                            />
-                        </div>
-                        <div className="Services_block Services_block--3">
-                            <img
-                                className="Services_img"
-                                src={images[2]}
-                                alt="A picture of a Photoshoot studio"
-                            />
-                            <div className="Services_grid-content">
-                                <h1 className="Services_grid-content-title">{Services_title_3}</h1>
-                                <p className="Services_grid-content-text">
-                                    {Services_text_3[0]}
-                                    <br />
-                                    {Services_text_3[1]}
-                                    <br />
-                                    {Services_text_3[2]}
-                                    <br />
-                                    {Services_text_3[3]}
-                                </p>
-                            </div>
-                        </div>
-                        <div className=" Services_block Services_block--4">
-                            <div className="Services_grid-content">
-                                <h1 className="Services_grid-content-title">{Services_title_4}</h1>
-                                <p className="Services_grid-content-text">
-                                    {Services_text_4[0]}
-                                    <br />
-                                    {Services_text_4[1]}
-                                    <br />
-                                    {Services_text_4[2]}
-                                    <br />
-                                    {Services_text_4[3]}
-                                </p>
-                            </div>
-                            <img
-                                className="Services_img"
-                                src={images[3]}
-                                alt="A portrait picture of a girl in a wedding dress"
                             />
                         </div>
                     </div>
