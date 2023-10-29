@@ -97,7 +97,8 @@
 
     &_logo {
         width: 8vw;
-        height: 7vw;
+        height: 15vh;
+        padding: 10px;
 
         @include Desktop {
             width: 100px;
