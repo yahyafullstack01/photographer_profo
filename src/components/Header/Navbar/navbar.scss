@@ -97,8 +97,13 @@
 
     &_logo {
         width: 8vw;
-        height: 15vh;
+        height: 14vh;
         padding: 10px;
+
+        @include BigScreen{
+            width: 200px;
+            height: 200px;
+        }
 
         @include Desktop {
             width: 100px;
@@ -106,13 +111,13 @@
         }
 
         @include Tablet {
-            width: 12vw;
-            height: 12vw;
+            width: 17vw;
+            height: 17vw;
         }
 
         @include Mobile {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
         }
     }
 
