@@ -10,7 +10,7 @@
     }
 
     @include Mobile {
-        height: auto;
+        height: 100vh;
     }
 
     &_title {

@@ -41,6 +41,8 @@
 
         @include Mobile {
             display: flex;
+            margin-top: 5%;
+            row-gap: 8vw;
             flex-direction: column;
         }
     }
@@ -54,6 +56,10 @@
         cursor: pointer;
         &:hover {
             transform: scale(1.1);
+        }
+
+        @include Mobile{
+            flex-direction: column-reverse;
         }
     }
 
@@ -82,6 +88,7 @@
 
         @include Mobile {
             font-size: 8vw;
+            margin-bottom: 2%;
         }
     }
 

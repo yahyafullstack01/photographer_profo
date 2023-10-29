@@ -5,7 +5,6 @@ import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
 
 
-
 export default function MyGallery() {
     const [Love, setLove] = useState<string[]>([]);
     const [Family, setFamily] = useState<string[]>([]);
@@ -101,7 +100,7 @@ export default function MyGallery() {
                 <>
                     <div className="Mygallery_Grid">
                         <Link passHref href="/Gallery/Wedding_album" className="Mygallery_anchor">
-                            <div className="Mygallery_container Mygallery_container">
+                            <div className="Mygallery_container">
                                 <img
                                     src={Wedding[0]}
                                     alt="The image"
@@ -123,7 +122,7 @@ export default function MyGallery() {
                             </div>
                         </Link>
                         <Link passHref href="/Gallery/Family_album" className="Mygallery_anchor">
-                            <div className="Mygallery_container Mygallery_container">
+                            <div className="Mygallery_container">
                                 <img
                                     src={Family[0]}
                                     alt="The image"

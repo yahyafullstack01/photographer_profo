@@ -64,20 +64,19 @@
 
     &_img {
         display: block;
-        border-radius: 50px;
+        border-radius: 80%;
         margin-top: -15%;
-        object-fit: cover;
-        height: 90vh;
+        object-fit: fill;
+        height: 85vh;
         width: 100%;
-        border: 2px solid whitesmoke;
+        border: 5px solid whitesmoke;
 
         @include Tablet {
-            height: 70vh;
             margin-top: 0;
         }
 
         @include Mobile {
-            height: 55vh;
+            height: 40vh;
         }
     }
 }
