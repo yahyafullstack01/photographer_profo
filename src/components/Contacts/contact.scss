@@ -21,7 +21,6 @@
 
     &_img {
         display: block;
-        // margin: 20% auto;
         border-top-left-radius: 20%;
         width: 100%;
         object-fit: fill;
@@ -29,7 +28,7 @@
 
         @include Tablet {
             width: 100%;
-            height: 55vh;
+            height: 100vh;
             border-top-left-radius: 0;
         }
 
