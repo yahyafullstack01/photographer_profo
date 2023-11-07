@@ -440,34 +440,26 @@
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 .About_Vid {
   display: block;
+  -o-object-fit: fill;
+     object-fit: fill;
   position: absolute;
   z-index: 0;
-  top: 0;
-  bottom: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   width: 100vw;
   height: 100%;
 }
-.About_img {
-  display: block;
-  border-radius: 80%;
-  margin-top: -15%;
-  -o-object-fit: fill;
-     object-fit: fill;
-  height: 85vh;
-  width: 100%;
-  border: 5px solid whitesmoke;
-}
 @media (max-width: 768px) {
-  .About_img {
-    margin-top: 0;
+  .About_Vid {
+    position: relative;
+    border-radius: 20px;
   }
 }
 @media (max-width: 500px) {
-  .About_img {
+  .About_Vid {
     height: 40vh;
   }
 }
