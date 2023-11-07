@@ -62,21 +62,47 @@
         }
     }
 
-    &_img {
-        display: block;
-        border-radius: 80%;
-        margin-top: -15%;
-        object-fit: fill;
-        height: 85vh;
+    &_Vid-con {
+        position: relative;
         width: 100%;
-        border: 5px solid whitesmoke;
+        height: 100%;
+    }
+
+    &_Vid {
+        display: block;
+        object-fit: fill;
+        position: absolute;
+        z-index: 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 100vw;
+        height: 100%;
 
         @include Tablet {
-            margin-top: 0;
+            position: relative;
+            border-radius: 20px;
         }
 
-        @include Mobile {
+        @include Mobile{
             height: 40vh;
         }
     }
+
+    // &_img {
+    //     display: block;
+    //     border-radius: 80%;
+    //     margin-top: -15%;
+    //     object-fit: fill;
+    //     height: 85vh;
+    //     width: 100%;
+    //     border: 5px solid whitesmoke;
+
+    //     @include Tablet {
+    //         margin-top: 0;
+    //     }
+
+    //     @include Mobile {
+    //         height: 40vh;
+    //     }
+    // }
 }

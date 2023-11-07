@@ -55,13 +55,25 @@ export default function About() {
                         highlightColor='rgb(208, 235, 255)'
                     />
                 ) : (
-                    image && (
-                        <img
-                            className="About_img"
-                            src={image}
-                            alt="A Photo of Elina"
-                        />
-                    )
+                    // image && (
+                    //     <img
+                    //         className="About_img"
+                    //         src={image}
+                    //         alt="A Photo of Elina"
+                    //     />
+                    // )
+                    <div className="About_Vid-con">
+                        <video
+                            autoPlay={true}
+                            loop={true}
+                            muted={true}
+                            controls={false}
+                            className="About_Vid"
+                        >
+                            <source src="/wedding.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+
                 )}
             </div>
         </div>
