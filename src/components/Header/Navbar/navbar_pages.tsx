@@ -21,14 +21,14 @@ export default function Navbarpages() {
         <div className="Navpages">
             <div id="Navbar" className="Navpages_box">
                 <div className="Container_block Container_block--1">
-                    <a href="https://www.instagram.com/elendelmar" target="_blank">
+                    <a href="https://www.instagram.com/pic_best_moments" target="_blank">
                         <img
                             src="/instagram.png"
                             alt="The logo of instagram"
                             className="Container_socials"
                         />
                     </a>
-                    <a href="https://www.facebook.com/smirnova.olena" target="_blank">
+                    <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
                         <img
                             src="/facebook.png"
                             alt="The logo of instagram"

@@ -37,8 +37,7 @@ export default function MyFamily() {
             } catch (error) {
                 console.error("Error fetching love images:", error);
             }
-
-            setIsLoading(false);
+                setIsLoading(false);
         };
         fetchImages();
     }, []);

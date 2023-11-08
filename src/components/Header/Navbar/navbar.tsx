@@ -21,14 +21,14 @@ export default function Navbar() {
     return (
         <div id="Navbar" className="Container">
             <div className="Container_block Container_block--1">
-                <a href="https://www.instagram.com/elendelmar" target="_blank">
+                <a href="https://www.instagram.com/pic_best_moments" target="_blank">
                     <img
                         src="/instagram.png"
                         alt="The logo of instagram"
                         className="Container_socials"
                     />
                 </a>
-                <a href="https://www.facebook.com/smirnova.olena" target="_blank">
+                <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
                     <img
                         src="/facebook.png"
                         alt="The logo of instagram"
@@ -49,7 +49,7 @@ export default function Navbar() {
                 />
             </Link>
             <div className="Container_block Container_block--2">
-            <a className="Container_links" href="#About">{Nav_element[1]}</a>
+                <a className="Container_links" href="#About">{Nav_element[1]}</a>
                 <Link className="Container_links" href="/FeedBack">{Nav_element[4]}</Link>
                 <a className="Container_links" href="#Contact">{Nav_element[5]}</a>
             </div>

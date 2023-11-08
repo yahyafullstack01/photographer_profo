@@ -6,7 +6,7 @@ export default function Footer() {
             <div className='Footer_holder'>
                 <div className="Footer_container">
                     <div className="Footer_icon-box">
-                        <a href="https://www.instagram.com/elendelmar" target="_blank">
+                        <a href="https://www.instagram.com/pic_best_moments" target="_blank">
                             <Image
                                 src="/instagram.png"
                                 width={50}
@@ -16,7 +16,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a href="https://www.facebook.com/smirnova.olena" target="_blank">
+                        <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
                             <Image
                                 src="/facebook.png"
                                 width={50}
@@ -26,7 +26,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a  href="https://t.me/elendelmar" target="_blank">
+                        <a  href="https://t.me/Yacha_01" target="_blank">
                             <Image
                                 src="/telegram.webp"
                                 width={50}
@@ -36,7 +36,7 @@ export default function Footer() {
                             />
                         </a>
 
-                        <a href='https://wa.me/34634859891'>
+                        <a href='https://wa.me/34645550126'>
                             <Image
                                 src="/whatsapp.webp"
                                 width={50}
@@ -62,7 +62,7 @@ export default function Footer() {
                 </div>
                 <div className="Footer_text-down">
                     <p>© All Rights Reserved Terms of Use and Privacy Policy</p>
-                    <a href="mailto:smirnova.olena@gmail.com" target="_blank">smirnova.olena@gmail.com</a>
+                    <a href="mailto:photographbusiness01@gmail.com" target="_blank">photographbusiness01@gmail.com</a>
                 </div >
             </div>
         </div>
