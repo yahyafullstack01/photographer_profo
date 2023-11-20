@@ -23,9 +23,8 @@ export default function About() {
                     setImage(result.picture.asset.url);
                 }
             } catch (error) {
-                console.error('Error fetching image:', error);
+                console.error('Error fetching image from Sanity.io');
             }
-
             setIsLoading(false);
         };
 
@@ -55,13 +54,6 @@ export default function About() {
                         highlightColor='rgb(208, 235, 255)'
                     />
                 ) : (
-                    // image && (
-                    //     <img
-                    //         className="About_img"
-                    //         src={image}
-                    //         alt="A Photo of Elina"
-                    //     />
-                    // )
                     <div className="About_Vid-con">
                         <video
                             autoPlay={true}
@@ -73,7 +65,6 @@ export default function About() {
                             <source src="/wedding.mp4" type="video/mp4" />
                         </video>
                     </div>
-
                 )}
             </div>
         </div>

@@ -9,6 +9,7 @@
     position: absolute;
     backdrop-filter: blur(30px);
     color: aliceblue;
+    background: rgba(0, 0, 0, 0.299);
 
     @include BigScreen {
         margin: 0 auto;
@@ -52,6 +53,7 @@
         transition: ease-in-out 0.3s;
         font-family: "Mooli", sans-serif;
         font-weight: 400;
+        font-size: 1.2vw;
 
         &::after {
             content: "";
@@ -125,6 +127,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.2vw;
         font-family: "Mooli", sans-serif;
         font-weight: 400;
         @include Tablet {

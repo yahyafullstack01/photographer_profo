@@ -1,6 +1,5 @@
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
-import Errpage from "./404";
 import Head from "../../Html/html";
 import { useEffect } from 'react';
 import { appWithTranslation } from "next-i18next";
@@ -23,7 +22,6 @@ function App({ Component, pageProps }: AppProps) {
         document.body.style.overflowY = 'auto';
       }
     });
-
   }, []);
 
 

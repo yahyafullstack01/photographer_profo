@@ -4,22 +4,18 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
 
-
 export default function MyGallery() {
     const [Love, setLove] = useState<string[]>([]);
     const [Family, setFamily] = useState<string[]>([]);
     const [Wedding, setWedding] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
-
     // This fetches the translations from  i18nexus
     const { t } = useTranslation("Home");
     const Gallery_header: any = t('Gallery_title', { returnObjects: true });
     const Gallery_box_1: any = t('Gallery_box_1', { returnObjects: true });
     const Gallery_box_2: any = t('Gallery_box_2', { returnObjects: true });
-    const Gallery_box_3: any = t('Gallery_box_3', { returnObjects: true });
     const Gallery_box_4: any = t('Gallery_box_4', { returnObjects: true });
-    const Gallery_box_5: any = t('Gallery_box_5', { returnObjects: true });
 
     // This function fetches the Wedding Card Api from Sanity.io
     useEffect(() => {
@@ -27,10 +23,10 @@ export default function MyGallery() {
             try {
                 const query = `*[_type == "wedding_card"]{ title, picture { asset->{url} } }`;
                 const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
-
                 const urls = results.map((result) => result.picture.asset.url);
 
                 setWedding(urls);
+                
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
@@ -41,6 +37,7 @@ export default function MyGallery() {
 
         fetchImages();
     }, []);
+    
 
     // This function fetches the Love Card Api from Sanity.io
     useEffect(() => {
@@ -83,8 +80,6 @@ export default function MyGallery() {
 
         fetchImages();
     }, []);
-
-
 
     return (
         <div id="Gallery" className="Mygallery">

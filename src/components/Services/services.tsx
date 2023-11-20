@@ -15,12 +15,8 @@ export default function Services() {
     const Services_header: any = t('Services_title', { returnObjects: true });
     const Services_title_1: any = t('Services_title_box-1', { returnObjects: true });
     const Services_title_2: any = t('Services_title_box-2', { returnObjects: true });
-    const Services_title_3: any = t('Services_title_box-3', { returnObjects: true });
-    const Services_title_4: any = t('Services_title_box-4', { returnObjects: true });
     const Services_text_1: any = t('Services_box_content_1', { returnObjects: true });
     const Services_text_2: any = t('Services_box_content_2', { returnObjects: true });
-    const Services_text_3: any = t('Services_box_content_3', { returnObjects: true });
-    const Services_text_4: any = t('Services_box_content_4', { returnObjects: true });
     const Services_package_title: any = t('Services_package_title', { returnObjects: true });
     const Services_package_btn: any = t('Services_package_btn', { returnObjects: true });
 
@@ -31,14 +27,18 @@ export default function Services() {
             try {
                 const query = `*[_type == "services"]{ picture { asset->{url} } }`;
                 const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
-
+                
                 const urls = results.map((result) => result.picture.asset.url);
                 setImages(urls);
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
 
-            setIsLoading(false);
+                setInterval(() => {
+                    setIsLoading(false);
+                }, 4000);
+
+            } catch (error) {
+                alert('Error fetching images from Sanity.io');
+                setIsLoading(true);
+            }
         };
 
         fetchImages();

@@ -27,12 +27,15 @@ const Hero = () => {
                 }));
 
                 setImages(formattedImages);
-                setIsLoading(false);
+
+                setInterval(() => {
+                    setIsLoading(false);
+                }, 4000);
 
 
             } catch (error) {
-                console.error('Error fetching images:', error);
-                setIsLoading(false);
+                alert('Error fetching images from Sanity.io');
+                setIsLoading(true);
             }
         };
 
@@ -69,5 +72,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-

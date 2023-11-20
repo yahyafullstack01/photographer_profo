@@ -38,7 +38,7 @@ export default function Navbarpages() {
                 </div>
                 <div className="Container_block Container_block--2">
                     <Link className="Container_links" href="/#Gallery">{Nav_element[0]}</Link>
-                    <Link className="Container_links" href="/#Story">{Nav_element[2]}</Link>
+                    {/* <Link className="Container_links" href="/#Story">{Nav_element[2]}</Link> */}
                     <Link className="Container_links" href="/#Services">{Nav_element[3]}</Link>
                 </div>
                 <Link passHref href="/">
@@ -49,7 +49,7 @@ export default function Navbarpages() {
                     />
                 </Link>
                 <div className="Container_block Container_block--2">
-                    <Link className="Container_links" href="/#About">{Nav_element[1]}</Link>
+                    {/* <Link className="Container_links" href="/#About">{Nav_element[1]}</Link> */}
                     <Link className="Container_links" href="/FeedBack">{Nav_element[4]}</Link>
                     <Link className="Container_links" href="/#Contact">{Nav_element[5]}</Link>
                 </div>

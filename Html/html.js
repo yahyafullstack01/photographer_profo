@@ -5,7 +5,14 @@ export default function () {
         <div>
             <Head>
                 <title>Pic Best Moments</title>
-                <meta name="description" content="Discover the artistry of moments captured at their best on Pic Best Moments. Explore a curated collection of high-quality photographs captured by professional photographers. Whether you seek inspiration or are in need of a skilled photographer for your project, our platform connects you directly with talented individuals. Experience the power of visual storytelling. Your perfect moment awaits." />
+                <meta
+                    name="description"
+                    content="Discover the artistry of moments captured at their best on Pic Best Moments.
+                    Explore a curated collection of high-quality photographs captured by professional photographers.
+                    Whether you seek inspiration or are in need of a skilled photographer for your project, our platform connects you directly with talented individuals.
+                    Experience the power of visual storytelling.
+                    Your perfect moment awaits."
+                />
                 <link rel="shortcut icon" href="/logo.png" />
                 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>

@@ -15,7 +15,6 @@ export default function Footer() {
                                 className="Container_socials Footer_img"
                             />
                         </a>
-
                         <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
                             <Image
                                 src="/facebook.png"
@@ -25,8 +24,7 @@ export default function Footer() {
                                 className="Container_socials Footer_img"
                             />
                         </a>
-
-                        <a  href="https://t.me/Yacha_01" target="_blank">
+                        <a href="https://t.me/Yacha_01" target="_blank">
                             <Image
                                 src="/telegram.webp"
                                 width={50}
@@ -35,8 +33,7 @@ export default function Footer() {
                                 className="Container_socials Footer_img"
                             />
                         </a>
-
-                        <a href='https://wa.me/34645550126'>
+                        <a href='https://wa.me/34645550126' target="_blank">
                             <Image
                                 src="/whatsapp.webp"
                                 width={50}

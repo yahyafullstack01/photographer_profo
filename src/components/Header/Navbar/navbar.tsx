@@ -2,6 +2,7 @@ import { FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function Navbar() {
 
@@ -16,7 +17,6 @@ export default function Navbar() {
         router.push(router.pathname, router.asPath, { locale: lang });
         console.log(lang);
     };
-
 
     return (
         <div id="Navbar" className="Container">
@@ -38,7 +38,7 @@ export default function Navbar() {
             </div>
             <div className="Container_block Container_block--2">
                 <a className="Container_links" href="#Gallery">{Nav_element[0]}</a>
-                <a className="Container_links" href="#Story">{Nav_element[2]}</a>
+                {/* <a className="Container_links" href="#Story">{Nav_element[2]}</a> */}
                 <a className="Container_links" href="#Services">{Nav_element[3]}</a>
             </div>
             <Link href="/">
@@ -49,7 +49,7 @@ export default function Navbar() {
                 />
             </Link>
             <div className="Container_block Container_block--2">
-                <a className="Container_links" href="#About">{Nav_element[1]}</a>
+                {/* <a className="Container_links" href="#About">{Nav_element[1]}</a> */}
                 <Link className="Container_links" href="/FeedBack">{Nav_element[4]}</Link>
                 <a className="Container_links" href="#Contact">{Nav_element[5]}</a>
             </div>

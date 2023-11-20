@@ -8,9 +8,8 @@ import 'react-loading-skeleton/dist/skeleton.css'
 // import { AppContext } from "../Mycontext/context";
 import Header from "../components/Header/header";
 import Navbar from "@/components/Header/Navbar/navbar";
-import MyBlogs from "@/components/MyStories/MyStories";
+import Mystories from "@/components/MyStories/MyStories";
 import Contacts from "@/components/Contacts/contact";
-
 
 export default function HomePage() {
   return (
@@ -24,8 +23,8 @@ export default function HomePage() {
       <section />
       <MyGallery />
       <section />
-      <MyBlogs />
-      <section />
+      {/* <Mystories /> */}
+      {/* <section /> */}
       <Contacts />
     </>
   )
