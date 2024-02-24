@@ -5,8 +5,6 @@ import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
 
 
-
-
 export default function MyLove() {
     const [images, setImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
@@ -35,15 +33,15 @@ export default function MyLove() {
                             item.picture.asset.url
                     );
                     setImages(loveImages);
+                    setInterval(() => {
+                        setIsLoading(false);
+                    }, 4000);
                 }
             } catch (error) {
                 console.error("Error fetching love images:", error);
+                setIsLoading(true);
             }
 
-            // setTimeout(() => {
-            //     setIsLoading(false);
-            // }, 2000);
-            setIsLoading(false);
         };
         fetchImages();
     }, []);

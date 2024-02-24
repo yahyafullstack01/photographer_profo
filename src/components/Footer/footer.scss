@@ -1,3 +1,5 @@
+@import "../../styles/utilities/mixins";
+
 .Footer {
     display: flex;
     flex-direction: column;
@@ -67,31 +69,64 @@
         cursor: pointer;
         width: auto;
         height: 4vh;
+        
     }
 
-    &_img {
-        filter: grayscale(1);
-        width: auto;
-        height: 4vh;
+    // &_img {
+    //     filter: grayscale(1);
+    //     width: auto;
+    //     height: 4vh;
 
-        @include BigScreen {
-            width: 3vw;
-            height: 5vh;
+    //     @include BigScreen {
+    //         width: 3vw;
+    //         height: 5vh;
+    //     }
+
+    //     @include Tablet {
+    //         width: 5vw;
+    //         height: 6vh;
+    //     }
+
+    //     @include Mobile {
+    //         width: 7vw;
+    //         height: 5.5vh;
+    //     }
+
+    //     @include Small-Mobile {
+    //         width: 8vw;
+    //         height: 5vh;
+    //     }
+    // }
+
+    @media screen and (min-width: 800px) {
+        /* Apply for BigScreen and Desktop */
+        &_img {
+            width: 45px;
+            height: 45px;
         }
+    }
 
-        @include Tablet {
-            width: 5vw;
-            height: 6vh;
+    @media screen and (min-width: 600px) and (max-width: 799px) {
+        /* Apply for Tablet */
+        &_img {
+            width: 40px;
+            height: 40px;
         }
+    }
 
-        @include Mobile {
-            width: 7vw;
-            height: 5.5vh;
+    @media screen and (max-width: 599px) {
+        /* Apply for Mobile */
+        &_img {
+            width: 30px;
+            height: 30px;
         }
+    }
 
-        @include Small-Mobile {
-            width: 8vw;
-            height: 5vh;
+    @media screen and (max-width: 399px) {
+        /* Apply for Small-Mobile */
+        &_img {
+            width: 20px;
+            height: 20px;
         }
     }
 
@@ -117,7 +152,7 @@
             font-size: 3.5vw;
         }
 
-        @include Small-Mobile{
+        @include Small-Mobile {
             font-size: 4vw;
         }
     }

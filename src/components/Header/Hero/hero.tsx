@@ -23,7 +23,7 @@ const Hero = () => {
                 const formattedImages = result.map(item => ({
                     _id: item._id,
                     url: item.picture.asset.url,
-                    alt: item.picture.alt
+                    alt: item.picture.alt 
                 }));
 
                 setImages(formattedImages);

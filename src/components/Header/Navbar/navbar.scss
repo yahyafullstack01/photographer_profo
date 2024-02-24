@@ -98,26 +98,34 @@
     }
 
     &_logo {
-        width: 8vw;
-        height: 14vh;
+        min-width: 90px;
+        min-height: 90px;
+        max-width: 200px;
+        max-height: 200px;
+        width: 9vw; 
+        height: 9vw;
         padding: 10px;
+    }
 
-        @include BigScreen{
-            width: 200px;
-            height: 200px;
-        }
-
-        @include Desktop {
+    @media screen and (min-width: 800px) {
+        /* Apply for BigScreen and Desktop */
+        &_logo {
             width: 100px;
             height: 100px;
         }
+    }
 
-        @include Tablet {
+    @media screen and (min-width: 600px) and (max-width: 799px) {
+        /* Apply for Tablet */
+        &_logo {
             width: 17vw;
             height: 17vw;
         }
+    }
 
-        @include Mobile {
+    @media screen and (max-width: 599px) {
+        /* Apply for Mobile */
+        &_logo {
             width: 90px;
             height: 90px;
         }

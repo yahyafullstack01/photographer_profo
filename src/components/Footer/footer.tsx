@@ -9,10 +9,10 @@ export default function Footer() {
                         <a href="https://www.instagram.com/pic_best_moments" target="_blank">
                             <Image
                                 src="/instagram.png"
-                                width={50}
+                                width={50} 
                                 height={50}
                                 alt="The logo of instagram"
-                                className="Container_socials Footer_img"
+                                className="Footer_social Footer_img"
                             />
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
@@ -21,7 +21,7 @@ export default function Footer() {
                                 width={50}
                                 height={50}
                                 alt="The logo of facebook"
-                                className="Container_socials Footer_img"
+                                className="Footer_social Footer_img"
                             />
                         </a>
                         <a href="https://t.me/Yacha_01" target="_blank">
@@ -30,7 +30,7 @@ export default function Footer() {
                                 width={50}
                                 height={50}
                                 alt="The logo of telegram"
-                                className="Container_socials Footer_img"
+                                className="Footer_social Footer_img"
                             />
                         </a>
                         <a href='https://wa.me/34645550126' target="_blank">
@@ -39,7 +39,7 @@ export default function Footer() {
                                 width={50}
                                 height={50}
                                 alt="The logo of whatsapp"
-                                className="Container_socials Footer_img"
+                                className="Footer_social Footer_img"
                             />
                         </a>
                     </div>
@@ -51,7 +51,7 @@ export default function Footer() {
                                 width={50}
                                 height={50}
                                 alt="The logo of next"
-                                className="Container_socials Footer_img"
+                                className="Footer_social Footer_img"
                             />
                         </a>
                         <p className='Footer_text'>Made by Mejor Tech</p>
