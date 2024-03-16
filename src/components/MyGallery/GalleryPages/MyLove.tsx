@@ -24,7 +24,7 @@ export default function MyLove() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const query = `*[_type == "love"]{ picture { asset->{url} } }`;
+                const query = `*[_type == "love"]| order(_createdAt desc) { picture { asset->{url} } }`;
                 const result = await client.fetch(query);
 
                 if (result && result.length > 0) {
@@ -45,6 +45,41 @@ export default function MyLove() {
         };
         fetchImages();
     }, []);
+
+    //This function Randomly shuffles the images 
+    // useEffect(() => {
+    //     const fetchImages = async () => {
+    //         try {
+    //             // Fetch all documents of type "love"
+    //             const query = `*[_type == "love"] { picture { asset->{url} } }`;
+    //             const result = await client.fetch(query);
+
+    //             if (result && result.length > 0) {
+    //                 // Shuffle the array of images
+    //                 const shuffledImages = shuffle(result).map(
+    //                     (item: { picture: { asset: { url: string } } }) =>
+    //                         item.picture.asset.url
+    //                 );
+    //                 setImages(shuffledImages);
+    //                 setIsLoading(false); // Set loading to false once images are fetched
+    //             }
+    //         } catch (error) {
+    //             console.error("Error fetching love images:", error);
+    //             setIsLoading(true); // Set loading to true if there's an error
+    //         }
+    //     };
+
+    //     // Fisher-Yates shuffle algorithm
+    //     const shuffle = (array: any[]) => {
+    //         for (let i = array.length - 1; i > 0; i--) {
+    //             const j = Math.floor(Math.random() * (i + 1));
+    //             [array[i], array[j]] = [array[j], array[i]];
+    //         }
+    //         return array;
+    //     };
+
+    //     fetchImages();
+    // }, []);
 
     // These functions are used to open and close the Fullscreen mode when looking through images
     const showFullscreenImage = (index: number) => {

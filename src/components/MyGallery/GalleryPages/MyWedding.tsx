@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
 
-
-
 export default function MyWedding() {
     const [images, setImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
@@ -21,7 +19,7 @@ export default function MyWedding() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const query = `*[_type == "wedding"]{ picture { asset->{url} } }`;
+                const query = `*[_type == "wedding"] | order(_createdAt desc) { picture { asset->{url} } }`;
                 const result = await client.fetch(query);
 
                 if (result && result.length > 0) {
@@ -38,7 +36,6 @@ export default function MyWedding() {
         };
         fetchImages();
     }, []);
-
 
     // These functions are used to open and close the Fullscreen mode when looking through images
     const showFullscreenImage = (index: number) => {
