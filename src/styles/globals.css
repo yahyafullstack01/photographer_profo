@@ -1636,13 +1636,13 @@
 
 .Mycontact {
   display: grid;
+  background-color: rgba(128, 128, 128, 0.651);
   justify-content: space-between;
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   grid-auto-flow: dense;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  margin: 5% 5%;
+  margin: 5% 15%;
 }
 @media (min-width: 2000px) {
   .Mycontact {
@@ -1659,7 +1659,6 @@
 }
 .Mycontact_img {
   display: block;
-  border-top-left-radius: 20%;
   width: 100%;
   -o-object-fit: fill;
      object-fit: fill;
@@ -1764,7 +1763,7 @@
   font-weight: 400;
   max-width: 100%;
   outline: none;
-  color: #626262;
+  color: green;
   border-bottom: 3px solid #626262;
 }
 .Mycontact_input::-moz-placeholder {
@@ -2105,7 +2104,6 @@
 @media (min-width: 2000px) {
   .Footer {
     padding-top: 2%;
-    background-color: aliceblue;
   }
 }
 @media (max-width: 500px) {
@@ -2168,39 +2166,45 @@
          column-gap: 5vw;
   }
 }
-.Footer_socials {
+.Footer_social {
   cursor: pointer;
   width: auto;
   height: 4vh;
-  background-color: rebeccapurple;
 }
-.Footer_img {
-  filter: grayscale(1);
-  width: auto;
-  height: 4vh;
-}
-@media (min-width: 2000px) {
+@media screen and (min-width: 800px) {
+  .Footer {
+    /* Apply for BigScreen and Desktop */
+  }
   .Footer_img {
-    width: 3vw;
-    height: 5vh;
+    width: 45px;
+    height: 45px;
   }
 }
-@media (max-width: 768px) {
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .Footer {
+    /* Apply for Tablet */
+  }
   .Footer_img {
-    width: 5vw;
-    height: 6vh;
+    width: 40px;
+    height: 40px;
   }
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 599px) {
+  .Footer {
+    /* Apply for Mobile */
+  }
   .Footer_img {
-    width: 7vw;
-    height: 5.5vh;
+    width: 30px;
+    height: 30px;
   }
 }
-@media (max-width: 350px) {
+@media screen and (max-width: 399px) {
+  .Footer {
+    /* Apply for Small-Mobile */
+  }
   .Footer_img {
-    width: 8vw;
-    height: 5vh;
+    width: 20px;
+    height: 20px;
   }
 }
 .Footer_text-box {

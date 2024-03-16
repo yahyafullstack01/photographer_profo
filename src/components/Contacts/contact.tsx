@@ -38,7 +38,7 @@ export default function Contact() {
 
     return (
         <div id='Contact' className='Mycontact'>
-            {isLoading ? (
+            {/* {isLoading ? (
                 <Skeleton
                     height='100vh'
                     width='100%'
@@ -51,7 +51,7 @@ export default function Contact() {
                         <img className='Mycontact_img' src={image} alt="The contact picture" />
                     )}
                 </>
-            )}
+            )} */}
 
             <div className='Mycontact_info-box'>
                 <h1 className='Mycontact_header'>{Contact_header}</h1>
