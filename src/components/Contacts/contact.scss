@@ -18,6 +18,9 @@
     @include Tablet {
         display: flex;
         flex-direction: column;
+        margin: 2% 5%;
+        padding-left: 2%;
+        
     }
 
     &_img {
@@ -45,7 +48,9 @@
         width: 80%;
         @include Tablet {
             margin-left: 0;
-            margin-top: 5%;
+            // margin-top: 5%;
+            width: 85%;
+
         }
 
         @include Mobile {
@@ -97,7 +102,7 @@
 
         @include Tablet {
             max-width: 90%;
-            height: 100vh;
+            height: auto;
         }
 
         @include Mobile {
