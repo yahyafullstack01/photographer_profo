@@ -22,27 +22,34 @@ export default function MyFamily() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const query = `*[_type == "family"]| order(_createdAt desc) { picture { asset->{url} } }`;
+                // Fetch all documents of type "family"
+                const query = `*[_type == "family"] { picture { asset->{url} } }`;
                 const result = await client.fetch(query);
 
                 if (result && result.length > 0) {
-                    const loveImages = result.map(
+                    // Shuffle the array of images
+                    const shuffledImages = shuffle(result).map(
                         (item: { picture: { asset: { url: string } } }) =>
                             item.picture.asset.url
                     );
-                    setImages(loveImages);
-                    setInterval(() => {
-                        setIsLoading(false);
-                    }, 4000);
-
-
+                    setImages(shuffledImages);
+                    setIsLoading(false); // Set loading to false once images are fetched
                 }
             } catch (error) {
-                console.error("Error fetching love images:", error);
-                setIsLoading(true);
+                console.error("Error fetching family images:", error);
+                setIsLoading(true); // Set loading to true if there's an error
             }
-
         };
+
+        // A function that shuffles the images
+        const shuffle = (array: any[]) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        };
+
         fetchImages();
     }, []);
 
