@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
 
+
+
 export default function MyWedding() {
     const [images, setImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
@@ -19,36 +21,24 @@ export default function MyWedding() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                // Fetch all documents of type "wedding"
-                const query = `*[_type == "wedding"] { picture { asset->{url} } }`;
+                const query =`*[_type == "wedding"] | order(_createdAt desc) { picture { asset->{url} } }`;               
                 const result = await client.fetch(query);
 
                 if (result && result.length > 0) {
-                    // Shuffle the array of images
-                    const shuffledImages = shuffle(result).map(
+                    const loveImages = result.map(
                         (item: { picture: { asset: { url: string } } }) =>
                             item.picture.asset.url
                     );
-                    setImages(shuffledImages);
-                    setIsLoading(false); // Set loading to false once images are fetched
+                    setImages(loveImages);
                 }
             } catch (error) {
-                console.error("Error fetching wedding images:", error);
-                setIsLoading(true); // Set loading to true if there's an error
+                console.error("Error fetching love images:", error);
             }
+            setIsLoading(false);
         };
-
-        // A function that shuffles the images
-        const shuffle = (array: any[]) => {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        };
-
         fetchImages();
     }, []);
+
 
     // These functions are used to open and close the Fullscreen mode when looking through images
     const showFullscreenImage = (index: number) => {
