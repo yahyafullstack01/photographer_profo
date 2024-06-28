@@ -36,7 +36,9 @@
         gap: 3vw;
 
         @include Tablet {
-            grid-template-columns: repeat(2, 1fr);
+            // grid-template-columns: repeat(2, 1fr);
+            gap: 2vw;
+
         }
 
         @include Mobile {
@@ -47,18 +49,21 @@
         }
     }
 
-    
-
     &_container {
         display: flex;
         flex-direction: column;
         transition: ease-in-out 0.3s;
         cursor: pointer;
+
         &:hover {
             transform: scale(1.1);
         }
 
-        @include Mobile{
+        &--last {
+            grid-column:  1/ span 3;
+        }
+
+        @include Mobile {
             flex-direction: column-reverse;
         }
     }
@@ -67,7 +72,7 @@
         display: flex;
         object-fit: cover;
         width: 100%;
-        height: 60vh;
+        height: 80vh;
         border-radius: 10px;
         border: 2px solid white;
     }

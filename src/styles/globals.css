@@ -900,6 +900,9 @@
 .Mygallery_container:hover {
   transform: scale(1.1);
 }
+.Mygallery_container:nth-child(2) {
+  background-color: aqua;
+}
 @media (max-width: 500px) {
   .Mygallery_container {
     flex-direction: column-reverse;
@@ -1156,6 +1159,12 @@
   color: white;
   cursor: pointer;
 }
+#close-btn:hover {
+  color: red;
+}
+#close-btn:active {
+  transform: scale(0.9);
+}
 
 #prev-btn,
 #next-btn {
@@ -1165,6 +1174,14 @@
   font-weight: bolder;
   font-size: 50px;
   cursor: pointer;
+}
+#prev-btn:hover,
+#next-btn:hover {
+  color: #5ce1e6;
+}
+#prev-btn:active,
+#next-btn:active {
+  transform: scale(0.9);
 }
 
 #prev-btn {
@@ -1635,14 +1652,15 @@
 }
 
 .Mycontact {
-  display: grid;
+  display: flex;
   background-color: rgba(128, 128, 128, 0.651);
   justify-content: space-between;
+  background-blend-mode: darken;
   grid-template-rows: auto;
   grid-auto-flow: dense;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  margin: 5% 15%;
+  padding: 2% 0;
+  border-radius: 20px;
+  margin: 4% 15%;
 }
 @media (min-width: 2000px) {
   .Mycontact {
@@ -1655,6 +1673,8 @@
   .Mycontact {
     display: flex;
     flex-direction: column;
+    margin: 2% 5%;
+    padding-left: 2%;
   }
 }
 .Mycontact_img {
@@ -1686,7 +1706,7 @@
 @media (max-width: 768px) {
   .Mycontact_info-box {
     margin-left: 0;
-    margin-top: 5%;
+    width: 85%;
   }
 }
 @media (max-width: 500px) {
@@ -1716,6 +1736,7 @@
   max-width: 80%;
   font-family: "Mooli", sans-serif;
   font-weight: 400;
+  color: white;
 }
 @media (max-width: 768px) {
   .Mycontact_text {
@@ -1736,11 +1757,12 @@
   height: 100%;
   flex-direction: column;
   margin-top: 2%;
+  color: white;
 }
 @media (max-width: 768px) {
   .Mycontact_form {
     max-width: 90%;
-    height: 100vh;
+    height: auto;
   }
 }
 @media (max-width: 500px) {
@@ -1763,14 +1785,14 @@
   font-weight: 400;
   max-width: 100%;
   outline: none;
-  color: green;
-  border-bottom: 3px solid #626262;
+  color: white;
+  border-bottom: 3px solid white;
 }
 .Mycontact_input::-moz-placeholder {
-  color: #626262;
+  color: white;
 }
 .Mycontact_input::placeholder {
-  color: #626262;
+  color: white;
 }
 @media (max-width: 500px) {
   .Mycontact_input::-moz-placeholder {
@@ -1805,10 +1827,10 @@
   font-size: 2vw;
   margin-top: 2%;
   outline: none;
-  max-width: 40%;
-  border: 1px solid #002b2c;
+  max-width: 30%;
+  border: 1px solid white;
   outline: none;
-  color: #002b2c;
+  color: white;
   cursor: pointer;
   transition: ease-in-out 0.3s;
   font-family: "Mooli", sans-serif;
@@ -1867,7 +1889,7 @@
   width: 100%;
   -o-object-fit: fill;
      object-fit: fill;
-  height: 95%;
+  height: 93%;
 }
 @media (max-width: 768px) {
   .Mycontact_packages_img {
