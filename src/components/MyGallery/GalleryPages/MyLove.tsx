@@ -18,40 +18,30 @@ export default function MyLove() {
     const Services_package_btn: any = t('Services_package_btn', { returnObjects: true });
 
 
-
-
     // This function fetches the Api from Sanity.io
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                // Fetch all documents of type "love"
-                const query = `*[_type == "love"] { picture { asset->{url} } }`;
+                const query = `*[_type == "love"] | order(_createdAt desc) { picture { asset->{url} } }`;
                 const result = await client.fetch(query);
 
                 if (result && result.length > 0) {
-                    // Shuffle the array of images
-                    const shuffledImages = shuffle(result).map(
-                        (item: { picture: { asset: { url: string } } }) =>
-                            item.picture.asset.url
-                    );
-                    setImages(shuffledImages);
-                    setIsLoading(false); // Set loading to false once images are fetched
+                    const loveImages = result
+                        .filter(
+                            (item: { picture: { asset: { url: string } } | null }) =>
+                                item.picture && item.picture.asset && item.picture.asset.url
+                        )
+                        .map(
+                            (item: { picture: { asset: { url: string } } }) =>
+                                item.picture.asset.url
+                        );
+                    setImages(loveImages);
                 }
             } catch (error) {
                 console.error("Error fetching love images:", error);
-                setIsLoading(true); // Set loading to true if there's an error
             }
+            setIsLoading(false);
         };
-
-        // A function that shuffles the images
-        const shuffle = (array: any[]) => {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        };
-
         fetchImages();
     }, []);
 
