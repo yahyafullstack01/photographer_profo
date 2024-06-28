@@ -184,6 +184,14 @@
     font-size: 50px;
     color: white;
     cursor: pointer;
+
+    &:hover {
+        color: red;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
 }
 
 #prev-btn,
@@ -194,6 +202,14 @@
     font-weight: bolder;
     font-size: 50px;
     cursor: pointer;
+
+    &:hover {
+        color: $hovering_color;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
 }
 
 #prev-btn {
