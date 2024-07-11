@@ -1,7 +1,8 @@
 import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
-import Skeleton from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton'; 
+import Image from "next/image";
 
 
 export default function MyPackages() {
@@ -54,10 +55,12 @@ export default function MyPackages() {
                 <div className="MyPackages_Box">
                     <div className="MyPackages_Box--all">
                         <h1 className="MyPackages_type">{Package_types[0]}</h1>
-                        <img
+                        <Image
                             src={images[0]}
                             alt="The image of the packages"
                             className="MyPackages_picture"
+                            width={9000} // Specify appropriate width
+                            height={9000} // Specify appropriate height
                         />
                         <ul className="MyPackages_list-con">
                             <p className="MyPackages_list"><strong>{Package_info_1[0]}</strong></p>
@@ -69,10 +72,12 @@ export default function MyPackages() {
                     </div>
                     <div className="MyPackages_Box--all">
                         <h1 className="MyPackages_type">{Package_types[1]}</h1>
-                        <img
+                        <Image
                             src={images[1]}
                             alt="The image of the packages"
                             className="MyPackages_picture"
+                            width={9000} // Specify appropriate width
+                            height={9000} // Specify appropriate height
                         />
                         <ul className="MyPackages_list-con">
                             <p className="MyPackages_list"><strong>{Package_info_2[0]}</strong></p>
@@ -84,10 +89,12 @@ export default function MyPackages() {
                     </div>
                     <div className="MyPackages_Box--all">
                         <h1 className="MyPackages_type">{Package_types[2]}</h1>
-                        <img
+                        <Image
                             src={images[2]}
                             alt="The image of the packages"
                             className="MyPackages_picture"
+                            width={9000} // Specify appropriate width
+                            height={9000} // Specify appropriate height
                         />
                         <ul className="MyPackages_list-con">
                             <p className="MyPackages_list"><strong>{Package_info_3[0]}</strong></p>
@@ -99,10 +106,12 @@ export default function MyPackages() {
                     </div>
                     <div className="MyPackages_Box--all">
                         <h1 className="MyPackages_type">{Package_types[3]}</h1>
-                        <img
+                        <Image
                             src={images[3]}
                             alt="The image of the packages"
                             className="MyPackages_picture"
+                            width={9000} // Specify appropriate width
+                            height={9000} // Specify appropriate height
                         />
                         <ul className="MyPackages_list-con">
                             <p className="MyPackages_list"><strong>{Package_info_3[0]}</strong></p>

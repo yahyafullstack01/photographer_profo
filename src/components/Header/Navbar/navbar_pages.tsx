@@ -2,6 +2,7 @@ import { FiMenu } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbarpages() {
 
@@ -22,17 +23,21 @@ export default function Navbarpages() {
             <div id="Navbar" className="Navpages_box">
                 <div className="Container_block Container_block--1">
                     <a href="https://www.instagram.com/pic_best_moments" target="_blank">
-                        <img
-                            src="/instagram.png"
+                        <Image
+                            src="/instagram.webp"
                             alt="The logo of instagram"
                             className="Container_socials"
+                            width={1000} // Specify appropriate width
+                            height={1000} // Specify appropriate height
                         />
                     </a>
                     <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
-                        <img
-                            src="/facebook.png"
+                        <Image
+                            src="/facebook.webp"
                             alt="The logo of instagram"
                             className="Container_socials"
+                            width={1000} // Specify appropriate width
+                            height={1000} // Specify appropriate height
                         />
                     </a>
                 </div>
@@ -42,10 +47,12 @@ export default function Navbarpages() {
                     <Link className="Container_links" href="/#Services">{Nav_element[3]}</Link>
                 </div>
                 <Link passHref href="/">
-                    <img
-                        src="/logo.png"
+                    <Image
+                        src="/Logo.webp"
                         alt="The logo of instagram"
                         className="Container_logo"
+                        width={1000} // Specify appropriate width
+                        height={1000} // Specify appropriate height
                     />
                 </Link>
                 <div className="Container_block Container_block--2">

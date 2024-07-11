@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
+import Image from "next/image";
 
 
 export default function MyLove() {
@@ -73,13 +74,15 @@ export default function MyLove() {
                     <>
                         <div className="Gallery_grid-box">
                             {images.map((image, index) => (
-                                <img
+                                <Image
                                     key={index}
                                     src={image}
                                     alt="The Pictures in the gallery"
                                     className="Gallery_img"
                                     onClick={() => showFullscreenImage(index)}
                                     loading="lazy"
+                                    width={9000} // Specify appropriate width
+                                    height={9000} // Specify appropriate height
                                 />
                             ))}
                         </div>
@@ -99,10 +102,12 @@ export default function MyLove() {
                     <span id="close-btn" onClick={hideFullscreenImage}>
                         &times;
                     </span>
-                    <img
+                    <Image
                         id="fullscreen-image"
                         src={images[currentIndex]}
                         alt={images[currentIndex]}
+                        width={9000} // Specify appropriate width
+                        height={9000} // Specify appropriate height
                     />
                     <span
                         id="prev-btn"

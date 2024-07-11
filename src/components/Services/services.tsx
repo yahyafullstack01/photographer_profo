@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import client from '@/sanity/sanity.client';
 import Link from "next/link";
 import Skeleton from 'react-loading-skeleton';
+import Image from "next/image";
 
 
 export default function Services() {
@@ -27,7 +28,7 @@ export default function Services() {
             try {
                 const query = `*[_type == "services"]{ picture { asset->{url} } }`;
                 const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
-                
+
                 const urls = results.map((result) => result.picture.asset.url);
                 setImages(urls);
 
@@ -58,10 +59,12 @@ export default function Services() {
                 <>
                     <div className="Services_Grid">
                         <div className=" Services_block Services_block--1">
-                            <img
+                            <Image
                                 className="Services_img"
                                 src={images[0]}
                                 alt="A picture of a Sony Camera"
+                                width={9000} // Specify appropriate width
+                                height={9000} // Specify appropriate height
                             />
                             <div className="Services_grid-content">
                                 <h1 className="Services_grid-content-title">{Services_title_1}</h1>
@@ -85,10 +88,12 @@ export default function Services() {
                                     {Services_text_2[2]}
                                 </p>
                             </div>
-                            <img
+                            <Image
                                 className="Services_img"
                                 src={images[1]}
                                 alt="A picture of a couple in a grass feild"
+                                width={9000} // Specify appropriate width
+                                height={9000} // Specify appropriate height
                             />
                         </div>
                     </div>

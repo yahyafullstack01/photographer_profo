@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
+import Image from "next/image";
 
 export default function MyGallery() {
     const [Love, setLove] = useState<string[]>([]);
@@ -120,44 +121,52 @@ export default function MyGallery() {
                     <div className="Mygallery_Grid">
                         <Link passHref href="/Gallery/Love_album" className="Mygallery_anchor">
                             <div className="Mygallery_container">
-                                <img
+                                <Image
                                     src={Love[0]}
                                     alt="The image"
                                     className="Mygallery_img"
                                     loading="lazy"
+                                    width={9000} // Specify appropriate width
+                                    height={9000} // Specify appropriate height
                                 />
                                 <h2 className="Mygallery_info">{Gallery_box_2}</h2>
                             </div>
                         </Link>
                         <Link passHref href="/Gallery/Wedding_album" className="Mygallery_anchor">
                             <div className="Mygallery_container">
-                                <img
+                                <Image
                                     src={Wedding[0]}
                                     alt="The image"
                                     className="Mygallery_img"
                                     loading="lazy"
+                                    width={9000} // Specify appropriate width
+                                    height={9000} // Specify appropriate height
                                 />
                                 <h2 className="Mygallery_info">{Gallery_box_1}</h2>
                             </div>
                         </Link>
                         <Link passHref href="/Gallery/Family_album" className="Mygallery_anchor">
                             <div className="Mygallery_container">
-                                <img
+                                <Image
                                     src={Family[0]}
                                     alt="The image"
                                     className="Mygallery_img"
                                     loading="lazy"
+                                    width={9000} // Specify appropriate width
+                                    height={9000} // Specify appropriate height
                                 />
                                 <h2 className="Mygallery_info">{Gallery_box_4}</h2>
                             </div>
                         </Link>
                         <Link passHref href="/Gallery/Black_white_album" className="Mygallery_anchor">
                             <div className=" Mygallery_container Mygallery_container--last">
-                                <img
+                                <Image
                                     src={Black_white[0]}
                                     alt="The image"
                                     className="Mygallery_img"
                                     loading="lazy"
+                                    width={9000} // Specify appropriate width
+                                    height={9000} // Specify appropriate height
                                 />
                                 <h2 className="Mygallery_info">{Gallery_box_5}</h2>
                             </div>

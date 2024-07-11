@@ -8,18 +8,18 @@ export default function Footer() {
                     <div className="Footer_icon-box">
                         <a href="https://www.instagram.com/pic_best_moments" target="_blank">
                             <Image
-                                src="/instagram.png"
-                                width={50} 
-                                height={50}
+                                src="/instagram.webp"
+                                width={100} 
+                                height={100}
                                 alt="The logo of instagram"
                                 className="Footer_social Footer_img"
                             />
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61552729176710" target="_blank">
                             <Image
-                                src="/facebook.png"
-                                width={50}
-                                height={50}
+                                src="/facebook.webp"
+                                width={100}
+                                height={100}
                                 alt="The logo of facebook"
                                 className="Footer_social Footer_img"
                             />
@@ -27,8 +27,8 @@ export default function Footer() {
                         <a href="https://t.me/Yacha_01" target="_blank">
                             <Image
                                 src="/telegram.webp"
-                                width={50}
-                                height={50}
+                                width={100}
+                                height={100}
                                 alt="The logo of telegram"
                                 className="Footer_social Footer_img"
                             />
@@ -36,8 +36,8 @@ export default function Footer() {
                         <a href='https://wa.me/34645550126' target="_blank">
                             <Image
                                 src="/whatsapp.webp"
-                                width={50}
-                                height={50}
+                                width={100}
+                                height={100}
                                 alt="The logo of whatsapp"
                                 className="Footer_social Footer_img"
                             />
@@ -47,9 +47,9 @@ export default function Footer() {
                         <p className='Footer_text'>Built with</p>
                         <a href='https://nextjs.org/' target='_blank'>
                             <Image
-                                src="/next.png"
-                                width={50}
-                                height={50}
+                                src="/next.webp"
+                                width={100}
+                                height={100}
                                 alt="The logo of next"
                                 className="Footer_social Footer_img"
                             />

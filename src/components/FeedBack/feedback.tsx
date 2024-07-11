@@ -2,12 +2,12 @@ import client from "@/sanity/sanity.client";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Skeleton from 'react-loading-skeleton';
+import Image from "next/image";
 
 
 export default function MyFeedback() {
     const { t } = useTranslation("Home");
     const [isLoading, setIsLoading] = useState(true);
-
 
     const feedback_title: any = t('Feedback_title', { returnObjects: true });
     const feedback_names: any = t('Feedback_names', { returnObjects: true });
@@ -48,7 +48,14 @@ export default function MyFeedback() {
             ) : (
                 <div className="MyFeedback_grid">
                     <div className="MyFeedback_contain-img">
-                        <img src={images[0]} alt="test" className="MyFeedback_img" />
+                        <Image
+                            src={images[0]}
+                            alt="test"
+                            className="MyFeedback_img"
+                            width={1000} // Specify appropriate width
+                            height={1000} // Specify appropriate height
+                            loading="lazy"
+                        />
                     </div>
                     <div className="MyFeedback_contain-info">
                         <h1 className="MyFeedback_name">{feedback_names[0]}</h1>
@@ -58,7 +65,14 @@ export default function MyFeedback() {
                     </div>
 
                     <div className="MyFeedback_contain-img">
-                        <img src={images[1]} alt="test" className="MyFeedback_img" />
+                        <Image
+                            src={images[1]}
+                            alt="test"
+                            className="MyFeedback_img"
+                            width={1000} // Specify appropriate width
+                            height={1000} // Specify appropriate height
+                            loading="lazy"
+                        />
                     </div>
                     <div className="MyFeedback_contain-info">
                         <h1 className="MyFeedback_name">{feedback_names[1]}</h1>
@@ -68,7 +82,14 @@ export default function MyFeedback() {
                     </div>
 
                     <div className="MyFeedback_contain-img">
-                        <img src={images[2]} alt="test" className="MyFeedback_img" />
+                        <Image
+                            src={images[2]}
+                            alt="test"
+                            className="MyFeedback_img"
+                            width={1000} // Specify appropriate width
+                            height={1000} // Specify appropriate height
+                            loading="lazy"
+                        />
                     </div>
                     <div className="MyFeedback_contain-info">
                         <h1 className="MyFeedback_name">{feedback_names[2]}</h1>
@@ -78,7 +99,14 @@ export default function MyFeedback() {
                     </div>
 
                     <div className="MyFeedback_contain-img">
-                        <img src={images[3]} alt="test" className="MyFeedback_img" />
+                        <Image
+                            src={images[3]}
+                            alt="test"
+                            className="MyFeedback_img"
+                            width={1000} // Specify appropriate width
+                            height={1000} // Specify appropriate height
+                            loading="lazy"
+                        />
                     </div>
                     <div className="MyFeedback_contain-info">
                         <h1 className="MyFeedback_name">{feedback_names[3]}</h1>

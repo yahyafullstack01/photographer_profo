@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from "next-i18next";
 import client from '@/sanity/sanity.client';
 import Skeleton from 'react-loading-skeleton';
+import Image from 'next/image';
 
 
 export default function Contact() {
@@ -51,7 +52,7 @@ export default function Contact() {
             ) : (
                 <>
                     {image && (
-                        <img className='Mycontact_packages_img' src={image} alt="The contact picture" />
+                        <Image className='Mycontact_packages_img' src={image} alt="The contact picture" width={9000} height={9000} />
                     )}
                 </>
             )}

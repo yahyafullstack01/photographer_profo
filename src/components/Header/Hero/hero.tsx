@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import client from '../../../sanity/sanity.client';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';  
+import Image from 'next/image';
 
 interface Image {
     _id: string;
@@ -61,10 +62,12 @@ const Hero = () => {
                     highlightColor='rgb(208, 235, 255)'
                 />
             ) : (
-                <img
+                <Image
                     className='Slider_img'
                     src={images[index]?.url}
                     alt={images[index]?.alt}
+                    width={9000} // Specify appropriate width
+                    height={9000} // Specify appropriate height
                 />
             )}
         </div>
