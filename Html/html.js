@@ -4,16 +4,14 @@ export default function () {
     return (
         <div>
             <Head>
-                <title>Pic Best Moments</title>
+                <title>Pic Best moments Photography</title>
                 <meta
                     name="description"
                     content="Discover the artistry of moments captured at their best on Pic Best Moments.
-                    Explore a curated collection of high-quality photographs captured by professional photographers.
-                    Whether you seek inspiration or are in need of a skilled photographer for your project, our platform connects you directly with talented individuals.
-                    Experience the power of visual storytelling.
-                    Your perfect moment awaits."
+                    Explore a curated collection of high-quality photographs captured by professionals"
                 />
-                <link rel="shortcut icon" href="/logo.png" />
+                <meta http-equiv = "content-language" content = "en"/>
+                <link rel="shortcut icon" href="/Logo.webp" />
                 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet"></link>
