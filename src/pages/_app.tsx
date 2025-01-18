@@ -6,8 +6,7 @@ import { appWithTranslation } from "next-i18next";
 import Footer from '@/components/Footer/footer';
 import { useRouter } from "next/router";
 import 'react-loading-skeleton/dist/skeleton.css';
-import '../styles/globals.css'; 
-
+import '../styles/globals.css';
 function App({ Component, pageProps }: AppProps) {
 
   //This Code Hides the Footer From Showing in the 404 Page
@@ -33,6 +32,8 @@ function App({ Component, pageProps }: AppProps) {
       {!Hide_Footer && <Footer />}
     </>
   );
+
+
 }
 
 export default appWithTranslation(App);
