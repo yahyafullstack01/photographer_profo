@@ -37,7 +37,7 @@ const HomePage: React.FC<HomePageProps> = ({
   return (
     <AppProvider value={{ images, isLoading: false }}>
       <Navbar />
-      <Header />
+      {/* <Header />
       <section />
       <About />
       <section />
@@ -50,7 +50,7 @@ const HomePage: React.FC<HomePageProps> = ({
         Black_white={Black_white}
       />
       <section />
-      <Contacts />
+      <Contacts /> */}
     </AppProvider>
   );
 };
