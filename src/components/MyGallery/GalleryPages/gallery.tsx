@@ -17,7 +17,6 @@ export default function GalleryComponent({ images, titleIndex }: GalleryProps) {
   const Services_package_title: any = t("Services_package_title", { returnObjects: true });
   const Services_package_btn: any = t("Services_package_btn", { returnObjects: true });
 
-  // Fullscreen functionality
   const showFullscreenImage = (index: number) => {
     setCurrentIndex(index);
     setIsFullscreenOpen(true);
@@ -28,6 +27,7 @@ export default function GalleryComponent({ images, titleIndex }: GalleryProps) {
     setIsFullscreenOpen(false);
     document.body.style.overflow = "auto"; // Re-enable scrolling
   };
+
 
   return (
     <div className="Gallery">
@@ -63,39 +63,41 @@ export default function GalleryComponent({ images, titleIndex }: GalleryProps) {
           <button className="Gallery_package-btn">{Services_package_btn}</button>
         </Link>
       </div>
-      {isFullscreenOpen && currentIndex !== -1 && (
-        <div id="fullscreen-overlay" className="Fullscreen_overlay">
+      {isFullscreenOpen && (
+        <div id="fullscreen-overlay">
           <span id="close-btn" onClick={hideFullscreenImage}>
             &times;
           </span>
           <Image
             id="fullscreen-image"
             src={images[currentIndex]}
-            alt={`Fullscreen image ${currentIndex + 1}`}
-            width={9000}
-            height={9000}
-            className="Fullscreen_img"
+            alt={images[currentIndex]}
+            width={9000} // Specify appropriate width
+            height={9000} // Specify appropriate height
           />
           <span
             id="prev-btn"
-            className="Fullscreen_prev"
             onClick={() =>
-              setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+              setCurrentIndex((prevIndex) =>
+                (prevIndex - 1 + images.length) % images.length
+              )
             }
           >
             &lt;
           </span>
           <span
             id="next-btn"
-            className="Fullscreen_next"
             onClick={() =>
-              setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+              setCurrentIndex((prevIndex) =>
+                (prevIndex + 1) % images.length
+              )
             }
           >
             &gt;
           </span>
         </div>
-      )}
+      )
+      }
     </div>
   );
 }

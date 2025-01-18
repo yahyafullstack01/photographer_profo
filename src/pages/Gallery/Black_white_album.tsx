@@ -29,9 +29,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(lang, ["Home"])),
-      images,
+      images
     },
-    revalidate: 60, // Optional: Revalidate the page every 60 seconds
   };
 };
-
