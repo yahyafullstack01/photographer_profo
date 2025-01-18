@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import { appWithTranslation } from "next-i18next";
 import Footer from '@/components/Footer/footer';
 import { useRouter } from "next/router";
+import 'react-loading-skeleton/dist/skeleton.css';
+import '../styles/globals.css'; 
 
 function App({ Component, pageProps }: AppProps) {
 
@@ -23,7 +25,6 @@ function App({ Component, pageProps }: AppProps) {
       }
     });
   }, []);
-
 
   return (
     <>

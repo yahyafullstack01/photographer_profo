@@ -47,12 +47,8 @@ export default function About() {
                     </p>
                 </div>
                 {isLoading ? (
-                    <Skeleton
-                        height='100vh'
-                        width="100%"
-                        baseColor='transparent'
-                        highlightColor='rgb(208, 235, 255)'
-                    />
+                    <div className="Slider_skeleton" />
+
                 ) : (
                     <div className="About_Vid-con">
                         <video

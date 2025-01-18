@@ -1,23 +1,42 @@
 import Navbarpages from "@/components/Header/Navbar/navbar_pages";
-import MyLove from "@/components/MyGallery/GalleryPages/MyLove";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { GetStaticProps } from "next";
-export default function LoveStory() {
-    return (
-        <>
-            <Navbarpages />
-            <MyLove />
-        </>
-    )
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetServerSideProps } from "next";
+import client from "@/sanity/sanity.client";
+import GalleryComponent from "@/components/MyGallery/GalleryPages/gallery";
+
+interface LoveStoryProps {
+  images: string[];
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const lang = locale ?? 'en';
+export default function LoveStory({ images }: LoveStoryProps) {
+  return (
+    <>
+      <Navbarpages />
+      <GalleryComponent images={images} titleIndex={0} />
+    </>
+  );
+}
 
-    return {
-        props: {
-            ...(await serverSideTranslations(lang, ['Home'])),
-        },
-    };
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const lang = locale ?? "en";
+
+  // Fetch images for the love gallery
+  let images: string[] = [];
+  try {
+    const query = `*[_type == "love"] | order(_createdAt desc) { picture { asset->{url} } }`;
+    const results = await client.fetch<{ picture: { asset: { url: string } } }[]>(query);
+
+    images = results
+      .filter((item) => item.picture?.asset?.url)
+      .map((item) => item.picture.asset.url);
+  } catch (error) {
+    console.error("Error fetching love images:", error);
+  }
+
+  return {
+    props: {
+      ...(await serverSideTranslations(lang, ["Home"])),
+      images,
+    },
+  };
 };
-

@@ -10,8 +10,6 @@ export default function Contact() {
     const [image, setImage] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
-
-
     const Contact_header: any = t('Contact_title', { returnObjects: true });
     const Contact_info: any = t('Contact_info', { returnObjects: true });
     const Contact_holders: any = t('Contact_holders', { returnObjects: true });

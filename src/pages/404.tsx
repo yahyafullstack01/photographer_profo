@@ -8,9 +8,7 @@ export default function ERRPAGE() {
     const Error_code: any = t('Error_code', { returnObjects: true });
     const Error_btn: any = t('Error_btn', { returnObjects: true });
 
-
     return (
-
         <div className="ErrPage">
             {Error_code[0]}<br />
             {Error_code[1]}<br />
@@ -30,5 +28,3 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         },
     };
 };
-
-
