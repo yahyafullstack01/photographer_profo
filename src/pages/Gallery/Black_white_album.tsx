@@ -1,6 +1,6 @@
 import Navbarpages from "@/components/Header/Navbar/navbar_pages";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import client from "@/sanity/sanity.client";
 import GalleryComponent from "@/components/MyGallery/GalleryPages/gallery";
 
@@ -13,7 +13,7 @@ export default function LoveStory({ images }: { images: string[] }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const lang = locale ?? "en";
 
   // Fetch black and white images from Sanity
@@ -31,6 +31,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
       ...(await serverSideTranslations(lang, ["Home"])),
       images,
     },
+    revalidate: 60, // Optional: Revalidate the page every 60 seconds
   };
 };
 
