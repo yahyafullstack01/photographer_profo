@@ -123,7 +123,7 @@ export default function MyGallery() {
                             <div className="Mygallery_container">
                                 <Image
                                     src={Love[0]}
-                                    alt="The image"
+                                    alt="Love album image"
                                     className="Mygallery_img"
                                     loading="lazy"
                                     width={9000} // Specify appropriate width
@@ -136,7 +136,7 @@ export default function MyGallery() {
                             <div className="Mygallery_container">
                                 <Image
                                     src={Wedding[0]}
-                                    alt="The image"
+                                    alt="Wedding album image"
                                     className="Mygallery_img"
                                     loading="lazy"
                                     width={9000} // Specify appropriate width
@@ -149,7 +149,7 @@ export default function MyGallery() {
                             <div className="Mygallery_container">
                                 <Image
                                     src={Family[0]}
-                                    alt="The image"
+                                    alt="Family album image"
                                     className="Mygallery_img"
                                     loading="lazy"
                                     width={9000} // Specify appropriate width
@@ -159,10 +159,10 @@ export default function MyGallery() {
                             </div>
                         </Link>
                         <Link passHref href="/Gallery/Black_white_album" className="Mygallery_anchor">
-                            <div className=" Mygallery_container Mygallery_container--last">
+                            <div className="Mygallery_container Mygallery_container--last">
                                 <Image
                                     src={Black_white[0]}
-                                    alt="The image"
+                                    alt="Black and white album image"
                                     className="Mygallery_img"
                                     loading="lazy"
                                     width={9000} // Specify appropriate width
@@ -172,6 +172,7 @@ export default function MyGallery() {
                             </div>
                         </Link>
                     </div>
+
                 </>
             )
             }

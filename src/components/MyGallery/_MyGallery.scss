@@ -1,3 +1,6 @@
+@import "../../styles/utilities/mixins";
+@import "../../styles/utilities/varaibles";
+
 .Mygallery {
     display: flex;
     flex-direction: column;
@@ -15,6 +18,7 @@
         font-size: 3vw;
         font-family: "Mooli", sans-serif;
         font-weight: 400;
+        text-align: center;
 
         @include Tablet {
             font-size: 5vw;
@@ -36,9 +40,8 @@
         gap: 3vw;
 
         @include Tablet {
-            // grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2vw;
-
         }
 
         @include Mobile {
@@ -60,7 +63,7 @@
         }
 
         &--last {
-            grid-column:  1/ span 3;
+            grid-column: 1 / span 3;
         }
 
         @include Mobile {
@@ -75,6 +78,10 @@
         height: 80vh;
         border-radius: 10px;
         border: 2px solid white;
+
+        @include Mobile {
+            height: 50vh;
+        }
     }
 
     &_middle {
@@ -92,7 +99,7 @@
         font-weight: 400;
 
         @include Mobile {
-            font-size: 8vw;
+            font-size: 5vw;
             margin-bottom: 2%;
         }
     }
@@ -122,11 +129,19 @@
     }
 }
 
-
 .Mygallery_Grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+
+    @include Tablet {
+        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+        gap: 5px;
+    }
+
+    @include Mobile {
+        display: flex;
+    }
 }
 
 .Mygallery_skeleton {
@@ -156,6 +171,7 @@
     0% {
         background-position: -200px 0;
     }
+
     100% {
         background-position: 200px 0;
     }
